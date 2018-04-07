@@ -1,4 +1,4 @@
-const { getChildren, removeEmpty } = require('../utils');
+const { getChildren, removeEmpty } = require("../utils");
 
 exports.type = `
   type Frame {

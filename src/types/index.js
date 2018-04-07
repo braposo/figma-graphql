@@ -1,13 +1,13 @@
-const merge = require('lodash/merge');
+const merge = require("lodash/merge");
 
 const typePaths = [
-  require('./file'),
-  require('./page'),
-  require('./color'),
-  require('./stroke'),
-  require('./style'),
-  require('./frame'),
-  require('./element')
+  require("./file"),
+  require("./page"),
+  require("./color"),
+  require("./stroke"),
+  require("./style"),
+  require("./frame"),
+  require("./element")
 ];
 
 /**

@@ -1,4 +1,4 @@
-const { getChildren } = require('../utils');
+const { getChildren } = require("../utils");
 
 exports.type = `
     type Page {

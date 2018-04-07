@@ -1,4 +1,4 @@
-const { loadFigma, getChildren } = require('../utils');
+const { loadFigma, getChildren } = require("../utils");
 
 exports.type = `
   type File {
@@ -21,10 +21,10 @@ exports.resolvers = {
   File: {
     pages: (root, { name }) => {
       if (name) {
-        return getChildren(root, 'document.children', { name });
+        return getChildren(root, "document.children", { name });
       }
 
-      return getChildren(root, 'document.children');
+      return getChildren(root, "document.children");
     }
   }
 };

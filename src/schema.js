@@ -1,6 +1,6 @@
-const { makeExecutableSchema } = require('graphql-tools');
-const mergeSchema = require('./types');
-const { GraphQLDateTime } = require('graphql-iso-date');
+const { makeExecutableSchema } = require("graphql-tools");
+const mergeSchema = require("./types");
+const { GraphQLDateTime } = require("graphql-iso-date");
 
 const typeDefs = [
   `
@@ -19,7 +19,7 @@ const typeDefs = [
 const resolvers = {
   DateTime: GraphQLDateTime,
   Query: {
-    version: () => '1'
+    version: () => "1"
   }
 };
 
