@@ -1,11 +1,13 @@
-const merge = require("lodash/merge");
+const merge = require('lodash/merge');
 
 const typePaths = [
-    require("./file"),
-    require("./page"),
-    require("./color"),
-    require("./frame"),
-    require("./element"),
+  require('./file'),
+  require('./page'),
+  require('./color'),
+  require('./stroke'),
+  require('./style'),
+  require('./frame'),
+  require('./element')
 ];
 
 /**
@@ -17,15 +19,15 @@ const typePaths = [
  * type, resolvers
  */
 module.exports = ({ typeDefs: t, resolvers: r }) =>
-    typePaths.reduce(
-        ({ typeDefs, resolvers }, { type, resolvers: typeResolvers }) => {
-            return {
-                typeDefs: [...typeDefs, type],
-                resolvers: merge(resolvers, typeResolvers),
-            };
-        },
-        {
-            typeDefs: t,
-            resolvers: r,
-        }
-    );
+  typePaths.reduce(
+    ({ typeDefs, resolvers }, { type, resolvers: typeResolvers }) => {
+      return {
+        typeDefs: [...typeDefs, type],
+        resolvers: merge(resolvers, typeResolvers)
+      };
+    },
+    {
+      typeDefs: t,
+      resolvers: r
+    }
+  );
