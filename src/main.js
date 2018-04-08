@@ -1,10 +1,11 @@
 require("dotenv").config();
 
-const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
+const { graphqlExpress } = require("apollo-server-express");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const { loadFigma, clearCache } = require("./utils");
+const expressPlayground = require('graphql-playground-middleware-express').default;
 
 const { schema, context } = require("./schema");
 
@@ -48,8 +49,8 @@ app.use(
 // Show GraphiQL for everything else!
 app.get(
     "*",
-    graphiqlExpress({
-        endpointURL: "/graphql",
+    expressPlayground({
+        endpoint: "/graphql",
     })
 );
 
