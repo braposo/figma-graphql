@@ -25,9 +25,10 @@ exports.type = `
 
 exports.resolvers = {
     Query: {
-        image: (root, { id, params = { ids: ["0:1"]} }) => loadFigmaImages(id, params).then(data => data),
+        image: (root, { id, params = { ids: ["0:1"] } }) =>
+            loadFigmaImages(id, params).then(data => data),
     },
     Image: {
-        images: ({ images = [] }) =>  Object.values(images)
+        images: ({ images = [] }) => Object.values(images),
     },
 };

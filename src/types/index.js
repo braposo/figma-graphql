@@ -10,7 +10,7 @@ const typePaths = [
     require("./element"),
     require("./image"),
     require("./comments"),
-    require("./projects")
+    require("./projects"),
 ];
 
 /**

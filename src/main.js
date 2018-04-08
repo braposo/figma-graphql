@@ -2,11 +2,11 @@ require("dotenv").config();
 
 const { graphqlExpress } = require("apollo-server-express");
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 const { loadFigma, clearCache } = require("./utils");
-const expressPlayground = require('graphql-playground-middleware-express').default;
+const expressPlayground = require("graphql-playground-middleware-express").default;
 
 const { schema, context } = require("./schema");
 

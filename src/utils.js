@@ -14,7 +14,7 @@ const clearCache = id => delete cache[id];
 
 const getFigma = (fn, id, params) =>
     new Promise((resolve, reject) => {
-        const isParams = params ? { ...params } : null
+        const isParams = params ? { ...params } : null;
         if (cache[id]) {
             console.log("hit from cache", id);
             resolve(cache[id]);
@@ -30,15 +30,15 @@ const getFigma = (fn, id, params) =>
         }
     });
 
-const loadFigma = id => getFigma(file, id)
+const loadFigma = id => getFigma(file, id);
 
-const loadFigmaComments = id => getFigma(comments, id)
+const loadFigmaComments = id => getFigma(comments, id);
 
-const loadFigmaImages = (id, params) => getFigma(fileImages, id, params)
+const loadFigmaImages = (id, params) => getFigma(fileImages, id, params);
 
-const loadTeamprojects = id => getFigma(teamProjects, id)
+const loadTeamprojects = id => getFigma(teamProjects, id);
 
-const createComment = (id, params) => getFigma(postComment, id, params)
+const createComment = (id, params) => getFigma(postComment, id, params);
 
 const getChildren = (data, path, match, ...rest) => {
     const matchString = match ? matching(has(match)) : all;
@@ -60,5 +60,5 @@ module.exports = {
     loadFigmaImages,
     loadFigmaComments,
     createComment,
-    loadTeamprojects
+    loadTeamprojects,
 };
