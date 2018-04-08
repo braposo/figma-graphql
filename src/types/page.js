@@ -1,4 +1,4 @@
-const { getChildren } = require("../utils");
+const { getChildren } = require('../utils');
 
 exports.type = `
     type Page {
@@ -11,7 +11,7 @@ exports.type = `
 `;
 
 exports.resolvers = {
-    Page: {
-        frames: (root, args) => getChildren(root),
-    },
+  Page: {
+    frames: (root, args) => getChildren(root),
+  },
 };

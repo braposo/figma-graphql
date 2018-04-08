@@ -1,4 +1,4 @@
-const { loadFigmaComments, getChildren, createComment } = require("../utils");
+const { loadFigmaComments, getChildren, createComment } = require('../utils');
 
 exports.type = `
     type User {
@@ -40,11 +40,11 @@ exports.type = `
 `;
 
 exports.resolvers = {
-    Query: {
-        comments: (root, { id }) => loadFigmaComments(id).then(data => data.comments),
-    },
-    Mutation: {
-        addComment: (root, { id, message, params }) =>
-            createComment(id, { client_meta: { ...params }, message }).then(data => data),
-    },
+  Query: {
+    comments: (root, { id }) => loadFigmaComments(id).then(data => data.comments),
+  },
+  Mutation: {
+    addComment: (root, { id, message, params }) =>
+      createComment(id, { client_meta: { ...params }, message }).then(data => data),
+  },
 };

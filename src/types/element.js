@@ -1,4 +1,4 @@
-const { getChildren } = require("../utils");
+const { getChildren } = require('../utils');
 
 exports.type = `
     type Element {
@@ -18,21 +18,15 @@ exports.type = `
 `;
 
 exports.resolvers = {
-    Element: {
-        fill: (root, args) => {
-            return getChildren(root, "fills[0].color");
-        },
-        position: (root, args) => {
-            return {
-                x: getChildren(root, "absoluteBoundingBox.x"),
-                y: getChildren(root, "absoluteBoundingBox.y"),
-            };
-        },
-        size: (root, args) => {
-            return {
-                width: getChildren(root, "absoluteBoundingBox.width"),
-                height: getChildren(root, "absoluteBoundingBox.height"),
-            };
-        },
-    },
+  Element: {
+    fill: (root, args) => getChildren(root, 'fills[0].color'),
+    position: (root, args) => ({
+      x: getChildren(root, 'absoluteBoundingBox.x'),
+      y: getChildren(root, 'absoluteBoundingBox.y'),
+    }),
+    size: (root, args) => ({
+      width: getChildren(root, 'absoluteBoundingBox.width'),
+      height: getChildren(root, 'absoluteBoundingBox.height'),
+    }),
+  },
 };
