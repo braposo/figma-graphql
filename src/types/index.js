@@ -8,6 +8,9 @@ const typePaths = [
     require("./style"),
     require("./frame"),
     require("./element"),
+    require("./image"),
+    require("./comments"),
+    require("./projects")
 ];
 
 /**
