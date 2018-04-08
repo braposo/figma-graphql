@@ -13,15 +13,15 @@ exports.type = `
 `;
 
 exports.resolvers = {
-    Frame: {
-        elements: (root, args) => {
-            if (args) {
-                const { type, name } = args;
-                const match = removeEmpty({ type, name });
-                return getChildren(root, null, match);
-            }
+  Frame: {
+    elements: (root, args) => {
+      if (args) {
+        const { type, name } = args;
+        const match = removeEmpty({ type, name });
+        return getChildren(root, null, match);
+      }
 
-            return getChildren(root);
-        },
-    },
+      return getChildren(root);
+    }
+  }
 };

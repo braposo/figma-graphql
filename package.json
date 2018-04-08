@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/main.js",
-    "dev": "nodemon ./src/main.js"
+    "dev": "nodemon ./src/main.js",
+    "format": "prettier --write '**/*.{js,css,md}'",
+    "posttest": "npm run format"
   },
   "keywords": [
     "figma",
@@ -34,6 +36,7 @@
     "shades": "^1.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.2",
+    "prettier": "^1.11.1"
   }
 }
