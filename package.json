@@ -7,7 +7,7 @@
     "start": "node ./src/main.js",
     "dev": "nodemon ./src/main.js",
     "format": "prettier --write '**/*.{js,css,md}'",
-    "posttest": "npm run format"
+    "posttest": "yarn run format"
   },
   "keywords": [
     "figma",
@@ -39,5 +39,8 @@
   "devDependencies": {
     "nodemon": "^1.17.2",
     "prettier": "^1.11.1"
+  },
+  "now": {
+    "alias": "figma-graphql"
   }
 }
