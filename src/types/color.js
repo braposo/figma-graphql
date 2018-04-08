@@ -5,4 +5,9 @@ exports.type = `
         b: Float
         a: Float
     }
+
+    type GradientStops {
+        color: Color,
+        position: Float
+    }
 `;

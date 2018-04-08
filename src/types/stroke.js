@@ -1,9 +1,4 @@
 exports.type = `
-    type GradientStops {
-        color: Color,
-        position: Float
-    }
-
     type Stroke {
         type: String
         blendMode: String

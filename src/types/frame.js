@@ -1,15 +1,17 @@
 const { getChildren, removeEmpty } = require("../utils");
 
 exports.type = `
-  type Frame {
-    id: String!
-    name: String!
-    type: String!
-    blendMode: String!
-    backgroundColor: Color!
-    clipsContent: Boolean!
-    elements(type: String, name: String): [Element!]
-  }
+    type Frame {
+        id: String!
+        name: String!
+        type: String!
+        blendMode: String!
+        backgroundColor: Color!
+        clipsContent: Boolean!
+        elements(type: String, name: String): [Element!]
+        position: Position,
+        size: Size,
+    }
 `;
 
 exports.resolvers = {
@@ -22,6 +24,18 @@ exports.resolvers = {
             }
 
             return getChildren(root);
+        },
+        position: (root, args) => {
+            return {
+                x: getChildren(root, "absoluteBoundingBox.x"),
+                y: getChildren(root, "absoluteBoundingBox.y"),
+            };
+        },
+        size: (root, args) => {
+            return {
+                width: getChildren(root, "absoluteBoundingBox.width"),
+                height: getChildren(root, "absoluteBoundingBox.height"),
+            };
         },
     },
 };

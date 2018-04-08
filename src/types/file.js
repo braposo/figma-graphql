@@ -1,17 +1,17 @@
 const { loadFigma, getChildren } = require("../utils");
 
 exports.type = `
-  type File {
-    name: String!
-    lastModified: DateTime
-    thumbnailUrl: String
-    components: [String]
-    pages(name: String): [Page!]
-  }
+    type File {
+        name: String!
+        lastModified: DateTime
+        thumbnailUrl: String
+        components: [String]
+        pages(name: String): [Page!]
+    }
 
-  extend type Query {
-    file(id: String!): File
-  }
+    extend type Query {
+        file(id: String!): File
+    }
 `;
 
 exports.resolvers = {

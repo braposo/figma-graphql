@@ -1,30 +1,20 @@
 const { getChildren } = require("../utils");
 
 exports.type = `
-   type Position {
-     x: Float
-     y: Float
-   }
-
-   type Size {
-     width: Float
-     height: Float
-   }
-
-  type Element {
-    id: String!
-    name: String!
-    type: String!
-    blendMode: String!
-    characters: String
-    fill: Color,
-    position: Position,
-    size: Size,
-    style: Style,
-    strokeWeight: Int,
-    strokeAlign: String,
-    strokes: [Stroke]
-  }
+    type Element {
+        id: String!
+        name: String!
+        type: String!
+        blendMode: String!
+        characters: String
+        fill: Color,
+        position: Position,
+        size: Size,
+        style: Style,
+        strokeWeight: Int,
+        strokeAlign: String,
+        strokes: [Stroke]
+    }
 `;
 
 exports.resolvers = {

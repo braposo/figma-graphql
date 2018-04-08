@@ -10,4 +10,14 @@ exports.type = `
         lineHeightPx: Float,
         lineHeightPercent: Int
     }
+
+    type Position {
+        x: Float
+        y: Float
+    }
+
+    type Size {
+        width: Float
+        height: Float
+    }
 `;
