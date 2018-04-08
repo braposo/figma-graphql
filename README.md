@@ -4,7 +4,7 @@ This is a **very experimental** GraphQL connector for the new [Figma Web API](ht
 
 ## How to use this?
 
-There's a live version of this at [https://figma-graphql.now.sh/](<https://figma-graphql.now.sh/?query=%7B%0A%20%20%20%20file(id%3A%20%22KViUntEBJqK4gWfiwft5NObl%22)%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20thumbnailUrl%0A%20%20%20%20%20%20%20%20lastModified%0A%20%20%20%20%20%20%20%20pages%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20%20%20%20%20frames%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20clipsContent%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20blendMode%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20elements(type%3A%20%22TEXT%22)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20characters%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20fill%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20r%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20g%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D>)
+There's a live version of this at [https://www.graphqlbin.com/v2/lOM4TX](https://www.graphqlbin.com/v2/lOM4TX)
 
 If you want to play with it then:
 
@@ -34,10 +34,35 @@ Here's an example of what you can do at this point:
                 name
                 clipsContent
                 blendMode
+                position {
+                    x
+                    y
+                }
+                size {
+                    width
+                    height
+                }
                 elements(type: "TEXT") {
                     name
                     type
                     characters
+                    position {
+                        x
+                        y
+                    }
+                    size {
+                        width
+                        height
+                    }
+                    style {
+                        fontSize
+                        fontFamily
+                        fontWeight
+                        letterSpacing
+                    }
+                    strokes {
+                        type
+                    }
                     fill {
                         r
                         g
