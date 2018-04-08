@@ -21,33 +21,33 @@ Here's an example of what you can do at this point:
 
 ```gql
 {
-  file(id: "KViUntEBJqK4gWfiwft5NObl") {
-    name
-    thumbnailUrl
-    lastModified
-    pages {
-      name
-      id
-      type
-      frames {
-        id
+    file(id: "KViUntEBJqK4gWfiwft5NObl") {
         name
-        clipsContent
-        blendMode
-        elements(type: "TEXT") {
-          name
-          type
-          characters
-          fill {
-            r
-            g
-            b
-            a
-          }
+        thumbnailUrl
+        lastModified
+        pages {
+            name
+            id
+            type
+            frames {
+                id
+                name
+                clipsContent
+                blendMode
+                elements(type: "TEXT") {
+                    name
+                    type
+                    characters
+                    fill {
+                        r
+                        g
+                        b
+                        a
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 ```
 

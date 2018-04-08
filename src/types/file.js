@@ -15,16 +15,16 @@ exports.type = `
 `;
 
 exports.resolvers = {
-  Query: {
-    file: (root, { id }) => loadFigma(id).then(data => data)
-  },
-  File: {
-    pages: (root, { name }) => {
-      if (name) {
-        return getChildren(root, "document.children", { name });
-      }
+    Query: {
+        file: (root, { id }) => loadFigma(id).then(data => data),
+    },
+    File: {
+        pages: (root, { name }) => {
+            if (name) {
+                return getChildren(root, "document.children", { name });
+            }
 
-      return getChildren(root, "document.children");
-    }
-  }
+            return getChildren(root, "document.children");
+        },
+    },
 };

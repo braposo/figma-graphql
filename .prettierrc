@@ -1,13 +1,16 @@
 {
-  "overrides": [
-    {
-      "files": "*.md",
-      "options": {
-        "printWidth": 70,
-        "useTabs": false,
-        "trailingComma": "none",
-        "proseWrap": "never"
-      }
-    }
-  ]
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "printWidth": 100,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "printWidth": 70,
+                "useTabs": false,
+                "trailingComma": "none",
+                "proseWrap": "never"
+            }
+        }
+    ]
 }

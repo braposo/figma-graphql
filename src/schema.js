@@ -3,7 +3,7 @@ const mergeSchema = require("./types");
 const { GraphQLDateTime } = require("graphql-iso-date");
 
 const typeDefs = [
-  `
+    `
     scalar DateTime
 
     type Query {
@@ -13,19 +13,19 @@ const typeDefs = [
     type Mutation {
         noop: String
     }
-`
+`,
 ];
 
 const resolvers = {
-  DateTime: GraphQLDateTime,
-  Query: {
-    version: () => "1"
-  }
+    DateTime: GraphQLDateTime,
+    Query: {
+        version: () => "1",
+    },
 };
 
 module.exports = {
-  schema: makeExecutableSchema(mergeSchema({ typeDefs, resolvers })),
-  context: req => {
-    return {};
-  }
+    schema: makeExecutableSchema(mergeSchema({ typeDefs, resolvers })),
+    context: req => {
+        return {};
+    },
 };
