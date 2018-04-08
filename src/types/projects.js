@@ -1,4 +1,4 @@
-const { loadTeamprojects, getChildren } = require("../utils");
+const { loadTeamProjects, getChildren } = require("../utils");
 
 exports.type = `
     type Project {
@@ -14,6 +14,6 @@ exports.type = `
 
 exports.resolvers = {
     Query: {
-        projects: (root, { id }) => loadTeamprojects(id).then(data => data.projects),
+        projects: (root, { id }) => loadTeamProjects(id).then(data => data.projects),
     },
 };

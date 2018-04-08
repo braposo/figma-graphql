@@ -6,7 +6,7 @@ const client = Figma.Client({
     personalAccessToken: process.env.FIGMA_TOKEN,
 });
 
-const { file, fileImages, comments, postComment, teamProjects } = client;
+const { file, fileImages, comments, postComment, teamProjects, projectFiles } = client;
 
 const cache = {};
 
@@ -36,7 +36,9 @@ const loadFigmaComments = id => getFigma(comments, id);
 
 const loadFigmaImages = (id, params) => getFigma(fileImages, id, params);
 
-const loadTeamprojects = id => getFigma(teamProjects, id);
+const loadTeamProjects = id => getFigma(teamProjects, id);
+
+const loadProjectFiles = id => getFigma(projectFiles, id);
 
 const createComment = (id, params) => getFigma(postComment, id, params);
 
@@ -60,5 +62,6 @@ module.exports = {
     loadFigmaImages,
     loadFigmaComments,
     createComment,
-    loadTeamprojects,
+    loadTeamProjects,
+    loadProjectFiles
 };

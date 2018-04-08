@@ -11,6 +11,7 @@ const typePaths = [
     require("./image"),
     require("./comments"),
     require("./projects"),
+    require("./project-files"),
 ];
 
 /**
