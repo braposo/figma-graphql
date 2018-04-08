@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const { graphqlExpress } = require("apollo-server-express");
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const bodyParser = require("body-parser");
 const { loadFigma, clearCache } = require("./utils");
@@ -11,7 +12,7 @@ const { schema, context } = require("./schema");
 
 const PORT = 3001;
 
-const getColours = data => get("children", all, "fills[0].color")(data);
+app.use(cors());
 
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
@@ -42,6 +43,7 @@ app.use(
         pretty: true,
         // Enable GraphiQL dev tool
         graphiql: false,
+        tracing: true,
         context: context(req),
     }))
 );
