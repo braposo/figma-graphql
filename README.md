@@ -1,6 +1,6 @@
 # figma-graphql
 
-[![Build Status](https://travis-ci.org/https://github.com/SaraVieira/figma-graphql.svg)](https://travis-ci.org/https://github.com/SaraVieira/figma-graphql)
+[![Build Status](https://travis-ci.org/https://github.com/braposo/figma-graphql.svg)](https://travis-ci.org/https://github.com/braposo/figma-graphql)
 
 This is a **very experimental** GraphQL connector for the new [Figma Web API](https://www.figma.com/developers)
 
