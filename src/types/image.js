@@ -14,7 +14,7 @@ exports.type = `
 
     type Image {
         # Images for the ID's you requested
-        images: [String]
+        images: [String]!
     }
 
     extend type Query {

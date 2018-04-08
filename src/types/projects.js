@@ -1,8 +1,11 @@
 const { loadTeamProjects } = require('../utils');
 
 exports.type = `
+    # A single Project
     type Project {
+        # ID of the Project
         id: ID!,
+        # Name of the Project
         name: String!
     }
 

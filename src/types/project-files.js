@@ -1,10 +1,15 @@
 const { loadProjectFiles } = require('../utils');
 
 exports.type = `
+    # A file inside a project
     type ProjectFile {
-     key: String,
-     name: String,
-     thumbnail_url: String,
+     # Key of this file
+     key: String
+     # Name of the file
+     name: String
+     # Thumbnail of the file
+     thumbnail_url: String
+     # Date when last modified
      last_modified: String
     }
 
