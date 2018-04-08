@@ -1,4 +1,4 @@
-const { loadFigmaImages, getChildren } = require('../utils');
+const { loadFigmaImages } = require('../utils');
 
 exports.type = `
     input Params {

@@ -1,4 +1,4 @@
-const { loadFigmaComments, getChildren, createComment } = require('../utils');
+const { loadFigmaComments, createComment } = require('../utils');
 
 exports.type = `
     type User {

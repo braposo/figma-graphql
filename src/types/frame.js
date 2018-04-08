@@ -25,11 +25,11 @@ exports.resolvers = {
 
       return getChildren(root);
     },
-    position: (root, args) => ({
+    position: root => ({
       x: getChildren(root, 'absoluteBoundingBox.x'),
       y: getChildren(root, 'absoluteBoundingBox.y'),
     }),
-    size: (root, args) => ({
+    size: root => ({
       width: getChildren(root, 'absoluteBoundingBox.width'),
       height: getChildren(root, 'absoluteBoundingBox.height'),
     }),

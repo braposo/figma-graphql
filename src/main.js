@@ -18,11 +18,9 @@ app.use(cors());
 // Get figma API response (just for testing)
 app.get('/figma/:id', (req, res) => {
   const { id } = req.params;
-  loadFigma(id)
-    .then((data) => {
-      res.json(data);
-    })
-    .catch(e => console.log(e));
+  loadFigma(id).then(data => {
+    res.json(data);
+  });
 });
 
 // Clears cache for specific figma file
@@ -46,7 +44,7 @@ app.use(
     graphiql: false,
     tracing: true,
     context: context(req),
-  })),
+  }))
 );
 
 // Show GraphiQL for everything else!
@@ -54,9 +52,10 @@ app.get(
   '*',
   expressPlayground({
     endpoint: '/graphql',
-  }),
+  })
 );
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line
   console.log(`Server running at http://localhost:${PORT}`);
 });

@@ -1,3 +1,8 @@
 {
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "rules": {
+        "object-curly-newline":"off",
+        "comma-dangle":"off",
+        "arrow-parens":"off",
+    }
 }

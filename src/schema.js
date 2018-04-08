@@ -25,5 +25,5 @@ const resolvers = {
 
 module.exports = {
   schema: makeExecutableSchema(mergeSchema({ typeDefs, resolvers })),
-  context: req => ({}),
+  context: () => ({}),
 };

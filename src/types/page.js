@@ -12,6 +12,6 @@ exports.type = `
 
 exports.resolvers = {
   Page: {
-    frames: (root, args) => getChildren(root),
+    frames: root => getChildren(root),
   },
 };

@@ -1,6 +1,5 @@
 const merge = require('lodash/merge');
 
-
 /* eslint-disable global-require */
 const typePaths = [
   require('./file'),
@@ -34,5 +33,5 @@ module.exports = ({ typeDefs: t, resolvers: r }) =>
     {
       typeDefs: t,
       resolvers: r,
-    },
+    }
   );

@@ -1,4 +1,4 @@
-const { loadProjectFiles, getChildren } = require('../utils');
+const { loadProjectFiles } = require('../utils');
 
 exports.type = `
     type ProjectFile {

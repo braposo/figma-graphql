@@ -19,12 +19,12 @@ exports.type = `
 
 exports.resolvers = {
   Element: {
-    fill: (root, args) => getChildren(root, 'fills[0].color'),
-    position: (root, args) => ({
+    fill: root => getChildren(root, 'fills[0].color'),
+    position: root => ({
       x: getChildren(root, 'absoluteBoundingBox.x'),
       y: getChildren(root, 'absoluteBoundingBox.y'),
     }),
-    size: (root, args) => ({
+    size: root => ({
       width: getChildren(root, 'absoluteBoundingBox.width'),
       height: getChildren(root, 'absoluteBoundingBox.height'),
     }),

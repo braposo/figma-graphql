@@ -1,5 +1,7 @@
 # figma-graphql
 
+[![Build Status](https://travis-ci.org/https://github.com/SaraVieira/figma-graphql.svg)](https://travis-ci.org/https://github.com/SaraVieira/figma-graphql)
+
 This is a **very experimental** GraphQL connector for the new [Figma Web API](https://www.figma.com/developers)
 
 ## How to use this?
@@ -21,58 +23,58 @@ Here's an example of what you can do at this point:
 
 ```gql
 {
-    file(id: "KViUntEBJqK4gWfiwft5NObl") {
+  file(id: "KViUntEBJqK4gWfiwft5NObl") {
+    name
+    thumbnailUrl
+    lastModified
+    pages {
+      name
+      id
+      type
+      frames {
+        id
         name
-        thumbnailUrl
-        lastModified
-        pages {
-            name
-            id
-            type
-            frames {
-                id
-                name
-                clipsContent
-                blendMode
-                position {
-                    x
-                    y
-                }
-                size {
-                    width
-                    height
-                }
-                elements(type: "TEXT") {
-                    name
-                    type
-                    characters
-                    position {
-                        x
-                        y
-                    }
-                    size {
-                        width
-                        height
-                    }
-                    style {
-                        fontSize
-                        fontFamily
-                        fontWeight
-                        letterSpacing
-                    }
-                    strokes {
-                        type
-                    }
-                    fill {
-                        r
-                        g
-                        b
-                        a
-                    }
-                }
-            }
+        clipsContent
+        blendMode
+        position {
+          x
+          y
         }
+        size {
+          width
+          height
+        }
+        elements(type: "TEXT") {
+          name
+          type
+          characters
+          position {
+            x
+            y
+          }
+          size {
+            width
+            height
+          }
+          style {
+            fontSize
+            fontFamily
+            fontWeight
+            letterSpacing
+          }
+          strokes {
+            type
+          }
+          fill {
+            r
+            g
+            b
+            a
+          }
+        }
+      }
     }
+  }
 }
 ```
 

@@ -1,16 +1,12 @@
 const Figma = require('figma-js');
-const {
-  get, matching, all, has,
-} = require('shades');
+const { get, matching, all, has } = require('shades');
 const pickBy = require('lodash/pickBy');
 
 const client = Figma.Client({
   personalAccessToken: process.env.FIGMA_TOKEN,
 });
 
-const {
-  file, fileImages, comments, postComment, teamProjects, projectFiles,
-} = client;
+const { file, fileImages, comments, postComment, teamProjects, projectFiles } = client;
 
 const cache = {};
 
@@ -20,13 +16,16 @@ const getFigma = (fn, id, params) =>
   new Promise((resolve, reject) => {
     const isParams = params ? { ...params } : null;
     if (cache[id]) {
+      // eslint-disable-next-line
       console.log('hit from cache', id);
       resolve(cache[id]);
     } else {
+      // eslint-disable-next-line
       console.log('fetching', id);
       fn(id, isParams)
         .then(({ data }) => {
           cache[id] = data;
+          // eslint-disable-next-line
           console.log('stored', id);
           resolve(data);
         })

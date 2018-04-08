@@ -7,7 +7,8 @@
     "start": "node ./src/main.js",
     "dev": "nodemon ./src/main.js",
     "format": "prettier --write '**/*.{js,css,md}'",
-    "posttest": "yarn run format"
+    "posttest": "yarn run format",
+    "test": "eslint ."
   },
   "keywords": [
     "figma",

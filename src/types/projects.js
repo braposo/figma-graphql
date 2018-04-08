@@ -1,4 +1,4 @@
-const { loadTeamProjects, getChildren } = require('../utils');
+const { loadTeamProjects } = require('../utils');
 
 exports.type = `
     type Project {
