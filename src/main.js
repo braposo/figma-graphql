@@ -2,11 +2,12 @@ require("dotenv").config();
 
 const { graphqlExpress } = require("apollo-server-express");
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
+
 const app = express();
 const bodyParser = require("body-parser");
 const { loadFigma, clearCache } = require("./utils");
-const expressPlayground = require('graphql-playground-middleware-express').default;
+const expressPlayground = require("graphql-playground-middleware-express").default;
 
 const { schema, context } = require("./schema");
 
@@ -17,11 +18,9 @@ app.use(cors());
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
     const { id } = req.params;
-    loadFigma(id)
-        .then(data => {
-            res.json(data);
-        })
-        .catch(e => console.log(e));
+    loadFigma(id).then(data => {
+        res.json(data);
+    });
 });
 
 // Clears cache for specific figma file
@@ -57,5 +56,6 @@ app.get(
 );
 
 app.listen(PORT, () => {
+    // eslint-disable-next-line
     console.log(`Server running at http://localhost:${PORT}`);
 });
