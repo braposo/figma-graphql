@@ -1,4 +1,4 @@
-const { getChildren, removeEmpty } = require('../utils');
+const { getChildren, removeEmpty } = require("../utils");
 
 exports.type = `
     # A node of fixed size containing other nodes
@@ -22,23 +22,23 @@ exports.type = `
 `;
 
 exports.resolvers = {
-  Frame: {
-    elements: (root, args) => {
-      if (args) {
-        const { type, name } = args;
-        const match = removeEmpty({ type, name });
-        return getChildren(root, null, match);
-      }
+    Frame: {
+        elements: (root, args) => {
+            if (args) {
+                const { type, name } = args;
+                const match = removeEmpty({ type, name });
+                return getChildren(root, null, match);
+            }
 
-      return getChildren(root);
+            return getChildren(root);
+        },
+        position: root => ({
+            x: getChildren(root, "absoluteBoundingBox.x"),
+            y: getChildren(root, "absoluteBoundingBox.y"),
+        }),
+        size: root => ({
+            width: getChildren(root, "absoluteBoundingBox.width"),
+            height: getChildren(root, "absoluteBoundingBox.height"),
+        }),
     },
-    position: root => ({
-      x: getChildren(root, 'absoluteBoundingBox.x'),
-      y: getChildren(root, 'absoluteBoundingBox.y'),
-    }),
-    size: root => ({
-      width: getChildren(root, 'absoluteBoundingBox.width'),
-      height: getChildren(root, 'absoluteBoundingBox.height'),
-    }),
-  },
 };

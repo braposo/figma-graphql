@@ -4,5 +4,13 @@
         "object-curly-newline":"off",
         "comma-dangle":"off",
         "arrow-parens":"off",
+        "indent": [
+            "error",
+            4
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ]
     }
 }

@@ -1,4 +1,4 @@
-const { loadProjectFiles } = require('../utils');
+const { loadProjectFiles } = require("../utils");
 
 exports.type = `
     # A file inside a project
@@ -20,7 +20,7 @@ exports.type = `
 `;
 
 exports.resolvers = {
-  Query: {
-    projectFiles: (root, { project }) => loadProjectFiles(project).then(data => data.files),
-  },
+    Query: {
+        projectFiles: (root, { project }) => loadProjectFiles(project).then(data => data.files),
+    },
 };

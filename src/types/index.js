@@ -1,18 +1,18 @@
-const merge = require('lodash/merge');
+const merge = require("lodash/merge");
 
 /* eslint-disable global-require */
 const typePaths = [
-  require('./file'),
-  require('./page'),
-  require('./color'),
-  require('./stroke'),
-  require('./style'),
-  require('./frame'),
-  require('./element'),
-  require('./image'),
-  require('./comments'),
-  require('./projects'),
-  require('./project-files'),
+    require("./file"),
+    require("./page"),
+    require("./color"),
+    require("./stroke"),
+    require("./style"),
+    require("./frame"),
+    require("./element"),
+    require("./image"),
+    require("./comments"),
+    require("./projects"),
+    require("./project-files"),
 ];
 /* eslint-enable */
 
@@ -25,13 +25,13 @@ const typePaths = [
  * type, resolvers
  */
 module.exports = ({ typeDefs: t, resolvers: r }) =>
-  typePaths.reduce(
-    ({ typeDefs, resolvers }, { type, resolvers: typeResolvers }) => ({
-      typeDefs: [...typeDefs, type],
-      resolvers: merge(resolvers, typeResolvers),
-    }),
-    {
-      typeDefs: t,
-      resolvers: r,
-    }
-  );
+    typePaths.reduce(
+        ({ typeDefs, resolvers }, { type, resolvers: typeResolvers }) => ({
+            typeDefs: [...typeDefs, type],
+            resolvers: merge(resolvers, typeResolvers),
+        }),
+        {
+            typeDefs: t,
+            resolvers: r,
+        }
+    );

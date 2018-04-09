@@ -23,58 +23,58 @@ Here's an example of what you can do at this point:
 
 ```gql
 {
-  file(id: "KViUntEBJqK4gWfiwft5NObl") {
-    name
-    thumbnailUrl
-    lastModified
-    pages {
-      name
-      id
-      type
-      frames {
-        id
+    file(id: "KViUntEBJqK4gWfiwft5NObl") {
         name
-        clipsContent
-        blendMode
-        position {
-          x
-          y
-        }
-        size {
-          width
-          height
-        }
-        elements(type: "TEXT") {
-          name
-          type
-          characters
-          position {
-            x
-            y
-          }
-          size {
-            width
-            height
-          }
-          style {
-            fontSize
-            fontFamily
-            fontWeight
-            letterSpacing
-          }
-          strokes {
+        thumbnailUrl
+        lastModified
+        pages {
+            name
+            id
             type
-          }
-          fill {
-            r
-            g
-            b
-            a
-          }
+            frames {
+                id
+                name
+                clipsContent
+                blendMode
+                position {
+                    x
+                    y
+                }
+                size {
+                    width
+                    height
+                }
+                elements(type: "TEXT") {
+                    name
+                    type
+                    characters
+                    position {
+                        x
+                        y
+                    }
+                    size {
+                        width
+                        height
+                    }
+                    style {
+                        fontSize
+                        fontFamily
+                        fontWeight
+                        letterSpacing
+                    }
+                    strokes {
+                        type
+                    }
+                    fill {
+                        r
+                        g
+                        b
+                        a
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 ```
 

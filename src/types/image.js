@@ -1,4 +1,4 @@
-const { loadFigmaImages } = require('../utils');
+const { loadFigmaImages } = require("../utils");
 
 exports.type = `
     input Params {
@@ -24,11 +24,11 @@ exports.type = `
 `;
 
 exports.resolvers = {
-  Query: {
-    image: (root, { id, params = { ids: ['0:1'] } }) =>
-      loadFigmaImages(id, params).then(data => data),
-  },
-  Image: {
-    images: ({ images = [] }) => Object.values(images),
-  },
+    Query: {
+        image: (root, { id, params = { ids: ["0:1"] } }) =>
+            loadFigmaImages(id, params).then(data => data),
+    },
+    Image: {
+        images: ({ images = [] }) => Object.values(images),
+    },
 };
