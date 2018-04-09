@@ -1,6 +1,6 @@
 {
   "name": "figma-graphql",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A GraphQL connector for the Figma API",
   "main": "index.js",
   "scripts": {
