@@ -4,7 +4,7 @@ This is a **very experimental** GraphQL connector for the new [Figma Web API](ht
 
 ## How to use this?
 
-There's a live version of this at [https://www.graphqlbin.com/v2/lOM4TX](https://www.graphqlbin.com/v2/lOM4TX)
+There's a live version of this at [https://graphqlbin.com/v2/j2LQcn](https://graphqlbin.com/v2/j2LQcn)
 
 If you want to play with it then:
 
