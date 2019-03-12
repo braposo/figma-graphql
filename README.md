@@ -10,7 +10,7 @@ If you want to play with it then:
 
 1.  Clone this repo
 2.  Run `yarn install`
-3.  Run `yarn run dev`
+3.  Run `FIGMA_TOKEN={YOUR_PERSONAL_FIGMA_TOKEN} yarn run dev`
 4.  Go to `http://localhost:3001/` and have fun!
 
 ## Query examples
