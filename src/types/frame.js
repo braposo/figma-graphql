@@ -1,44 +1,47 @@
-const { getChildren, removeEmpty } = require("../utils");
+const { gql } = require("apollo-server-express");
+const capitalize = require("lodash/capitalize");
+const { getChildren, removeEmpty, getPosition, getSize } = require("../utils");
 
-exports.type = `
+exports.type = gql`
+    union Children = Text | Rectangle | Vector | Frame
+
     # A node of fixed size containing other nodes
-    type Frame {
-        id: String!
+    type Frame implements Node {
+        id: ID!
         name: String!
-        type: String!
-        # How this node blends with nodes behind it in the scene
-        blendMode: String!
-        # Background color of the node
+        visible: Boolean!
+        type: NodeType!
+        position: Position
+        size: Size
+
+        blendMode: BlendMode!
         backgroundColor: Color!
-        # Does this node clip content outside of its bounds?
+        children(type: NodeType, name: String): [Children]
         clipsContent: Boolean!
-        # Elements in this node
-        elements(type: String, name: String): [Element!]
-        # Position of node
-        position: Position,
-        # Size of node
-        size: Size,
     }
 `;
 
 exports.resolvers = {
+    Children: {
+        __resolveType(obj) {
+            const { type } = obj;
+            if (type === "GROUP") {
+                // We alias Group to Frame since they implement the same interface
+                return "Frame";
+            }
+            return capitalize(type);
+        },
+    },
     Frame: {
-        elements: (root, args) => {
+        children: (root, args) => {
             if (args) {
                 const { type, name } = args;
                 const match = removeEmpty({ type, name });
                 return getChildren(root, null, match);
             }
-
             return getChildren(root);
         },
-        position: root => ({
-            x: getChildren(root, "absoluteBoundingBox.x"),
-            y: getChildren(root, "absoluteBoundingBox.y"),
-        }),
-        size: root => ({
-            width: getChildren(root, "absoluteBoundingBox.width"),
-            height: getChildren(root, "absoluteBoundingBox.height"),
-        }),
+        position: getPosition,
+        size: getSize,
     },
 };

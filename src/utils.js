@@ -42,6 +42,16 @@ const getChildMatching = match => data => get("children", matching(has(match)))(
 
 const removeEmpty = obj => pickBy(obj);
 
+const getPosition = root => ({
+    x: getChildren(root, "absoluteBoundingBox.x"),
+    y: getChildren(root, "absoluteBoundingBox.y"),
+});
+
+const getSize = root => ({
+    width: getChildren(root, "absoluteBoundingBox.width"),
+    height: getChildren(root, "absoluteBoundingBox.height"),
+});
+
 module.exports = {
     loadFigma,
     getChildren,
@@ -52,4 +62,6 @@ module.exports = {
     createComment,
     loadTeamProjects,
     loadProjectFiles,
+    getPosition,
+    getSize,
 };
