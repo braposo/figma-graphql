@@ -12,6 +12,8 @@ exports.type = `
         lastModified: DateTime
         # the url to a thumbnail of the file
         thumbnailUrl: String
+        # Current version of the file
+        version: String
         # list of components in this file
         components: [String]
         # list of pages in this file
