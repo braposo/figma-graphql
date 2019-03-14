@@ -13,6 +13,10 @@ const typeDefs = [
     type Mutation {
         noop: String
     }
+    
+    type Subscription {
+        noop: String
+    }
 `,
 ];
 

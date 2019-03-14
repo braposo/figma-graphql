@@ -1,4 +1,7 @@
+const { PubSub } = require("apollo-server-express");
 const { loadFigma, getChildren } = require("../utils");
+
+const pubsub = new PubSub();
 
 exports.type = `
     # Information about a file
@@ -19,11 +22,37 @@ exports.type = `
         # get a file information
         file(id: String!): File
     }
+    
+    extend type Subscription {
+        lastModified: DateTime
+    }
 `;
+
+const FILE_MODIFIED = "FILE_MODIFIED";
+let poller;
+
+async function handlePoller(id, prevModified) {
+    const data = await loadFigma(id);
+    const { lastModified } = data;
+    if (prevModified !== lastModified) {
+        console.log("Trigger update!");
+        console.log(lastModified);
+        pubsub.publish(FILE_MODIFIED, { lastModified });
+    }
+}
 
 exports.resolvers = {
     Query: {
-        file: (root, { id }) => loadFigma(id).then(data => data),
+        file: async (root, { id }) => {
+            // Trigger the polling
+            const data = await loadFigma(id);
+            const currentModified = data.lastModified;
+            if (poller) {
+                clearInterval(poller);
+            }
+            poller = setInterval(() => handlePoller(id, currentModified), 5000);
+            return data;
+        },
     },
     File: {
         pages: (root, { name }) => {
@@ -32,6 +61,11 @@ exports.resolvers = {
             }
 
             return getChildren(root, "document.children");
+        },
+    },
+    Subscription: {
+        lastModified: {
+            subscribe: () => pubsub.asyncIterator([FILE_MODIFIED]),
         },
     },
 };
