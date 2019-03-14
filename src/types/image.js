@@ -3,7 +3,7 @@ const { loadFigmaImages } = require("../utils");
 exports.type = `
     input Params {
         # A comma separated list of node IDs to render
-        ids: [String]
+        ids: [ID]
 
         # A number between 0.01 and 4, the image scaling factor
         scale: Int
@@ -11,15 +11,16 @@ exports.type = `
         # A string enum for the image output format, can be "jpg", "png", or "svg"
         format: String
     }
+    
 
     type Image {
         # Images for the ID's you requested
-        images: [String]!
+        images: [ID]!
     }
 
     extend type Query {
         # Get just the image of a node id in a file
-        image(id: String!, params: Params): Image
+        image(id: ID!, params: Params): Image
     }
 `;
 

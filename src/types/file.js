@@ -22,7 +22,7 @@ exports.type = `
 
     extend type Query {
         # get a file information
-        file(id: String!): File
+        file(id: ID!): File
     }
     
     extend type Subscription {

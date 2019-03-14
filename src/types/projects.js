@@ -11,7 +11,7 @@ exports.type = `
 
     extend type Query {
         # Get a teams projects
-        projects(id: String!): [Project]
+        projects(id: ID!): [Project]
     }
 `;
 

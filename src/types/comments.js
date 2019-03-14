@@ -46,12 +46,12 @@ exports.type = `
 
     extend type Query {
         # Get Comments on a File
-        comments(id: String!): [Comment]
+        comments(id: ID!): [Comment]
     }
 
     extend type Mutation {
         # add a comment (id and message are required)
-        addComment(id: String!, message: String!, params: ComentParams): Comment
+        addComment(id: ID!, message: String!, params: ComentParams): Comment
     }
 `;
 

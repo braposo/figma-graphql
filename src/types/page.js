@@ -3,8 +3,7 @@ const { getChildren } = require("../utils");
 exports.type = `
     # A page inside a file
     type Page {
-        # id of the page
-        id: String!
+        id: ID!
         # name of the page
         name: String!
         # the type of the node
