@@ -52,6 +52,8 @@ const getSize = root => ({
     height: getChildren(root, "absoluteBoundingBox.height"),
 });
 
+const getFill = root => getChildren(root, "fills[0].color");
+
 module.exports = {
     loadFigma,
     getChildren,
@@ -64,4 +66,5 @@ module.exports = {
     loadProjectFiles,
     getPosition,
     getSize,
+    getFill,
 };

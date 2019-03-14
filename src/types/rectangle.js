@@ -1,5 +1,5 @@
 const { gql } = require("apollo-server-express");
-const { getPosition, getSize } = require("../utils");
+const { resolvers } = require("./vector");
 
 exports.type = gql`
     # A rectangle node
@@ -10,6 +10,7 @@ exports.type = gql`
         type: NodeType!
         blendMode: BlendMode!
         backgroundColor: Color!
+        fill: Color
         position: Position
         size: Size
 
@@ -20,7 +21,6 @@ exports.type = gql`
 
 exports.resolvers = {
     Rectangle: {
-        position: getPosition,
-        size: getSize,
+        ...resolvers.Vector,
     },
 };
