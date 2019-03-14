@@ -5,7 +5,7 @@ const cors = require("cors");
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 
-const { loadFigma, clearCache } = require("./utils");
+const { loadFigma } = require("./utils");
 const { schema } = require("./schema");
 
 const PORT = 3001;
@@ -25,14 +25,6 @@ app.get("/figma/:id", (req, res) => {
     loadFigma(id).then(data => {
         res.json(data);
     });
-});
-
-// Clears cache for specific figma file
-app.get("/clear/:id", (req, res) => {
-    const { id } = req.params;
-    clearCache(id);
-
-    res.status(200).send("Cache cleared");
 });
 
 httpServer.listen(PORT, () => {
