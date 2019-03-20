@@ -1,4 +1,5 @@
 const { gql } = require("apollo-server-express");
+const { get } = require("lodash");
 const { getFill, getPosition, getSize } = require("../utils");
 
 exports.type = gql`
@@ -21,5 +22,6 @@ exports.resolvers = {
         position: getPosition,
         size: getSize,
         fill: getFill,
+        visible: root => get(root, "visible", true),
     },
 };
