@@ -26,20 +26,21 @@ exports.type = `
     }
     
     extend type Subscription {
-        lastModified: DateTime
+        file(id: ID!): File
     }
 `;
 
 const FILE_MODIFIED = "FILE_MODIFIED";
 let poller;
+let currentModified;
 
 async function handlePoller(id, prevModified) {
     const data = await loadFigma(id);
     const { lastModified } = data;
     if (prevModified !== lastModified) {
-        console.log("Trigger update!");
-        console.log(lastModified);
-        pubsub.publish(FILE_MODIFIED, { lastModified });
+        console.log(`Trigger update! ${lastModified}`);
+        currentModified = lastModified;
+        pubsub.publish(FILE_MODIFIED, { file: { ...data } });
     }
 }
 
@@ -48,7 +49,6 @@ exports.resolvers = {
         file: async (root, { id }) => {
             // Trigger the polling
             const data = await loadFigma(id);
-            const currentModified = data.lastModified;
             if (poller) {
                 clearInterval(poller);
             }
@@ -66,7 +66,7 @@ exports.resolvers = {
         },
     },
     Subscription: {
-        lastModified: {
+        file: {
             subscribe: () => pubsub.asyncIterator([FILE_MODIFIED]),
         },
     },
