@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server-express");
 const capitalize = require("lodash/capitalize");
-const { getChildren, removeEmpty, getPosition, getSize } = require("../utils");
+const { getChildren, removeEmpty } = require("../utils");
+const { resolvers } = require("./node");
 
 exports.type = gql`
     union Children = Text | Rectangle | Vector | Frame
@@ -33,6 +34,7 @@ exports.resolvers = {
         },
     },
     Frame: {
+        ...resolvers.Node,
         children: (root, args) => {
             if (args) {
                 const { type, name } = args;
@@ -41,7 +43,5 @@ exports.resolvers = {
             }
             return getChildren(root);
         },
-        position: getPosition,
-        size: getSize,
     },
 };

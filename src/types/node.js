@@ -1,6 +1,8 @@
+const { gql } = require("apollo-server-express");
+const { get } = require("lodash");
 const { getPosition, getSize } = require("../utils");
 
-exports.type = `
+exports.type = gql`
     enum NodeType {
         DOCUMENT
         CANVAS
@@ -18,14 +20,14 @@ exports.type = `
         COMPONENT
         INSTANCE
     }
-    
+
     interface Node {
         id: ID!
         name: String!
         visible: Boolean!
         type: NodeType!
-        position: Position,
-        size: Size,
+        position: Position
+        size: Size
     }
 `;
 
@@ -33,5 +35,6 @@ exports.resolvers = {
     Node: {
         position: getPosition,
         size: getSize,
+        visible: root => get(root, "visible", true),
     },
 };

@@ -1,6 +1,6 @@
+const { getFill } = require("../utils");
 const { gql } = require("apollo-server-express");
-const { get } = require("lodash");
-const { getFill, getPosition, getSize } = require("../utils");
+const { resolvers } = require("./node");
 
 exports.type = gql`
     # Vector node
@@ -19,9 +19,7 @@ exports.type = gql`
 
 exports.resolvers = {
     Vector: {
-        position: getPosition,
-        size: getSize,
+        ...resolvers.Node,
         fill: getFill,
-        visible: root => get(root, "visible", true),
     },
 };
