@@ -14,7 +14,7 @@ exports.type = gql`
         type: NodeType!
         position: Position
         size: Size
-
+        image(params: ImageParams): String
         blendMode: BlendMode!
         backgroundColor: Color!
         children(type: NodeType, name: String): [Children]

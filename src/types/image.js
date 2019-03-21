@@ -1,7 +1,7 @@
 const { loadFigmaImages } = require("../utils");
 
 exports.type = `
-    input Params {
+    input ImageParams {
         # A comma separated list of node IDs to render
         ids: [ID]
 
@@ -20,7 +20,7 @@ exports.type = `
 
     extend type Query {
         # Get just the image of a node id in a file
-        image(id: ID!, params: Params): Image
+        image(id: ID!, params: ImageParams): Image
     }
 `;
 

@@ -11,7 +11,7 @@ const { file, fileImages, comments, postComment, teamProjects, projectFiles } = 
 const getFigma = (fn, id, params) =>
     new Promise((resolve, reject) => {
         const isParams = params ? { ...params } : null;
-        console.log("fetching", id);
+        console.log("fetching", id, isParams);
         fn(id, isParams)
             .then(({ data }) => {
                 resolve(data);

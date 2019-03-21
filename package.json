@@ -31,6 +31,7 @@
     "figma-js": "^1.6.1",
     "graphql": "^0.13.2",
     "graphql-iso-date": "^3.5.0",
+    "graphql-resolve-batch": "^1.0.2",
     "graphql-tools": "^2.23.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.5",

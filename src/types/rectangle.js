@@ -13,7 +13,7 @@ exports.type = gql`
         fill: Color
         position: Position
         size: Size
-
+        image(params: ImageParams): String
         cornerRadius: Int
         rectangleCornerRadii: [Int]
     }

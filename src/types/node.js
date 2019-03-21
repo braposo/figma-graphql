@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server-express");
 const { get } = require("lodash");
-const { getPosition, getSize } = require("../utils");
+const { createBatchResolver } = require("graphql-resolve-batch");
+const { getPosition, getSize, loadFigmaImages } = require("../utils");
 
 exports.type = gql`
     enum NodeType {
@@ -24,6 +25,7 @@ exports.type = gql`
     interface Node {
         id: ID!
         name: String!
+        image(params: ImageParams): String
         visible: Boolean!
         type: NodeType!
         position: Position
@@ -33,6 +35,13 @@ exports.type = gql`
 
 exports.resolvers = {
     Node: {
+        image: createBatchResolver(async (sources, { params }, context, info) => {
+            const { images } = await loadFigmaImages(info.variableValues.fileId, {
+                ...params,
+                ids: sources.map(({ id }) => id),
+            });
+            return Object.values(images);
+        }),
         position: getPosition,
         size: getSize,
         visible: root => get(root, "visible", true),

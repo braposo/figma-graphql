@@ -12,6 +12,7 @@ exports.type = gql`
         blendMode: BlendMode!
         backgroundColor: Color!
         fill: Color
+        image(params: ImageParams): String
         position: Position
         size: Size
     }
