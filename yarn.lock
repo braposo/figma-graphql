@@ -1499,9 +1499,10 @@ fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-figma-js@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/figma-js/-/figma-js-1.2.1.tgz#11bcf128a8ea5a8fd748cb5266aa00d1da28a80a"
+figma-js@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/figma-js/-/figma-js-1.6.1.tgz#75ef58fd005507632b79145dc4196222e7dadd9b"
+  integrity sha512-abxIW2bSCSJc5Sn6E2fNzit5+5RkoV603V5mdJFm43OdJQ0O11cEx0HaUURswi20Um9gIPjDmWpBUCEXArqYQA==
   dependencies:
     axios "^0.18.0"
 

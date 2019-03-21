@@ -28,7 +28,7 @@
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "figma-js": "^1.2.1",
+    "figma-js": "^1.6.1",
     "graphql": "^0.13.2",
     "graphql-iso-date": "^3.5.0",
     "graphql-tools": "^2.23.1",
