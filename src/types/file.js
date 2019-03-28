@@ -1,9 +1,10 @@
+const { gql } = require("apollo-server-express");
 const { PubSub } = require("apollo-server-express");
 const { loadFigma, getChildren } = require("../utils");
 
 const pubsub = new PubSub();
 
-exports.type = `
+exports.type = gql`
     # Information about a file
     type File {
         # name of the file
@@ -24,7 +25,7 @@ exports.type = `
         # get a file information
         file(id: ID!): File
     }
-    
+
     extend type Subscription {
         file(id: ID!): File
     }
