@@ -24,7 +24,7 @@ exports.type = gql`
         # CSS compatible veticalAlign property
         verticalAlign: String
         # CSS compatible lineHeight
-        lineHeight: Float
+        lineHeight: String
     }
 
     type Position {
@@ -46,6 +46,6 @@ exports.resolvers = {
     Style: {
         textAlign: root => root.textAlignHorizontal.toLowerCase(),
         verticalAlign: root => root.textAlignVertical.toLowerCase(),
-        lineHeight: root => root.lineHeightPx,
+        lineHeight: root => `${root.lineHeightPx}px`,
     },
 };
