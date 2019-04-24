@@ -1,21 +1,36 @@
-# figma-graphql
+<p align="center">
+  <a href="http://figma-graphql.party">
+    <img width="150" src="./assets/logo.svg">
+  </a>
+</p>
 
-This is a **very experimental** GraphQL connector for the new [Figma Web API](https://www.figma.com/developers)
+<h1 align="center">
+figma-graphql
+</h1>
 
-## How to use this?
+<div align="center">
 
-There's a live version of this at [https://graphqlbin.com/v2/D113i3](https://graphqlbin.com/v2/D113i3)
+The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
-If you want to play with it then:
+![Prettier format][prettier-badge]
+[![PRs Welcome][prs-badge]][prs]
+[![MIT License][license-badge]][license]
 
-1.  Clone this repo
-2.  Run `yarn install`
-3.  Run `FIGMA_TOKEN={YOUR_PERSONAL_FIGMA_TOKEN} yarn run dev`
-4.  Go to `http://localhost:3001/` and have fun!
+</div>
+
+## Quick start
+
+1. Open figma-graphql sandbox and fork it
+
+[![Open figma-graphql][codesandbox-badge]][codesandbox]
+
+2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
+
+3. Have fun!
 
 ## Query examples
 
-This is still in the very beginning but there's already a few useful things we can get from this API.
+Here are some examples of what you can do with the Figma GraphQL API.
 
 ### Get a file's contents
 
@@ -176,8 +191,23 @@ mutation {
 }
 ```
 
+## Developing
+
+1.  Clone this repo
+2.  Run `yarn install` to install all dependencies
+3.  Run `FIGMA_TOKEN={YOUR_PERSONAL_FIGMA_TOKEN} yarn run dev`
+4.  The Figma GraphQL playground should be available at `http://localhost:3001/`
+
 ## Figma file
 
 This isn't really necessary but [here's the base Figma file](https://www.figma.com/file/KViUntEBJqK4gWfiwft5NObl/Style-guide) that is being used during development.
 
 It should work with any file so can use your own Figma files and just replace `file(id: "KViUntEBJqK4gWfiwft5NObl")` with the id of the file you want to query.
+
+[license-badge]: https://img.shields.io/npm/l/figma-graphql.svg?style=flat-square
+[license]: https://github.com/braposo/figma-graphql/blob/master/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs]: http://makeapullrequest.com
+[codesandbox-badge]: https://codesandbox.io/static/img/play-codesandbox.svg
+[codesandbox]: https://codesandbox.io/s/github/braposo/figma-graphql/
+[prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
