@@ -1,16 +1,10 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "plugin:prettier/recommended"],
     "rules": {
-        "object-curly-newline":"off",
-        "comma-dangle":"off",
-        "arrow-parens":"off",
-        "indent": [
-            "error",
-            4
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ]
+        "object-curly-newline": "off",
+        "comma-dangle": "off",
+        "arrow-parens": "off",
+        "indent": ["error", 4],
+        "quotes": ["error", "double"]
     }
 }

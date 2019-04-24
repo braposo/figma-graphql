@@ -1,15 +1,14 @@
 require("dotenv").config();
 
-const { graphqlExpress } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 const express = require("express");
 const cors = require("cors");
-
-const app = express();
-const bodyParser = require("body-parser");
-const { loadFigma, clearCache } = require("./utils");
 const expressPlayground = require("graphql-playground-middleware-express").default;
 
-const { schema, context } = require("./schema");
+const app = express();
+const { loadFigma, clearCache } = require("./utils");
+
+const { typeDefs, resolvers } = require("./schema");
 
 const PORT = 3001;
 
@@ -31,22 +30,6 @@ app.get("/clear/:id", (req, res) => {
     res.status(200).send("Cache cleared");
 });
 
-// GraphQL endpoint
-app.use(
-    "/graphql",
-    bodyParser.json(),
-    graphqlExpress(req => ({
-        // GraphQL’s data schema
-        schema,
-        // Pretty Print the JSON response
-        pretty: true,
-        // Enable GraphiQL dev tool
-        graphiql: false,
-        tracing: true,
-        context: context(req),
-    }))
-);
-
 // Show GraphiQL for everything else!
 app.get(
     "*",
@@ -59,3 +42,12 @@ app.listen(PORT, () => {
     // eslint-disable-next-line
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
+// GraphQL endpoint
+const server = new ApolloServer({
+    // These will be defined for both new or existing servers
+    typeDefs,
+    resolvers,
+});
+
+server.applyMiddleware({ app });
