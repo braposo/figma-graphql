@@ -20,9 +20,9 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
 
 ## Quick start
 
-1. Open figma-graphql sandbox and fork it
-
 [![Open figma-graphql][codesandbox-badge]][codesandbox]
+
+1. Open figma-graphql [sandbox][codesandbox] and fork it
 
 2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
 
