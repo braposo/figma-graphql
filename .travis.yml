@@ -4,6 +4,6 @@ cache:
         - node_modules
     yarn: true
 node_js:
-    - 9
+    - 10
 script:
     - yarn ci
