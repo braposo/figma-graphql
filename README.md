@@ -209,7 +209,7 @@ It should work with any file so can use your own Figma files and just replace `f
 [codesandbox-badge]: https://codesandbox.io/static/img/play-codesandbox.svg
 [codesandbox]: https://codesandbox.io/s/github/braposo/figma-graphql/
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
-[build-badge]: https://img.shields.io/travis/braposo/figma-graphql.svg?style=flat-square
-[travis]: https://travis-ci.org/braposo/figma-graphql
+[build-badge]: https://img.shields.io/travis/com/braposo/figma-graphql.svg?style=flat-square
+[travis]: https://travis-ci.com/braposo/figma-graphql
 [coverage-badge]: https://img.shields.io/codecov/c/github/braposo/figma-graphql.svg?style=flat-square
 [coverage]: https://codecov.io/github/braposo/figma-graphql
