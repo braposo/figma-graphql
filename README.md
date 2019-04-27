@@ -24,7 +24,15 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
 
 2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
 
-3. Have fun!
+3. Try your first query!
+
+```gql
+{
+    file(id: "cLp23bR627jcuNSoBGkhL04E") {
+        name
+    }
+}
+```
 
 ## Query examples
 
@@ -34,7 +42,7 @@ Here are some examples of what you can do with the Figma GraphQL API.
 
 ```gql
 {
-    file(id: "KViUntEBJqK4gWfiwft5NObl") {
+    file(id: "cLp23bR627jcuNSoBGkhL04E") {
         name
         thumbnailUrl
         lastModified
@@ -95,7 +103,7 @@ To get the whole file don't pass any more parameters.
 
 ```gql
 {
-    image(id: "KViUntEBJqK4gWfiwft5NObl") {
+    image(id: "cLp23bR627jcuNSoBGkhL04E") {
         images
     }
 }
@@ -105,7 +113,7 @@ To get the image of node pass the id of that node as a parameter
 
 ```gql
 {
-    image(id: "KViUntEBJqK4gWfiwft5NObl", params: { ids: "16:19" }) {
+    image(id: "cLp23bR627jcuNSoBGkhL04E", params: { ids: "16:19" }) {
         images
     }
 }
@@ -115,7 +123,7 @@ To get the image of node pass the id of that node as a parameter
 
 ```gql
 {
-    comments(id: "KViUntEBJqK4gWfiwft5NObl") {
+    comments(id: "cLp23bR627jcuNSoBGkhL04E") {
         id
         file_key
         parent_id
@@ -141,7 +149,7 @@ To get the image of node pass the id of that node as a parameter
 ```gql
 mutation {
     addComment(
-        id: "KViUntEBJqK4gWfiwft5NObl"
+        id: "cLp23bR627jcuNSoBGkhL04E"
         message: "Test from server"
     ) {
         id
@@ -155,7 +163,7 @@ You can also pass the coordinates where the comment should be placed as a parame
 ```gql
 mutation {
     addComment(
-        id: "KViUntEBJqK4gWfiwft5NObl"
+        id: "cLp23bR627jcuNSoBGkhL04E"
         message: "Test from server"
         params: { x: "12", y: "12" }
     ) {
@@ -198,9 +206,9 @@ mutation {
 
 ## Figma file
 
-This isn't really necessary but [here's the base Figma file](https://www.figma.com/file/KViUntEBJqK4gWfiwft5NObl/Style-guide) that is being used during development.
+This isn't really necessary but [here's the base Figma file](https://www.figma.com/file/cLp23bR627jcuNSoBGkhL04E/Style-guide) that is being used during development.
 
-It should work with any file so can use your own Figma files and just replace `file(id: "KViUntEBJqK4gWfiwft5NObl")` with the id of the file you want to query.
+It should work with any file so can use your own Figma files and just replace `file(id: "cLp23bR627jcuNSoBGkhL04E")` with the id of the file you want to query.
 
 [license-badge]: https://img.shields.io/npm/l/figma-graphql.svg?style=flat-square
 [license]: https://github.com/braposo/figma-graphql/blob/master/LICENSE
