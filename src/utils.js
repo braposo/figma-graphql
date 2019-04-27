@@ -15,22 +15,12 @@ const clearCache = id => delete cache[id];
 const getFigma = (fn, id, params) =>
     new Promise((resolve, reject) => {
         const isParams = params ? { ...params } : null;
-        if (cache[id]) {
-            // eslint-disable-next-line
-            console.log("hit from cache", id);
-            resolve(cache[id]);
-        } else {
-            // eslint-disable-next-line
-            console.log("fetching", id);
-            fn(id, isParams)
-                .then(({ data }) => {
-                    cache[id] = data;
-                    // eslint-disable-next-line
-                    console.log("stored", id);
-                    resolve(data);
-                })
-                .catch(reject);
-        }
+
+        // eslint-disable-next-line
+        console.log("fetching", id);
+        fn(id, isParams)
+            .then(({ data }) => resolve(data))
+            .catch(reject);
     });
 
 const loadFigma = id => getFigma(file, id);
