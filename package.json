@@ -9,7 +9,6 @@
         "format": "prettier --write '**/*.{js,css,md,ts,json}' *.{js,css,md,ts,json}",
         "test": "jest --no-cache --setupFiles dotenv/config",
         "lint": "eslint src/ --ext .js",
-        "ci": "scripts/ci.sh",
         "commit": "yarn git-cz",
         "semantic-release": "semantic-release"
     },

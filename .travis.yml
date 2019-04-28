@@ -5,6 +5,22 @@ cache:
     yarn: true
 node_js:
     - 10
-script:
-    - commitlint-travis
-    - yarn ci
+
+jobs:
+    include:
+    - stage: install
+        script: yarn install
+        skip_cleanup: true
+    - stage: test
+        script: 
+        - commitlint-travis
+        - yarn lint
+        - yarn test --coverage && codecov
+        skip_cleanup: true
+    - stage: release
+        deploy:
+            provider: script
+            skip_cleanup: true
+            script:
+            - yarn semantic-release
+        if: branch = master
