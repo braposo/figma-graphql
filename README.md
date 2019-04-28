@@ -12,7 +12,7 @@ figma-graphql
 
 The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
-[![Build Status][build-badge]][travis] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) ![Prettier format][prettier-badge] [![PRs Welcome][prs-badge]][prs] [![MIT License][license-badge]][license]
+[![Build Status][build-badge]][travis] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) ![Prettier format][prettier-badge] [![PRs Welcome][prs-badge]][prs] [![Commitizen friendly][commitizen-badge]][commitizen] [![MIT License][license-badge]][license]
 
 </div>
 
@@ -210,6 +210,18 @@ This isn't really necessary but [here's the base Figma file](https://www.figma.c
 
 It should work with any file so can use your own Figma files and just replace `file(id: "cLp23bR627jcuNSoBGkhL04E")` with the id of the file you want to query.
 
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt="Bernardo Raposo"/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-braposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td><td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt="Sara Vieira"/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="#review-SaraVieira" title="Reviewed Pull Requests">👀</a></td><td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt="Andrey Okonetchnikov"/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 [license-badge]: https://img.shields.io/npm/l/figma-graphql.svg?style=flat-square
 [license]: https://github.com/braposo/figma-graphql/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
@@ -223,15 +235,5 @@ It should work with any file so can use your own Figma files and just replace `f
 [coverage]: https://codecov.io/github/braposo/figma-graphql
 [snyk-badge]: https://snyk.io/test/github/braposo/figma-graphql/badge.svg?style=flat-square
 [snyk]: https://snyk.io/test/github/braposo/figma-graphql
-
-## Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt="Bernardo Raposo"/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-braposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td><td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt="Sara Vieira"/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="#review-SaraVieira" title="Reviewed Pull Requests">👀</a></td><td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt="Andrey Okonetchnikov"/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a></td></tr></table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
+[commitizen]: http://commitizen.github.io/cz-cli/
