@@ -10,7 +10,8 @@
         "test": "jest --no-cache --setupFiles dotenv/config",
         "lint": "eslint src/ --ext .js",
         "ci": "scripts/ci.sh",
-        "commit": "yarn git-cz"
+        "commit": "yarn git-cz",
+        "semantic-release": "semantic-release"
     },
     "keywords": [
         "figma",
@@ -23,7 +24,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/braposo/figma-graphql.git"
+        "url": "https://github.com/braposo/figma-graphql.git"
     },
     "dependencies": {
         "apollo-server-express": "^2.4.8",
@@ -46,6 +47,8 @@
         "@commitlint/config-conventional": "^7.5.0",
         "@commitlint/prompt": "^7.5.0",
         "@commitlint/travis-cli": "^7.5.2",
+        "@semantic-release/changelog": "^3.0.2",
+        "@semantic-release/git": "^7.0.8",
         "all-contributors-cli": "^6.3.1",
         "codecov": "^3.3.0",
         "commitizen": "^3.1.1",
@@ -60,7 +63,8 @@
         "husky": ">=1",
         "jest": "^24.7.1",
         "lint-staged": ">=8",
-        "prettier": "^1.17.0"
+        "prettier": "^1.17.0",
+        "semantic-release": "^15.13.3"
     },
     "now": {
         "alias": "figma-graphql"
