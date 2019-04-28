@@ -1,5 +1,4 @@
 <p align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
   <a href="http://figma-graphql.party">
     <img width="150" src="./assets/logo.svg">
   </a>
@@ -13,7 +12,7 @@ figma-graphql
 
 The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
-[![Build Status][build-badge]][travis] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] ![Prettier format][prettier-badge] [![PRs Welcome][prs-badge]][prs] [![MIT License][license-badge]][license]
+[![Build Status][build-badge]][travis] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) ![Prettier format][prettier-badge] [![PRs Welcome][prs-badge]][prs] [![MIT License][license-badge]][license]
 
 </div>
 
