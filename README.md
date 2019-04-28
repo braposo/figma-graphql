@@ -12,7 +12,7 @@ figma-graphql
 
 The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
-[![Build Status][build-badge]][travis] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
+[![Build Status][build-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
 
 </div>
 
@@ -239,3 +239,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [commitizen]: http://commitizen.github.io/cz-cli/
 [semantic-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
 [semantic]: https://github.com/semantic-release/semantic-release
+[greenkeeper-badge]: https://badges.greenkeeper.io/braposo/figma-graphql.svg?style=flat-square
+[greenkeeper]: https://greenkeeper.io/
