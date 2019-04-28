@@ -1,16 +1,15 @@
 language: node_js
-cache:
-    directories:
-        - node_modules
-    yarn: true
+cache: yarn
 node_js:
-    - 10
+- 10
+
+branches:
+  only:
+    - master
+    - /^greenkeeper.*$/
 
 jobs:
     include:
-    - stage: install
-        script: yarn install
-        skip_cleanup: true
     - stage: test
         script: 
         - commitlint-travis
@@ -18,6 +17,7 @@ jobs:
         - yarn test --coverage && codecov
         skip_cleanup: true
     - stage: release
+        node_js: lts/*
         deploy:
             provider: script
             skip_cleanup: true
