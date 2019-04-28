@@ -22,6 +22,6 @@ describe("Schema", () => {
             }
         `;
 
-        await expect(graphql(mockSchema, query)).resolves.toEqual({ data: { version: "1" } });
+        await expect(graphql(mockSchema, query)).resolves.toEqual({ data: { version: "1.4" } });
     });
 });

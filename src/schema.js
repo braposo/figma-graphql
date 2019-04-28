@@ -18,7 +18,7 @@ const typeDefs = [
 const resolvers = {
     DateTime: GraphQLDateTime,
     Query: {
-        version: () => "1",
+        version: () => "1.4",
     },
 };
 
