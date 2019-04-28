@@ -35,6 +35,15 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "okonet",
+      "name": "Andrey Okonetchnikov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11071?v=4",
+      "profile": "http://okonet.ru",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
