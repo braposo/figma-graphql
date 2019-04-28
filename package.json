@@ -9,7 +9,8 @@
         "format": "prettier --write '**/*.{js,css,md,ts,json}' *.{js,css,md,ts,json}",
         "test": "jest --no-cache --setupFiles dotenv/config",
         "lint": "eslint src/ --ext .js",
-        "ci": "scripts/ci.sh"
+        "ci": "scripts/ci.sh",
+        "commit": "yarn git-cz"
     },
     "keywords": [
         "figma",
@@ -41,8 +42,13 @@
         "shades": "^2.0.0"
     },
     "devDependencies": {
+        "@commitlint/cli": "^7.5.2",
+        "@commitlint/config-conventional": "^7.5.0",
+        "@commitlint/prompt": "^7.5.0",
         "all-contributors-cli": "^6.3.1",
         "codecov": "^3.3.0",
+        "commitizen": "^3.1.1",
+        "cz-conventional-changelog": "2.1.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb": "17.1.0",
         "eslint-config-prettier": "^4.1.0",
@@ -59,18 +65,24 @@
         "alias": "figma-graphql"
     },
     "lint-staged": {
-        "*.{js,md,ts,json}": [
-            "prettier --write",
+        "**/*.{js,md,json}": [
+            "yarn format",
             "git add"
         ],
-        "*.js": [
-            "eslint --fix",
+        "**/*.{js}": [
+            "yarn lint --fix",
             "git add"
         ]
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
         }
     }
 }
