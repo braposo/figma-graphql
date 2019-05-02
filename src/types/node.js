@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server-express");
 const { get } = require("lodash");
 const { createBatchResolver } = require("graphql-resolve-batch");
+const capitalize = require("lodash/capitalize");
 const { getPosition, getSize, loadFigmaImages } = require("../utils");
 
 exports.type = gql`
@@ -35,6 +36,10 @@ exports.type = gql`
 
 exports.resolvers = {
     Node: {
+        __resolveType(obj) {
+            const { type } = obj;
+            return capitalize(type);
+        },
         image: createBatchResolver(async (sources, { params }, context, info) => {
             const { images } = await loadFigmaImages(info.variableValues.fileId, {
                 ...params,
