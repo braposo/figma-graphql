@@ -11,11 +11,11 @@ const { file, fileImages, comments, postComment, teamProjects, projectFiles } = 
 const getFigma = (fn, id, params) =>
     new Promise((resolve, reject) => {
         const isParams = params ? { ...params } : null;
-        console.log("fetching", id, isParams);
+
+        // eslint-disable-next-line
+        console.log("fetching", id);
         fn(id, isParams)
-            .then(({ data }) => {
-                resolve(data);
-            })
+            .then(({ data }) => resolve(data))
             .catch(reject);
     });
 

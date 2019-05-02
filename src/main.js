@@ -17,7 +17,6 @@ app.use(cors());
 server.applyMiddleware({ app });
 
 const httpServer = http.createServer(app);
-server.installSubscriptionHandlers(httpServer);
 
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
@@ -29,5 +28,4 @@ app.get("/figma/:id", (req, res) => {
 
 httpServer.listen(PORT, () => {
     console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`);
-    console.log(`🚀 Subscriptions ready at ws://localhost:${PORT}${server.subscriptionsPath}`);
 });

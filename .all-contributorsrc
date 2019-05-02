@@ -1,0 +1,50 @@
+{
+  "projectName": "figma-graphql",
+  "projectOwner": "braposo",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "braposo",
+      "name": "Bernardo Raposo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38172?v=4",
+      "profile": "http://bernardoraposo.com",
+      "contributions": [
+        "question",
+        "code",
+        "doc",
+        "design",
+        "ideas",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "SaraVieira",
+      "name": "Sara Vieira",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1051509?v=4",
+      "profile": "http://iamsaravieira.com",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "okonet",
+      "name": "Andrey Okonetchnikov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11071?v=4",
+      "profile": "http://okonet.ru",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
