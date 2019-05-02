@@ -1,5 +1,5 @@
-const { getFill } = require("../utils");
 const { gql } = require("apollo-server-express");
+const { getFill } = require("../utils");
 const { resolvers } = require("./node");
 
 exports.type = gql`
