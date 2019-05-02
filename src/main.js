@@ -1,18 +1,22 @@
 require("dotenv").config();
 
-const { ApolloServer } = require("apollo-server-express");
-const express = require("express");
+const http = require("http");
 const cors = require("cors");
-const expressPlayground = require("graphql-playground-middleware-express").default;
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
 
-const app = express();
-const { loadFigma, clearCache } = require("./utils");
-
-const { typeDefs, resolvers } = require("./schema");
+const { loadFigma } = require("./utils");
+const { schema } = require("./schema");
 
 const PORT = 3001;
 
+const server = new ApolloServer({ schema });
+
+const app = express();
 app.use(cors());
+server.applyMiddleware({ app });
+
+const httpServer = http.createServer(app);
 
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
@@ -22,32 +26,6 @@ app.get("/figma/:id", (req, res) => {
     });
 });
 
-// Clears cache for specific figma file
-app.get("/clear/:id", (req, res) => {
-    const { id } = req.params;
-    clearCache(id);
-
-    res.status(200).send("Cache cleared");
+httpServer.listen(PORT, () => {
+    console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 });
-
-// Show GraphiQL for everything else!
-app.get(
-    "*",
-    expressPlayground({
-        endpoint: "/graphql",
-    })
-);
-
-app.listen(PORT, () => {
-    // eslint-disable-next-line
-    console.log(`Server running at http://localhost:${PORT}`);
-});
-
-// GraphQL endpoint
-const server = new ApolloServer({
-    // These will be defined for both new or existing servers
-    typeDefs,
-    resolvers,
-});
-
-server.applyMiddleware({ app });

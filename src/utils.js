@@ -8,10 +8,6 @@ const client = Figma.Client({
 
 const { file, fileImages, comments, postComment, teamProjects, projectFiles } = client;
 
-const cache = {};
-
-const clearCache = id => delete cache[id];
-
 const getFigma = (fn, id, params) =>
     new Promise((resolve, reject) => {
         const isParams = params ? { ...params } : null;
@@ -46,9 +42,20 @@ const getChildMatching = match => data => get("children", matching(has(match)))(
 
 const removeEmpty = obj => pickBy(obj);
 
+const getPosition = root => ({
+    x: getChildren(root, "absoluteBoundingBox.x"),
+    y: getChildren(root, "absoluteBoundingBox.y"),
+});
+
+const getSize = root => ({
+    width: getChildren(root, "absoluteBoundingBox.width"),
+    height: getChildren(root, "absoluteBoundingBox.height"),
+});
+
+const getFill = root => getChildren(root, "fills[0].color");
+
 module.exports = {
     loadFigma,
-    clearCache,
     getChildren,
     getChildMatching,
     removeEmpty,
@@ -57,4 +64,7 @@ module.exports = {
     createComment,
     loadTeamProjects,
     loadProjectFiles,
+    getPosition,
+    getSize,
+    getFill,
 };

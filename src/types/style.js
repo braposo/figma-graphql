@@ -1,4 +1,6 @@
-exports.type = `
+const { gql } = require("apollo-server-express");
+
+exports.type = gql`
     type Style {
         # Font Family of the text
         fontFamily: String
@@ -17,6 +19,12 @@ exports.type = `
         lineHeightPx: Float
         # Line Height in Percent
         lineHeightPercent: Int
+        # CSS compatible textAlign property
+        textAlign: String
+        # CSS compatible veticalAlign property
+        verticalAlign: String
+        # CSS compatible lineHeight
+        lineHeight: String
     }
 
     type Position {
@@ -33,3 +41,11 @@ exports.type = `
         height: Float
     }
 `;
+
+exports.resolvers = {
+    Style: {
+        textAlign: root => root.textAlignHorizontal.toLowerCase(),
+        verticalAlign: root => root.textAlignVertical.toLowerCase(),
+        lineHeight: root => `${root.lineHeightPx}px`,
+    },
+};

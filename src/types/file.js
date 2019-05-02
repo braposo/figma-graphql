@@ -1,6 +1,7 @@
+const { gql } = require("apollo-server-express");
 const { loadFigma, getChildren } = require("../utils");
 
-exports.type = `
+exports.type = gql`
     # Information about a file
     type File {
         # name of the file
@@ -9,6 +10,8 @@ exports.type = `
         lastModified: DateTime
         # the url to a thumbnail of the file
         thumbnailUrl: String
+        # Current version of the file
+        version: String
         # list of components in this file
         components: [String]
         # list of pages in this file
@@ -17,7 +20,11 @@ exports.type = `
 
     extend type Query {
         # get a file information
-        file(id: String!): File
+        file(id: ID!): File
+    }
+
+    extend type Subscription {
+        file(id: ID!): File
     }
 `;
 
@@ -28,10 +35,10 @@ exports.resolvers = {
     File: {
         pages: (root, { name }) => {
             if (name) {
-                return getChildren(root, "document.children", { name });
+                return getChildren(root.document, "children", { name });
             }
 
-            return getChildren(root, "document.children");
+            return getChildren(root.document, "children");
         },
     },
 };

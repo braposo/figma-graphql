@@ -1,20 +1,10 @@
 /* eslint-env jest */
 
-const { makeExecutableSchema, mockServer } = require("graphql-tools");
+const { mockServer } = require("graphql-tools");
 const { graphql } = require("graphql");
-const { typeDefs, resolvers } = require("../schema");
+const { schema } = require("../schema");
 
 describe("Schema", () => {
-    const mockSchema = makeExecutableSchema({ typeDefs, resolvers });
-
-    test("has valid type definitions", async () => {
-        await expect(async () => {
-            const server = mockServer(typeDefs);
-
-            await server.query("{ __schema { types { name } } }");
-        }).not.toThrow();
-    });
-
     test("query has version", async () => {
         const query = `
             query {
@@ -22,6 +12,14 @@ describe("Schema", () => {
             }
         `;
 
-        await expect(graphql(mockSchema, query)).resolves.toEqual({ data: { version: "1.4" } });
+        await expect(graphql(schema, query)).resolves.toEqual({ data: { version: "1.4" } });
+    });
+
+    test("has valid type definitions", async () => {
+        await expect(async () => {
+            const server = mockServer(schema);
+
+            await server.query("{ __schema { types { name } } }");
+        }).not.toThrow();
     });
 });
