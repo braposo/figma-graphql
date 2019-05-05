@@ -16,3 +16,4 @@ package-lock.json
 
 .env
 coverage/
+.docz
