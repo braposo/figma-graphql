@@ -19,7 +19,8 @@ jobs:
         - stage: release
           node_js: lts/*
           deploy:
-              provider: script
+            - provider: script
               skip_cleanup: true
+              github_token: $GH_TOKEN
               script: yarn release
           if: branch = master
