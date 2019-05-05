@@ -21,8 +21,5 @@ jobs:
           deploy:
               provider: script
               skip_cleanup: true
-              script:
-                  - yarn semantic-release
-                  - yarn docs:build
-                  - yarn docs:deploy
+              script: yarn release
           if: branch = master
