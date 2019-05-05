@@ -70,12 +70,12 @@
         "alias": "figma-graphql"
     },
     "lint-staged": {
-        "**/*.{js,md,json}": [
-            "yarn format",
+        "*.{js,css,md}": [
+            "prettier --write",
             "git add"
         ],
-        "**/*.{js}": [
-            "yarn lint --fix",
+        "*.js": [
+            "eslint --fix",
             "git add"
         ]
     },
