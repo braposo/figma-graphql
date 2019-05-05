@@ -13,8 +13,7 @@
         "test": "jest --no-cache --setupFiles dotenv/config",
         "lint": "eslint src/ --ext .js",
         "commit": "yarn git-cz",
-        "semantic-release": "semantic-release",
-        "release": "yarn docs:build && yarn docs:deploy && yarn semantic-release"
+        "semantic-release": "semantic-release"
     },
     "keywords": [
         "figma",

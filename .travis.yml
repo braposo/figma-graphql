@@ -17,10 +17,17 @@ jobs:
               - yarn test --coverage && codecov
           skip_cleanup: true
         - stage: release
-          node_js: lts/*
+          before_deploy: 
+            - yarn docs:build
           deploy:
             - provider: script
               skip_cleanup: true
-              github_token: $GH_TOKEN
-              script: yarn release
+              script: yarn semantic-release
+            - provider: pages
+              skip_cleanup: true
+              local_dir: .docz/dist/
+              github_token: $GH_TOKEN 
+              keep_history: true
+              on:
+                branch: master
           if: branch = master
