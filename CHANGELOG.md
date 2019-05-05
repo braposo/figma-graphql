@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/braposo/figma-graphql/compare/v1.5.1...v1.6.0) (2019-05-05)
+
+
+### Features
+
+* add docs ([#14](https://github.com/braposo/figma-graphql/issues/14)) ([67612fc](https://github.com/braposo/figma-graphql/commit/67612fc))
+
 ## [1.5.1](https://github.com/braposo/figma-graphql/compare/v1.5.0...v1.5.1) (2019-05-04)
 
 ### Bug Fixes
