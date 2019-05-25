@@ -17,34 +17,6 @@ const typeDefs = [
     type Subscription {
         noop: String
     }
-    
-    enum BlendMode {
-        PASS_THROUGH
-        NORMAL
-        DARKEN
-        MULTIPLY
-        LINEAR_BURN
-        COLOR_BURN
-        LIGHTEN
-        SCREEN
-        LINEAR_DODGE
-        COLOR_DODGE
-        OVERLAY
-        SOFT_LIGHT
-        HARD_LIGHT
-        DIFFERENCE
-        EXCLUSION
-        HUE
-        SATURATION
-        COLOR
-        LUMINOSITY
-    }
-    
-    enum StrokeAlign {
-        INSIDE
-        OUTSIDE
-        CENTER
-    }
 `,
 ];
 
@@ -57,5 +29,4 @@ const resolvers = {
 
 module.exports = {
     schema: makeExecutableSchema(mergeSchema({ typeDefs, resolvers })),
-    context: () => ({}),
 };

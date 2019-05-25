@@ -4,18 +4,20 @@ const merge = require("lodash/merge");
 const typePaths = [
     require("./file"),
     require("./page"),
-    require("./color"),
-    require("./stroke"),
-    require("./style"),
+    require("./css"),
     require("./frame"),
     require("./node"),
     require("./vector"),
-    require("./rectangle"),
-    require("./text"),
     require("./image"),
     require("./comments"),
     require("./projects"),
     require("./project-files"),
+    require("./misc"),
+    require("./helpers/style"),
+    require("./helpers/constraint"),
+    require("./helpers/effect"),
+    require("./helpers/grid"),
+    require("./helpers/text"),
 ];
 /* eslint-enable */
 

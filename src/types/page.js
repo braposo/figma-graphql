@@ -1,23 +1,31 @@
 const { gql } = require("apollo-server-express");
-const { getChildren } = require("../utils");
+const {
+    generateQueriesForShortcuts,
+    generateResolversForShortcuts,
+} = require("../utils/shortcuts");
+const { nodeProperties, resolvers } = require("./node");
 
 exports.type = gql`
-    # A page inside a file
-    type Page {
-        id: ID!
-        # name of the page
-        name: String!
-        # the type of the node
-        type: String!
-        # BG of the page
+    # A page inside a file - This is CANVAS in Figma API
+    type Page implements Node {
+        ${nodeProperties}
+
+        # Background color of the canvas
         backgroundColor: Color
-        # A node of fixed size containing other nodes
-        frames(name: String): [Frame!]
+
+        # Node ID that corresponds to the start frame for prototypes
+        prototypeStartNodeID: String
+
+        # An array of export settings representing images to export from the canvas (default: [])
+        exportSettings: [ExportSettings]
+        
+        ${generateQueriesForShortcuts()}
     }
 `;
 
 exports.resolvers = {
     Page: {
-        frames: (root, { name }) => getChildren(root, "children", name ? { name } : {}),
+        ...resolvers.Node,
+        ...generateResolversForShortcuts(),
     },
 };
