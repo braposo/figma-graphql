@@ -1,6 +1,12 @@
-const { loadFigmaImages } = require("../utils");
+const { loadFigmaImages } = require("../utils/figma");
 
 exports.type = `
+    enum ImageFormat {
+        jpg
+        png
+        svg
+    }
+
     input ImageParams {
         # A comma separated list of node IDs to render
         ids: [ID]
@@ -9,10 +15,9 @@ exports.type = `
         scale: Int
 
         # A string enum for the image output format, can be "jpg", "png", or "svg"
-        format: String
+        format: ImageFormat
     }
     
-
     type Image {
         # Images for the ID's you requested
         images: [ID]!

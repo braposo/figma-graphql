@@ -1,4 +1,4 @@
-const { loadFigmaComments, createComment } = require("../utils");
+const { loadFigmaComments, createComment } = require("../utils/figma");
 
 exports.type = `
     type User {
@@ -8,10 +8,11 @@ exports.type = `
         img_url: String
     }
 
-    type Meta {
-        # id of the node
-        node_id: String
-        # node offset in x and Y
+    type FrameOffset {
+        # Unique id specifying the frame.
+        node_id: ID!
+
+        # 2d vector offset within the frame.
         node_offset: Position
     }
 
@@ -22,26 +23,36 @@ exports.type = `
         y: Float
     }
 
+    # union Meta = Position | FrameOffset
+
     # a single comment
     type Comment {
         # id of the comment
         id: ID!
-        # file id containing the comment
-        file_key: String
-        # parent comment id
-        parent_id: String
-        # who posted the comment
-        user: User!
-        # when it was posted
-        created_at: String
-        # when it was resolved
-        resolved_at: String
-        # the actual message
-        message: String!
-        # some meta
-        client_meta: Meta
-        order_id: String
 
+        # The position of the comment. Either the absolute coordinates on the canvas or a relative offset within a frame
+        client_meta: Position
+
+        # The file in which the comment lives
+        file_key: String
+
+        # If present, the id of the comment to which this is the reply
+        parent_id: String
+
+        # The user who left the comment
+        user: User!
+
+        # The UTC ISO 8601 time at which the comment was left
+        created_at: DateTime
+
+        # If set, the UTC ISO 8601 time the comment was resolved
+        resolved_at: DateTime
+
+        # Only set for top level comments. The number displayed with the comment in the UI
+        order_id: Int
+
+        # the actual message
+        message: String!        
     }
 
     extend type Query {

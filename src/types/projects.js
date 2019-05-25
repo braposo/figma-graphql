@@ -1,4 +1,4 @@
-const { loadTeamProjects } = require("../utils");
+const { loadTeamProjects } = require("../utils/figma");
 
 exports.type = `
     # A single Project
