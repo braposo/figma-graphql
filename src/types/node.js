@@ -2,7 +2,8 @@ const { gql } = require("apollo-server-express");
 const { get } = require("lodash");
 const { createBatchResolver } = require("graphql-resolve-batch");
 const camelCase = require("lodash/camelCase");
-const { loadFigmaImages } = require("../utils/figma");
+const groupBy = require("lodash/groupBy");
+const { loadImages } = require("../utils/figma");
 
 const nodeProperties = `
     # A string uniquely identifying this node within the document.
@@ -60,13 +61,23 @@ exports.resolvers = {
 
             return capitalise(camelCase(type));
         },
-        image: createBatchResolver(async (sources, { params }, { fileId }) => {
-            const { images } = await loadFigmaImages(fileId, {
-                ...params,
-                ids: sources.map(({ id }) => id),
-            });
+        image: createBatchResolver(async (sources, { params }) => {
+            const sourcesByFile = groupBy(sources, "fileId");
+            const parsedImages = await Promise.all(
+                Object.entries(sourcesByFile).map(([fileId, nodes]) =>
+                    loadImages(fileId, { ...params, ids: nodes.map(({ id }) => id) }).then(
+                        ({ images }) => images
+                    )
+                )
+            );
 
-            return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
+            return parsedImages.reduce(
+                (acc, parsedImage) => [
+                    ...acc,
+                    ...Object.entries(parsedImage).map(entry => ({ id: entry[0], file: entry[1] })),
+                ],
+                []
+            );
         }),
         visible: root => get(root, "visible", true),
     },
