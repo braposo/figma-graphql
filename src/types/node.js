@@ -18,7 +18,7 @@ const nodeProperties = `
     type: NodeType!
 
     # Additional properties
-    image(params: ImageParams): String
+    image(params: ImageNodeParams): Image
 `;
 
 const nodeTypes = [
@@ -66,7 +66,7 @@ exports.resolvers = {
                 ids: sources.map(({ id }) => id),
             });
 
-            return Object.values(images);
+            return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
         }),
         visible: root => get(root, "visible", true),
     },
