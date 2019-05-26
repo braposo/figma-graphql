@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/braposo/figma-graphql/compare/v1.6.0...v1.7.0) (2019-05-26)
+
+
+### Features
+
+* add utils to normalise and create new structure for figma api ([a527739](https://github.com/braposo/figma-graphql/commit/a527739))
+* update schema to use new structure and match figma's API ([67981be](https://github.com/braposo/figma-graphql/commit/67981be))
+
 # [1.6.0](https://github.com/braposo/figma-graphql/compare/v1.5.1...v1.6.0) (2019-05-05)
 
 ### Features
