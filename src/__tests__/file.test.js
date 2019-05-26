@@ -19,4 +19,20 @@ describe("File", () => {
             data: { file: { name: "figma-graphql test file" } },
         });
     });
+
+    test("can get file default images", async () => {
+        const query = `
+            query {
+                file(id: "${figmaFile}") {
+                    images {
+                        id
+                    }
+                }
+            }
+        `;
+
+        await expect(graphql(schema, query, null, { fileId: figmaFile })).resolves.toEqual({
+            data: { file: { images: [{ id: "0:1" }] } },
+        });
+    });
 });
