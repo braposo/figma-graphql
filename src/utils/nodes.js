@@ -22,8 +22,8 @@ exports.getNodes = (data, nodeType, filterBy) => {
     }
 
     if (filterByName != null) {
-        // TODO: compare by regex instead so we can have smarter matches
-        return dataNodes.filter(node => node.name === filterByName);
+        const nameRegex = new RegExp(filterByName);
+        return dataNodes.filter(node => nameRegex.test(node.name));
     }
 
     return dataNodes;
