@@ -1,4 +1,4 @@
-const { loadFigmaComments, createComment } = require("../utils/figma");
+const { loadComments, createComment } = require("../utils/figma");
 
 exports.type = `
     type User {
@@ -68,7 +68,7 @@ exports.type = `
 
 exports.resolvers = {
     Query: {
-        comments: (root, { id }) => loadFigmaComments(id).then(data => data.comments),
+        comments: (root, { id }) => loadComments(id).then(data => data.comments),
     },
     Mutation: {
         addComment: (root, { id, message, params }) =>

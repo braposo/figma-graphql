@@ -1,4 +1,4 @@
-const { loadFigmaImages } = require("../utils/figma");
+const { loadImages } = require("../utils/figma");
 
 const defaultImageParams = { ids: ["0:1"] };
 exports.defaultImageParams = defaultImageParams;
@@ -44,7 +44,7 @@ exports.resolvers = {
     Query: {
         images: async (root, { id, params }) => {
             const imageParams = { ...defaultImageParams, ...params };
-            const { images } = await loadFigmaImages(id, imageParams).then(data => data);
+            const { images } = await loadImages(id, imageParams).then(data => data);
             return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
         },
     },
