@@ -7,7 +7,7 @@ const client = Figma.Client({
 
 const { file, fileImages, comments, postComment, teamProjects, projectFiles } = client;
 
-function getFigma(label, fn, id, params, normalise = false) {
+function getFigma(label, fn, id, params) {
     return new Promise((resolve, reject) => {
         const withParams = params ? { ...params } : null;
 
@@ -15,12 +15,13 @@ function getFigma(label, fn, id, params, normalise = false) {
         console.log("fetching", label, id);
         fn(id, withParams)
             .then(({ data }) => {
-                if (normalise) {
+                if (label === "file") {
                     const { name, lastModified, thumbnailUrl, version, document, styles } = data;
 
-                    const [processedNodes, processedShortcuts] = processNodes(document, styles);
+                    const [processedNodes, processedShortcuts] = processNodes(document, styles, id);
 
                     const result = {
+                        fileId: id,
                         name,
                         lastModified,
                         thumbnailUrl,
@@ -38,11 +39,11 @@ function getFigma(label, fn, id, params, normalise = false) {
     });
 }
 
-exports.loadFigmaFile = id => getFigma("file", file, id, null, true);
+exports.loadFile = id => getFigma("file", file, id, null);
 
-exports.loadFigmaComments = id => getFigma("comments", comments, id, null, false);
+exports.loadComments = id => getFigma("comments", comments, id, null);
 
-exports.loadFigmaImages = (id, params) => getFigma("images", fileImages, id, params, false);
+exports.loadImages = (id, params) => getFigma("images", fileImages, id, params);
 
 exports.loadTeamProjects = id => getFigma("projects", teamProjects, id);
 

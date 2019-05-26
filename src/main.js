@@ -4,17 +4,13 @@ const cors = require("cors");
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 
-const { loadFigmaFile } = require("./utils/figma");
-const { getFileId } = require("./utils/helpers");
+const { loadFile } = require("./utils/figma");
 const { schema } = require("./schema");
 
 const PORT = 3001;
 
 const server = new ApolloServer({
     schema,
-    context: async ({ req }) => ({
-        fileId: getFileId(req.body.query),
-    }),
 });
 
 const app = express();
@@ -24,7 +20,7 @@ server.applyMiddleware({ app });
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
     const { id } = req.params;
-    loadFigmaFile(id).then(data => {
+    loadFile(id).then(data => {
         res.json(data);
     });
 });
