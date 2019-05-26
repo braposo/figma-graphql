@@ -46,7 +46,7 @@ exports.resolvers = {
             const { images } = await loadImages(fileId, imageParams);
             return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
         },
-        comments: (_, __, { fileId }) => loadComments(fileId).then(data => data.comments),
+        comments: ({ fileId }) => loadComments(fileId).then(data => data.comments),
         ...generateResolversForShortcuts(),
     },
 };
