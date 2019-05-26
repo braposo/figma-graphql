@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/braposo/figma-graphql/compare/v1.7.0...v1.8.0) (2019-05-26)
+
+
+### Features
+
+* uses regex for name filter so we can have advanced search ([480b189](https://github.com/braposo/figma-graphql/commit/480b189))
+
 # [1.7.0](https://github.com/braposo/figma-graphql/compare/v1.6.0...v1.7.0) (2019-05-26)
 
 
