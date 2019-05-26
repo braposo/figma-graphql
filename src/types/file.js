@@ -1,5 +1,5 @@
 const { gql } = require("apollo-server-express");
-const { loadFigmaFile, loadFigmaImages } = require("../utils/figma");
+const { loadFigmaFile, loadFigmaImages, loadFigmaComments } = require("../utils/figma");
 const {
     generateResolversForShortcuts,
     generateQueriesForShortcuts,
@@ -21,8 +21,11 @@ exports.type = gql`
         # Current version of the file
         version: String
 
-        # Get images for that file
+        # Get images for the file
         images(params: ImageParams): [Image]
+
+        # Get comments for the file
+        comments: [Comment]
 
         ${generateQueriesForShortcuts()}
     }
@@ -43,6 +46,7 @@ exports.resolvers = {
             const { images } = await loadFigmaImages(fileId, imageParams);
             return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
         },
+        comments: (_, __, { fileId }) => loadFigmaComments(fileId).then(data => data.comments),
         ...generateResolversForShortcuts(),
     },
 };
