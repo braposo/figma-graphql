@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/braposo/figma-graphql/compare/v1.9.0...v1.10.0) (2019-05-26)
+
+
+### Bug Fixes
+
+* comments not getting correct fileId ([60b7458](https://github.com/braposo/figma-graphql/commit/60b7458))
+
+
+### Features
+
+* stitch teams, projects and files together ([17687bc](https://github.com/braposo/figma-graphql/commit/17687bc))
+
 # [1.9.0](https://github.com/braposo/figma-graphql/compare/v1.8.0...v1.9.0) (2019-05-26)
 
 
