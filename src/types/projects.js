@@ -1,4 +1,5 @@
-const { loadTeamProjects } = require("../utils/figma");
+const { createBatchResolver } = require("graphql-resolve-batch");
+const { loadFile, loadTeamProjects, loadProjectFiles } = require("../utils/figma");
 
 exports.type = `
     # A single Project
@@ -7,16 +8,33 @@ exports.type = `
         id: ID!,
         # Name of the Project
         name: String!
+
+        files: [File]
     }
 
     extend type Query {
         # Get a teams projects
-        projects(id: ID!): [Project]
+        projects(teamId: ID!): [Project]
     }
 `;
 
 exports.resolvers = {
     Query: {
-        projects: (root, { id }) => loadTeamProjects(id).then(data => data.projects),
+        projects: (root, { teamId }) => loadTeamProjects(teamId).then(({ projects }) => projects),
+    },
+    Project: {
+        files: createBatchResolver(async projects => {
+            const projectFiles = await Promise.all(
+                projects.map(async project =>
+                    loadProjectFiles(project.id).then(({ files }) => files)
+                )
+            );
+
+            const parsedFiles = await Promise.all(
+                projectFiles.map(files => Promise.all(files.map(file => loadFile(file.key))))
+            );
+
+            return Object.values(parsedFiles);
+        }),
     },
 };
