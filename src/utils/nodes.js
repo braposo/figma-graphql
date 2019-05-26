@@ -29,7 +29,7 @@ exports.getNodes = (data, nodeType, filterBy) => {
     return dataNodes;
 };
 
-exports.processNodes = (nodes, documentStyles) => {
+exports.processNodes = (nodes, documentStyles, fileId) => {
     const parsedStyles = new Map(Object.entries(documentStyles));
 
     const traverseChildren = (node, parentId) => {
@@ -52,7 +52,7 @@ exports.processNodes = (nodes, documentStyles) => {
 
         // Reached a leaf so returning the simplified node
         if (children == null || children.length === 0) {
-            return [[{ id, parentId, ...rest }], nodeStyles];
+            return [[{ id, parentId, fileId, ...rest }], nodeStyles];
         }
 
         // If it gets here then it means it has children
@@ -75,6 +75,7 @@ exports.processNodes = (nodes, documentStyles) => {
         const parsedNode = {
             id,
             parentId,
+            fileId,
             ...rest,
             children: parsedChildren,
             shortcuts: groupNodes(shortcuts),
