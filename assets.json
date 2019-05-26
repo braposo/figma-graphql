@@ -1,11 +1,11 @@
 {
-  "vendors.js": "/static/js/vendors.067eba4b.js",
-  "vendors.js.map": "/static/js/vendors.ed368007442b75a28a4d.js.map",
-  "app.js": "/static/js/app.ed368007442b75a28a4d.js",
-  "app.js.map": "/static/js/app.ed368007442b75a28a4d.js.map",
-  "home.js": "/static/js/home.bce2615d.js",
-  "home.js.map": "/static/js/home.ed368007442b75a28a4d.js.map",
+  "vendors.js": "/static/js/vendors.5246b0b3.js",
+  "vendors.js.map": "/static/js/vendors.1a8e6f137dd95ed567e2.js.map",
+  "app.js": "/static/js/app.1a8e6f137dd95ed567e2.js",
+  "app.js.map": "/static/js/app.1a8e6f137dd95ed567e2.js.map",
+  "home.js": "/static/js/home.3c64a4b8.js",
+  "home.js.map": "/static/js/home.1a8e6f137dd95ed567e2.js.map",
   "quick-start.js": "/static/js/quick-start.0abdf86c.js",
-  "quick-start.js.map": "/static/js/quick-start.ed368007442b75a28a4d.js.map",
+  "quick-start.js.map": "/static/js/quick-start.1a8e6f137dd95ed567e2.js.map",
   "index.html": "/index.html"
 }
