@@ -31,7 +31,7 @@ exports.type = `
         id: ID!
 
         # The position of the comment. Either the absolute coordinates on the canvas or a relative offset within a frame
-        client_meta: Position
+        client_meta: FrameOffset
 
         # The file in which the comment lives
         file_key: String
