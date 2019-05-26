@@ -1,3 +1,11 @@
+# [1.9.0](https://github.com/braposo/figma-graphql/compare/v1.8.0...v1.9.0) (2019-05-26)
+
+
+### Features
+
+* add comments query to file ([7589201](https://github.com/braposo/figma-graphql/commit/7589201)), closes [#3](https://github.com/braposo/figma-graphql/issues/3)
+* add image query to file ([4a77178](https://github.com/braposo/figma-graphql/commit/4a77178)), closes [#3](https://github.com/braposo/figma-graphql/issues/3)
+
 # [1.8.0](https://github.com/braposo/figma-graphql/compare/v1.7.0...v1.8.0) (2019-05-26)
 
 
