@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server-express");
+import { gql } from "apollo-server-express";
 
 export const type = gql`
     enum TextCase {
@@ -78,3 +78,5 @@ export const type = gql`
         lineHeightUnit: LineHeightUnit
     }
 `;
+
+export const resolvers = {};

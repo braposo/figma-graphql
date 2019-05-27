@@ -53,12 +53,12 @@ const capitalise = string => string.charAt(0).toUpperCase() + string.slice(1);
 
 export const resolvers = {
     Node: {
-        __resolveType({ type }) {
-            if (type === "CANVAS") {
+        __resolveType({ type: nodeType }) {
+            if (nodeType === "CANVAS") {
                 return "Pages";
             }
 
-            return capitalise(camelCase(type));
+            return capitalise(camelCase(nodeType));
         },
         image: createBatchResolver<any, any>(async (sources, { params }) => {
             const sourcesByFile = groupBy(sources, "fileId");
@@ -81,8 +81,8 @@ export const resolvers = {
         visible: root => root.visible || true,
     },
     RectangleBox: {
-        __resolveType({ type }) {
-            return capitalise(type);
+        __resolveType({ type: nodeType }) {
+            return capitalise(nodeType);
         },
     },
 };

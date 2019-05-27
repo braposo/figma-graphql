@@ -9,6 +9,11 @@ import * as comments from "./comments";
 import * as projects from "./projects";
 import * as projectFiles from "./project-files";
 import * as misc from "./misc";
+import * as constraint from "./helpers/constraint";
+import * as style from "./helpers/style";
+import * as effect from "./helpers/effect";
+import * as grid from "./helpers/grid";
+import * as text from "./helpers/text";
 
 const typePaths = [
     file,
@@ -21,11 +26,11 @@ const typePaths = [
     projects,
     projectFiles,
     misc,
-    require("./helpers/style"),
-    require("./helpers/constraint"),
-    require("./helpers/effect"),
-    require("./helpers/grid"),
-    require("./helpers/text"),
+    style,
+    constraint,
+    effect,
+    grid,
+    text,
 ];
 
 /**

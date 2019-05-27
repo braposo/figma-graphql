@@ -12,7 +12,7 @@
         "docs:deploy": "gh-pages -d .docz/dist",
         "format": "prettier --write '**/*.{js,css,md,ts,json}' *.{js,css,md,ts,json}",
         "test": "jest --no-cache --setupFiles dotenv/config",
-        "lint": "eslint src/ --ext .js",
+        "lint": "eslint src/ --ext .ts",
         "lint:check": "eslint --print-config . | eslint-config-prettier-check",
         "commit": "yarn git-cz",
         "semantic-release": "semantic-release",
@@ -72,6 +72,8 @@
         "@types/react": "^16.8.18",
         "@types/react-dom": "^16.8.4",
         "@types/semantic-release": "^15.13.0",
+        "@typescript-eslint/eslint-plugin": "^1.9.0",
+        "@typescript-eslint/parser": "^1.9.0",
         "all-contributors-cli": "^6.6.0",
         "codecov": "^3.5.0",
         "commitizen": "^3.1.1",
@@ -81,6 +83,7 @@
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-config-prettier": "^4.3.0",
+        "eslint-import-resolver-typescript": "^1.1.1",
         "eslint-plugin-import": "^2.17.3",
         "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-prettier": "^3.1.0",
@@ -101,11 +104,11 @@
         "alias": "figma-graphql"
     },
     "lint-staged": {
-        "*.{js,css,md}": [
+        "*.{ts,css,md}": [
             "prettier --write",
             "git add"
         ],
-        "*.js": [
+        "*.ts": [
             "eslint --fix",
             "git add"
         ]

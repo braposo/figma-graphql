@@ -46,3 +46,5 @@ export const type = gql`
         count: Int
     }
 `;
+
+export const resolvers = {};

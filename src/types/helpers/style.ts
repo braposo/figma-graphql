@@ -129,3 +129,5 @@ export const type = gql`
         position: Float
     }
 `;
+
+export const resolvers = {};
