@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shortcuts can generateQueriesForShortcuts 1`] = `
+"pages(name: String): [Page!]
+frames(name: String): [Frame!]
+groups(name: String): [Group!]
+vectors(name: String): [Vector!]
+booleanOperations(name: String): [BooleanOperation!]
+stars(name: String): [Star!]
+lines(name: String): [Line!]
+ellipses(name: String): [Ellipse!]
+regularPolygons(name: String): [RegularPolygon!]
+rectangles(name: String): [Rectangle!]
+texts(name: String): [Text!]
+slices(name: String): [Slice!]
+components(name: String): [Component!]
+instances(name: String): [Instance!]
+styles(name: String): [Style!]
+children(type: [NodeType], name: String): [Node!]"
+`;
+
+exports[`Shortcuts can generateResolversForShortcuts 1`] = `
+Object {
+  "booleanOperations": [Function],
+  "children": [Function],
+  "components": [Function],
+  "ellipses": [Function],
+  "frames": [Function],
+  "groups": [Function],
+  "instances": [Function],
+  "lines": [Function],
+  "pages": [Function],
+  "rectangles": [Function],
+  "regularPolygons": [Function],
+  "slices": [Function],
+  "stars": [Function],
+  "styles": [Function],
+  "texts": [Function],
+  "vectors": [Function],
+}
+`;
