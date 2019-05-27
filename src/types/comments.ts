@@ -73,6 +73,7 @@ export const resolvers = {
     },
     Mutation: {
         addComment: (root, { id, message, params }) =>
+            // eslint-disable-next-line @typescript-eslint/camelcase
             createComment(id, { client_meta: { ...params }, message }).then(data => data),
     },
 };

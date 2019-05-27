@@ -29,3 +29,5 @@ export const type = gql`
         offset: Position
     }
 `;
+
+export const resolvers = {};

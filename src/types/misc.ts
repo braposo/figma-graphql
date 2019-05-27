@@ -56,3 +56,5 @@ export const type = gql`
         size: Size
     }
 `;
+
+export const resolvers = {};

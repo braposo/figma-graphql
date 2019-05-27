@@ -2,7 +2,7 @@ import { gql } from "apollo-server-express";
 import { createBatchResolver } from "graphql-resolve-batch";
 import { loadFile, loadTeamProjects, loadProjectFiles } from "../utils/figma";
 
-exports.type = gql`
+export const type = gql`
     # A single Project
     type Project {
         # ID of the Project
@@ -19,7 +19,7 @@ exports.type = gql`
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Query: {
         projects: (root, { teamId }) => loadTeamProjects(teamId).then(({ projects }) => projects),
     },
