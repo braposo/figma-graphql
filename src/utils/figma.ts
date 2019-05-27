@@ -1,10 +1,18 @@
-import * as Figma from "figma-js";
+import {
+    Client,
+    FileImageParams,
+    PostCommentParams,
+    FileImageResponse,
+    CommentsResponse,
+    TeamProjectsResponse,
+    ProjectFilesResponse,
+} from "figma-js";
 import { config } from "dotenv";
 import { processNodes, groupNodes } from "./nodes";
 
 config();
 
-const client = Figma.Client({
+const client = Client({
     personalAccessToken: process.env.FIGMA_TOKEN,
 });
 
@@ -14,7 +22,7 @@ function getFigma(
     label: string,
     fn,
     id: string,
-    params: any
+    params: FileImageParams | PostCommentParams | null
 ): Promise<any> {
     return new Promise((resolve, reject) => {
         const withParams = params ? { ...params } : null;
@@ -49,13 +57,17 @@ function getFigma(
 
 export const loadFile = (id: string) => getFigma("file", file, id, null);
 
-export const loadComments = (id: string) => getFigma("comments", comments, id, null);
+export const loadComments = (id: string): Promise<CommentsResponse> =>
+    getFigma("comments", comments, id, null);
 
-export const loadImages = (id: string, params) => getFigma("images", fileImages, id, params);
+export const loadImages = (id: string, params: FileImageParams): Promise<FileImageResponse> =>
+    getFigma("images", fileImages, id, params);
 
-export const loadTeamProjects = (id: string) => getFigma("projects", teamProjects, id, null);
+export const loadTeamProjects = (id: string): Promise<TeamProjectsResponse> =>
+    getFigma("projects", teamProjects, id, null);
 
-export const loadProjectFiles = (id: string) => getFigma("projectFiles", projectFiles, id, null);
+export const loadProjectFiles = (id: string): Promise<ProjectFilesResponse> =>
+    getFigma("projectFiles", projectFiles, id, null);
 
-export const createComment = (id: string, params) =>
+export const createComment = (id: string, params: PostCommentParams): Promise<CommentsResponse> =>
     getFigma("postComment", postComment, id, params);

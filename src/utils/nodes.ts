@@ -1,7 +1,8 @@
 import groupBy from "lodash/groupBy";
 import uniqBy from "lodash/uniqBy";
+import { Node } from "figma-js";
 
-export const groupNodes = nodes => groupBy(uniqBy(nodes, "id"), "type");
+export const groupNodes = (nodes: Node[]) => groupBy(uniqBy(nodes, "id"), "type");
 
 export const getNodes = (data, nodeType, filterBy) => {
     const { name: filterByName, type: filterByType } = filterBy;

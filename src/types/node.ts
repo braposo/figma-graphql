@@ -71,7 +71,7 @@ export const resolvers = {
             );
 
             return parsedImages.reduce(
-                (acc, parsedImage) => [
+                (acc: any[], parsedImage) => [
                     ...acc,
                     ...Object.entries(parsedImage).map(entry => ({ id: entry[0], file: entry[1] })),
                 ],
