@@ -1,11 +1,8 @@
-require("dotenv").config();
-
-const cors = require("cors");
-const express = require("express");
-const { ApolloServer } = require("apollo-server-express");
-
-const { loadFile } = require("./utils/figma");
-const { schema } = require("./schema");
+import cors from "cors";
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { loadFile } from "./utils/figma";
+import schema from "./schema";
 
 const PORT = 3001;
 

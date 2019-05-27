@@ -1,11 +1,12 @@
-const { createBatchResolver } = require("graphql-resolve-batch");
-const { loadFile, loadTeamProjects, loadProjectFiles } = require("../utils/figma");
+import { gql } from "apollo-server-express";
+import { createBatchResolver } from "graphql-resolve-batch";
+import { loadFile, loadTeamProjects, loadProjectFiles } from "../utils/figma";
 
-exports.type = `
+exports.type = gql`
     # A single Project
     type Project {
         # ID of the Project
-        id: ID!,
+        id: ID!
         # Name of the Project
         name: String!
 
@@ -23,11 +24,9 @@ exports.resolvers = {
         projects: (root, { teamId }) => loadTeamProjects(teamId).then(({ projects }) => projects),
     },
     Project: {
-        files: createBatchResolver(async projects => {
+        files: createBatchResolver<{ id: string }, any>(async projects => {
             const projectFiles = await Promise.all(
-                projects.map(async project =>
-                    loadProjectFiles(project.id).then(({ files }) => files)
-                )
+                projects.map(async ({ id }) => loadProjectFiles(id).then(({ files }) => files))
             );
 
             const parsedFiles = await Promise.all(

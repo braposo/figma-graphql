@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
-const { graphql } = require("graphql");
-const { schema } = require("../../schema");
+import { graphql } from "graphql";
+import schema from "../../schema";
 
 const figmaFile = "cLp23bR627jcuNSoBGkhL04E";
 
@@ -21,7 +21,7 @@ describe("File", () => {
         `;
 
         const response = await graphql(schema, query);
-        const { name, lastModified, thumbnailUrl, version } = response.data.file;
+        const { name, lastModified, thumbnailUrl, version } = response.data && response.data.file;
 
         expect(name).toEqual("figma-graphql test file");
         expect(new Date(lastModified)).toEqual(expect.any(Date));

@@ -1,12 +1,9 @@
-const { gql } = require("apollo-server-express");
-const { loadFile, loadImages, loadComments } = require("../utils/figma");
-const {
-    generateResolversForShortcuts,
-    generateQueriesForShortcuts,
-} = require("../utils/shortcuts");
-const { defaultImageParams } = require("./image");
+import { gql } from "apollo-server-express";
+import { loadFile, loadImages, loadComments } from "../utils/figma";
+import { generateResolversForShortcuts, generateQueriesForShortcuts } from "../utils/shortcuts";
+import { defaultImageParams } from "./image";
 
-exports.type = gql`
+export const type = gql`
     # Information about a file
     type File {
         # name of the file
@@ -36,7 +33,7 @@ exports.type = gql`
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Query: {
         file: (_, { id }) => loadFile(id).then(data => data),
     },
@@ -46,7 +43,7 @@ exports.resolvers = {
             const { images } = await loadImages(fileId, imageParams);
             return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
         },
-        comments: ({ fileId }) => loadComments(fileId).then(data => data.comments),
+        comments: ({ fileId }) => loadComments(fileId).then(({ comments }) => comments),
         ...generateResolversForShortcuts(),
     },
 };

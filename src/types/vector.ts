@@ -1,8 +1,8 @@
-const { gql } = require("apollo-server-express");
-const { nodeProperties, resolvers } = require("./node");
-const { getSize } = require("../utils/helpers");
+import { gql } from "apollo-server-express";
+import { nodeProperties, resolvers as nodeResolvers } from "./node";
+import { getSize } from "../utils/helpers";
 
-const vectorProperties = `
+export const vectorProperties = `
     ${nodeProperties}
 
     # An array of export settings representing images to export from node
@@ -78,7 +78,7 @@ const vectorProperties = `
     styles: [Style]
 `;
 
-exports.type = gql`
+export const type = gql`
     # Vector node
     type Vector implements Node {
         ${vectorProperties}
@@ -135,46 +135,44 @@ const vectorResolvers = {
     size: getSize,
 };
 
-exports.resolvers = {
+export const resolvers = {
     Vector: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     BooleanOperation: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     Rectangle: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     Text: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     Star: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     Line: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     Ellipse: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 
     RegularPolygon: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...vectorResolvers,
     },
 };
-
-exports.vectorProperties = vectorProperties;

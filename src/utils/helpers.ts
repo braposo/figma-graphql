@@ -1,9 +1,9 @@
-exports.getPosition = node => ({
+export const getPosition = node => ({
     x: node.absoluteBoundingBox.x,
     y: node.absoluteBoundingBox.y,
 });
 
-exports.getSize = node => ({
+export const getSize = node => ({
     width: node.absoluteBoundingBox.width,
     height: node.absoluteBoundingBox.height,
 });

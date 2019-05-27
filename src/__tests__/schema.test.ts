@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
-const { mockServer } = require("graphql-tools");
-const { graphql } = require("graphql");
-const { schema } = require("../schema");
+import { mockServer } from "graphql-tools";
+import { graphql } from "graphql";
+import schema from "../schema";
 
 describe("Schema", () => {
     test("query has version", async () => {
@@ -17,7 +17,7 @@ describe("Schema", () => {
 
     test("has valid type definitions", async () => {
         await expect(async () => {
-            const server = mockServer(schema);
+            const server = mockServer(schema, {});
 
             await server.query("{ __schema { types { name } } }");
         }).not.toThrow();
