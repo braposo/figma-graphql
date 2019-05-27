@@ -1,5 +1,4 @@
 const { gql } = require("apollo-server-express");
-const { get } = require("lodash");
 const { createBatchResolver } = require("graphql-resolve-batch");
 const camelCase = require("lodash/camelCase");
 const groupBy = require("lodash/groupBy");
@@ -79,7 +78,7 @@ exports.resolvers = {
                 []
             );
         }),
-        visible: root => get(root, "visible", true),
+        visible: root => root.visible || true,
     },
     RectangleBox: {
         __resolveType({ type }) {
