@@ -1,10 +1,9 @@
-const groupBy = require("lodash/groupBy");
-const uniqBy = require("lodash/uniqBy");
+import groupBy from "lodash/groupBy";
+import uniqBy from "lodash/uniqBy";
 
-const groupNodes = nodes => groupBy(uniqBy(nodes, "id"), "type");
-exports.groupNodes = groupNodes;
+export const groupNodes = nodes => groupBy(uniqBy(nodes, "id"), "type");
 
-exports.getNodes = (data, nodeType, filterBy) => {
+export const getNodes = (data, nodeType, filterBy) => {
     const { name: filterByName, type: filterByType } = filterBy;
     let dataNodes;
 
@@ -29,17 +28,17 @@ exports.getNodes = (data, nodeType, filterBy) => {
     return dataNodes;
 };
 
-exports.processNodes = (nodes, documentStyles, fileId) => {
+export const processNodes = (nodes, documentStyles: { [key: string]: any }, fileId) => {
     const parsedStyles = new Map(Object.entries(documentStyles));
 
     const traverseChildren = (node, parentId) => {
         const { id, styles, children, ...rest } = node;
-        let nodeStyles = [];
+        let nodeStyles: any[] = [];
 
         // If node has styles definitions populate that with the actual styles
         if (styles != null) {
             nodeStyles = Object.entries(styles).map(([key, styleId]) => {
-                const documentStyle = parsedStyles.get(styleId);
+                const documentStyle = parsedStyles.get(styleId as string);
 
                 return {
                     id: styleId,
@@ -84,5 +83,5 @@ exports.processNodes = (nodes, documentStyles, fileId) => {
         return [[parsedNode], shortcuts];
     };
 
-    return traverseChildren(nodes);
+    return traverseChildren(nodes, "0:0");
 };

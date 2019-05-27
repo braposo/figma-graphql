@@ -1,9 +1,9 @@
-const { loadImages } = require("../utils/figma");
+import { gql } from "apollo-server-express";
+import { loadImages } from "../utils/figma";
 
-const defaultImageParams = { ids: ["0:1"] };
-exports.defaultImageParams = defaultImageParams;
+export const defaultImageParams = { ids: ["0:1"] };
 
-exports.type = `
+export const type = gql`
     enum ImageFormat {
         jpg
         png
@@ -40,7 +40,7 @@ exports.type = `
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Query: {
         images: async (root, { id, params }) => {
             const imageParams = { ...defaultImageParams, ...params };

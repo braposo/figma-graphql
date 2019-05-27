@@ -1,5 +1,5 @@
 /* eslint-env jest */
-const { generateResolversForShortcuts, generateQueriesForShortcuts } = require("../shortcuts");
+import { generateResolversForShortcuts, generateQueriesForShortcuts } from "../shortcuts";
 
 describe("Shortcuts", () => {
     test("can generateResolversForShortcuts", async () => {

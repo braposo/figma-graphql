@@ -1,11 +1,8 @@
-const { gql } = require("apollo-server-express");
-const {
-    generateQueriesForShortcuts,
-    generateResolversForShortcuts,
-} = require("../utils/shortcuts");
-const { nodeProperties, resolvers } = require("./node");
+import { gql } from "apollo-server-express";
+import { generateQueriesForShortcuts, generateResolversForShortcuts } from "../utils/shortcuts";
+import { nodeProperties, resolvers as nodeResolvers } from "./node";
 
-exports.type = gql`
+export const type = gql`
     # A page inside a file - This is CANVAS in Figma API
     type Page implements Node {
         ${nodeProperties}
@@ -23,9 +20,9 @@ exports.type = gql`
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Page: {
-        ...resolvers.Node,
+        ...nodeResolvers.Node,
         ...generateResolversForShortcuts(),
     },
 };

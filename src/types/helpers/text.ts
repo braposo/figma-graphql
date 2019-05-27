@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server-express");
 
-exports.type = gql`
+export const type = gql`
     enum TextCase {
         UPPER
         LOWER

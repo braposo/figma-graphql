@@ -1,6 +1,6 @@
-const { makeExecutableSchema } = require("graphql-tools");
-const { GraphQLDateTime } = require("graphql-iso-date");
-const mergeSchema = require("./types");
+import { makeExecutableSchema } from "graphql-tools";
+import { GraphQLDateTime } from "graphql-iso-date";
+import mergeSchema from "./types";
 
 const typeDefs = [
     `
@@ -27,6 +27,4 @@ const resolvers = {
     },
 };
 
-module.exports = {
-    schema: makeExecutableSchema(mergeSchema({ typeDefs, resolvers })),
-};
+export default makeExecutableSchema(mergeSchema({ typeDefs, resolvers }));

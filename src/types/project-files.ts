@@ -1,13 +1,14 @@
-const { loadProjectFiles, loadFile } = require("../utils/figma");
+import { gql } from "apollo-server-express";
+import { loadProjectFiles, loadFile } from "../utils/figma";
 
-exports.type = `
+export const type = gql`
     extend type Query {
         # Get a projects files
         projectFiles(projectId: String!): [File]
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Query: {
         projectFiles: async (_, { projectId }) => {
             const { files: projectFiles } = await loadProjectFiles(projectId);

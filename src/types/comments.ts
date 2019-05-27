@@ -1,6 +1,7 @@
-const { loadComments, createComment } = require("../utils/figma");
+import { gql } from "apollo-server-express";
+import { loadComments, createComment } from "../utils/figma";
 
-exports.type = `
+export const type = gql`
     type User {
         # user login
         handle: String
@@ -16,7 +17,7 @@ exports.type = `
         node_offset: Position
     }
 
-   input CommentParams {
+    input CommentParams {
         # X position you want to place the comment
         x: Float
         # Y position you want to place the comment
@@ -52,7 +53,7 @@ exports.type = `
         order_id: Int
 
         # the actual message
-        message: String!        
+        message: String!
     }
 
     extend type Query {
@@ -66,9 +67,9 @@ exports.type = `
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     Query: {
-        comments: (root, { id }) => loadComments(id).then(data => data.comments),
+        comments: (root, { id }) => loadComments(id).then(({ comments }) => comments),
     },
     Mutation: {
         addComment: (root, { id, message, params }) =>

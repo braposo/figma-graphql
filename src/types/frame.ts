@@ -1,10 +1,7 @@
-const { gql } = require("apollo-server-express");
-const {
-    generateResolversForShortcuts,
-    generateQueriesForShortcuts,
-} = require("../utils/shortcuts");
-const { getSize } = require("../utils/helpers");
-const { nodeProperties, resolvers } = require("./node");
+import { gql } from "apollo-server-express";
+import { generateResolversForShortcuts, generateQueriesForShortcuts } from "../utils/shortcuts";
+import { getSize } from "../utils/helpers";
+import { nodeProperties, resolvers as nodeResolvers } from "./node";
 
 const frameProperties = `
     ${nodeProperties}
@@ -63,7 +60,7 @@ const frameProperties = `
     ${generateQueriesForShortcuts()}
 `;
 
-exports.type = gql`
+export const type = gql`
     # A node of fixed size containing other nodes
     type Frame implements Node {
         ${frameProperties}        
@@ -86,12 +83,12 @@ exports.type = gql`
 `;
 
 const frameResolvers = {
-    ...resolvers.Node,
+    ...nodeResolvers.Node,
     ...generateResolversForShortcuts(),
     size: getSize,
 };
 
-exports.resolvers = {
+export const resolvers = {
     Frame: {
         ...frameResolvers,
     },

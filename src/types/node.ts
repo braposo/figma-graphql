@@ -1,10 +1,10 @@
-const { gql } = require("apollo-server-express");
-const { createBatchResolver } = require("graphql-resolve-batch");
-const camelCase = require("lodash/camelCase");
-const groupBy = require("lodash/groupBy");
-const { loadImages } = require("../utils/figma");
+import { gql } from "apollo-server-express";
+import { createBatchResolver } from "graphql-resolve-batch";
+import camelCase from "lodash/camelCase";
+import groupBy from "lodash/groupBy";
+import { loadImages } from "../utils/figma";
 
-const nodeProperties = `
+export const nodeProperties = `
     # A string uniquely identifying this node within the document.
     id: ID!
 
@@ -21,7 +21,7 @@ const nodeProperties = `
     image(params: ImageNodeParams): Image
 `;
 
-const nodeTypes = [
+export const nodeTypes = [
     "CANVAS",
     "FRAME",
     "GROUP",
@@ -39,7 +39,7 @@ const nodeTypes = [
     "STYLE",
 ];
 
-exports.type = gql`
+export const type = gql`
     enum NodeType {
         ${nodeTypes.join("\n")}
     }
@@ -51,7 +51,7 @@ exports.type = gql`
 
 const capitalise = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-exports.resolvers = {
+export const resolvers = {
     Node: {
         __resolveType({ type }) {
             if (type === "CANVAS") {
@@ -60,7 +60,7 @@ exports.resolvers = {
 
             return capitalise(camelCase(type));
         },
-        image: createBatchResolver(async (sources, { params }) => {
+        image: createBatchResolver<any, any>(async (sources, { params }) => {
             const sourcesByFile = groupBy(sources, "fileId");
             const parsedImages = await Promise.all(
                 Object.entries(sourcesByFile).map(([fileId, nodes]) =>
@@ -86,6 +86,3 @@ exports.resolvers = {
         },
     },
 };
-
-exports.nodeProperties = nodeProperties;
-exports.nodeTypes = nodeTypes;

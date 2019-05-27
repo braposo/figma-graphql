@@ -1,6 +1,6 @@
-const { gql } = require("apollo-server-express");
+import { gql } from "apollo-server-express";
 
-exports.type = gql`
+export const type = gql`
     enum GridPattern {
         COLUMNS
         ROWS

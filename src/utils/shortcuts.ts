@@ -1,6 +1,6 @@
-const camelCase = require("lodash/camelCase");
-const { nodeTypes } = require("../types/node");
-const { getNodes } = require("./nodes");
+import camelCase from "lodash/camelCase";
+import { nodeTypes } from "../types/node";
+import { getNodes } from "./nodes";
 
 const shortcutTypes = nodeTypes.map(type => {
     const convertedType = type === "CANVAS" ? "PAGE" : type;
@@ -37,7 +37,7 @@ const mapTypeToQuery = nodeTypes.reduce(
     }
 );
 
-exports.generateResolversForShortcuts = () =>
+export const generateResolversForShortcuts = () =>
     [...shortcutTypes, "children"].reduce((acc, resolverType) => {
         const key = resolverType === "children" ? resolverType : `${resolverType}s`;
         return {
@@ -47,7 +47,7 @@ exports.generateResolversForShortcuts = () =>
         };
     }, {});
 
-exports.generateQueriesForShortcuts = () =>
+export const generateQueriesForShortcuts = () =>
     [...shortcutTypes, "children"]
         .map(type => {
             const key = type === "children" ? type : `${type}s`;

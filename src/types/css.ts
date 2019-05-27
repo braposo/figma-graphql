@@ -1,6 +1,6 @@
-const { gql } = require("apollo-server-express");
+import { gql } from "apollo-server-express";
 
-exports.type = gql`
+export const type = gql`
     type CSS {
         # CSS compatible textAlign property
         textAlign: String
@@ -11,7 +11,7 @@ exports.type = gql`
     }
 `;
 
-exports.resolvers = {
+export const resolvers = {
     CSS: {
         textAlign: root => root.textAlignHorizontal.toLowerCase(),
         verticalAlign: root => root.textAlignVertical.toLowerCase(),
