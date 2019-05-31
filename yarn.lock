@@ -1146,12 +1146,12 @@
     conventional-commits-parser "^2.1.0"
     lodash "^4.17.11"
 
-"@commitlint/prompt@^7.6.1":
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/prompt/-/prompt-7.6.1.tgz#6f13f3081b3f5def621db0ef7d463be78d2b58b0"
-  integrity sha512-TWii4nCzC1uwwtubp/mlkU8JHeDWCmZqvVyeRswsMhkAH59dsPrCuD3tDePzeffK6hXzLRLBce9hO3PDqONOog==
+"@commitlint/prompt@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/prompt/-/prompt-8.0.0.tgz#6199d71c63f381c2ba29d90cdccf9a47e663addf"
+  integrity sha512-dzXZrfPA5/WvPr45l75nb4TFRHBvbkQ+bQTD0n0x1d3iJDJl1gu1dDQL8mhOLaZ9Cc7ddcBCYHs8w/9QGaMG7g==
   dependencies:
-    "@commitlint/load" "^7.6.1"
+    "@commitlint/load" "^8.0.0"
     babel-runtime "^6.23.0"
     chalk "^2.0.0"
     lodash "4.17.11"
