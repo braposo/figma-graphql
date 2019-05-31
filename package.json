@@ -61,7 +61,7 @@
         "@commitlint/cli": "^8.0.0",
         "@commitlint/config-conventional": "^7.6.0",
         "@commitlint/prompt": "^7.6.1",
-        "@commitlint/travis-cli": "^7.6.1",
+        "@commitlint/travis-cli": "^8.0.0",
         "@semantic-release/changelog": "^3.0.2",
         "@semantic-release/git": "^7.0.8",
         "@types/eslint": "^4.16.6",
