@@ -6,6 +6,7 @@
     "scripts": {
         "start": "ts-node --transpile-only ./src/main.ts",
         "dev": "ts-node-dev --respawn --transpileOnly ./src/main.ts",
+        "debug": "ts-node-dev --inspect --respawn ./src/main.ts",
         "docs:dev": "docz dev",
         "docs:build": "docz build && yarn docs:addcname",
         "docs:addcname": "echo \"figma-graphql.party\" > .docz/dist/CNAME",
@@ -98,6 +99,7 @@
         "semantic-release": "^15.13.12",
         "ts-jest": "^24.0.2",
         "ts-node-dev": "^1.0.0-pre.39",
+        "type-coverage": "^2.0.1",
         "types-installer": "^1.6.3"
     },
     "now": {
