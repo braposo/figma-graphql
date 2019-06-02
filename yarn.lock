@@ -13994,12 +13994,12 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tsutils@^3.7.0:
+tsutils@3, tsutils@^3.7.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.10.0.tgz#6f1c95c94606e098592b0dff06590cf9659227d6"
   integrity sha512-q20XSMq7jutbGB8luhKKsQldRKWvyBO2BGqni3p4yq8Ys9bEP/xQw3KepKmMRt9gJ4lvQSScrihJrcKdKoSU7Q==
@@ -14029,6 +14029,23 @@ type-check@~0.3.2:
   integrity sha1-WITKtRLPHTVeP7eE8wgEsrUg23I=
   dependencies:
     prelude-ls "~1.1.2"
+
+type-coverage-core@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.0.1.tgz#5f0be8487e0c28220bb350507b7f2c255f845626"
+  integrity sha512-0EHUwGxcrE6ELc6wkRXLksikbZKaqmaPvVD23eYXHOVxTNdS+b1HmN508hFJrys1Haz3avYxduQEfg3i+2yDVQ==
+  dependencies:
+    glob "7.1.3"
+    tslib "1"
+    tsutils "3"
+
+type-coverage@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.0.1.tgz#c2a88fcb63d883a42beaf9899298dfa8100b53e8"
+  integrity sha512-swCLVLCm4XxRiQaI950tr+nts7pR+3vJMbdQPa/JWCycQO1+AmGA9Sv8N2aaDD5f7cRT6ICB8h4dPXcUmJY3oA==
+  dependencies:
+    minimist "1.2.0"
+    type-coverage-core "^2.0.1"
 
 type-fest@^0.3.0:
   version "0.3.1"
