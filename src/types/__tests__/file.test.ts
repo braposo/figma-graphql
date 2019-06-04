@@ -33,7 +33,7 @@ describe("File", () => {
         const query = `
             query {
                 file(id: "${figmaFile}") {
-                    images {
+                    exports {
                         id
                     }
                 }
@@ -43,7 +43,7 @@ describe("File", () => {
         const response = await graphql(schema, query, null, { fileId: figmaFile });
 
         expect(response).toEqual({
-            data: { file: { images: [{ id: "0:1" }] } },
+            data: { file: { exports: [{ id: "0:1" }] } },
         });
     });
 
@@ -51,7 +51,7 @@ describe("File", () => {
         const query = `
             query {
                 file(id: "${figmaFile}") {
-                    images(params: { ids: ["1:6"]}) {
+                    exports(params: { ids: ["1:6"]}) {
                         id
                     }
                 }
@@ -61,7 +61,7 @@ describe("File", () => {
         const response = await graphql(schema, query, null, { fileId: figmaFile });
 
         expect(response).toEqual({
-            data: { file: { images: [{ id: "1:6" }] } },
+            data: { file: { exports: [{ id: "1:6" }] } },
         });
     });
 

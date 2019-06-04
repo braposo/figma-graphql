@@ -4,7 +4,7 @@ import * as page from "./page";
 import * as frame from "./frame";
 import * as node from "./node";
 import * as vector from "./vector";
-import * as image from "./image";
+import * as fileExport from "./export";
 import * as comments from "./comments";
 import * as projects from "./projects";
 import * as projectFiles from "./project-files";
@@ -21,7 +21,7 @@ const typePaths = [
     frame,
     node,
     vector,
-    image,
+    fileExport,
     comments,
     projects,
     projectFiles,
