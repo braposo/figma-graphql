@@ -10,6 +10,13 @@ export const type = gql`
         svg
     }
 
+    enum ExportFormat {
+        jpg
+        png
+        svg
+        css
+    }
+
     input ImageParams {
         # A comma separated list of node IDs to render
         ids: [ID]
@@ -21,31 +28,31 @@ export const type = gql`
         format: ImageFormat
     }
 
-    input ImageNodeParams {
+    input ExportParams {
         # A number between 0.01 and 4, the image scaling factor
         scale: Int
 
         # A string enum for the image output format, can be "jpg", "png", or "svg"
-        format: ImageFormat
+        format: ExportFormat
     }
 
-    type Image {
+    type ExportResult {
         id: String
-        file: String
+        output: String
     }
 
     extend type Query {
         # Get just the image of a node id in a file
-        images(id: ID!, params: ImageParams): [Image]
+        exports(id: ID!, params: ImageParams): [ExportResult]
     }
 `;
 
 export const resolvers = {
     Query: {
-        images: async (root, { id, params }) => {
+        exports: async (root, { id, params }) => {
             const imageParams = { ...defaultImageParams, ...params };
             const { images } = await loadImages(id, imageParams).then(data => data);
-            return Object.entries(images).map(entry => ({ id: entry[0], file: entry[1] }));
+            return Object.entries(images).map(entry => ({ id: entry[0], output: entry[1] }));
         },
     },
 };
