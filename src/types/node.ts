@@ -3,6 +3,7 @@ import { createBatchResolver } from "graphql-resolve-batch";
 import camelCase from "lodash/camelCase";
 import groupBy from "lodash/groupBy";
 import { loadImages } from "../utils/figma";
+import { generateCSS } from "../utils/helpers";
 
 export const nodeProperties = `
     # A string uniquely identifying this node within the document.
@@ -18,7 +19,7 @@ export const nodeProperties = `
     type: NodeType!
 
     # Additional properties
-    image(params: ImageNodeParams): Image
+    export(params: ExportParams): String
 `;
 
 export const nodeTypes = [
@@ -60,21 +61,31 @@ export const resolvers = {
 
             return capitalise(camelCase(nodeType));
         },
-        image: createBatchResolver<any, any>(async (sources, { params }) => {
+        export: createBatchResolver<any, any>(async (sources, { params }) => {
             const sourcesByFile = groupBy(sources, "fileId");
-            const parsedImages = await Promise.all(
-                Object.entries(sourcesByFile).map(([fileId, nodes]) =>
-                    loadImages(fileId, { ...params, ids: nodes.map(({ id }) => id) }).then(
-                        ({ images }) => images
-                    )
-                )
-            );
 
-            return parsedImages.reduce(
-                (acc: any[], parsedImage) => [
-                    ...acc,
-                    ...Object.entries(parsedImage).map(entry => ({ id: entry[0], file: entry[1] })),
-                ],
+            const fileExports =
+                params && params.format === "css"
+                    ? Object.entries(sourcesByFile).map(([fileId, nodes]) =>
+                          nodes.reduce(
+                              (acc, node) => ({
+                                  ...acc,
+                                  [node.id]: generateCSS(node),
+                              }),
+                              {}
+                          )
+                      )
+                    : await Promise.all(
+                          Object.entries(sourcesByFile).map(([fileId, nodes]) =>
+                              loadImages(fileId, {
+                                  ...params,
+                                  ids: nodes.map(({ id }) => id),
+                              }).then(({ images }) => images)
+                          )
+                      );
+
+            return fileExports.reduce(
+                (acc: any[], parsedImage) => [...acc, ...Object.values(parsedImage)],
                 []
             );
         }),
