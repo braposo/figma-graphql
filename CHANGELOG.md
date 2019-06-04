@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/braposo/figma-graphql/compare/v1.10.0...v1.11.0) (2019-06-04)
+
+
+### Features
+
+* add css export to nodes ([08200a8](https://github.com/braposo/figma-graphql/commit/08200a8)), closes [#19](https://github.com/braposo/figma-graphql/issues/19)
+
 # [1.10.0](https://github.com/braposo/figma-graphql/compare/v1.9.0...v1.10.0) (2019-05-26)
 
 ### Bug Fixes
