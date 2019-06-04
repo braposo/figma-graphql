@@ -128,6 +128,18 @@ export const type = gql`
         # gradient stop position
         position: Float
     }
+
+    enum ColorMode {
+        RGB
+        HEX
+        HSL
+    }
 `;
+
+export enum ColorMode {
+    RGB,
+    HEX,
+    HSL,
+}
 
 export const resolvers = {};
