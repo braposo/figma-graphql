@@ -29,7 +29,7 @@ describe("File", () => {
         expect(version).not.toBeNull();
     });
 
-    test("can get default file images", async () => {
+    test("can get default file exports", async () => {
         const query = `
             query {
                 file(id: "${figmaFile}") {
@@ -42,12 +42,10 @@ describe("File", () => {
 
         const response = await graphql(schema, query, null, { fileId: figmaFile });
 
-        expect(response).toEqual({
-            data: { file: { exports: [{ id: "0:1" }] } },
-        });
+        expect(response).toMatchSnapshot();
     });
 
-    test("can get specific file images", async () => {
+    test("can get specific file exports", async () => {
         const query = `
             query {
                 file(id: "${figmaFile}") {
@@ -60,9 +58,7 @@ describe("File", () => {
 
         const response = await graphql(schema, query, null, { fileId: figmaFile });
 
-        expect(response).toEqual({
-            data: { file: { exports: [{ id: "1:6" }] } },
-        });
+        expect(response).toMatchSnapshot();
     });
 
     test("can get file comments", async () => {

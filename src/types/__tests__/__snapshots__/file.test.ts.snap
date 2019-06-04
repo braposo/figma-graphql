@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`File can get default file exports 1`] = `
+Object {
+  "data": Object {
+    "file": Object {
+      "exports": Array [
+        Object {
+          "id": "0:1",
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`File can get file comments 1`] = `
 Object {
   "data": Object {
@@ -20,6 +34,20 @@ Object {
           "order_id": 1,
           "parent_id": "",
           "resolved_at": null,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`File can get specific file exports 1`] = `
+Object {
+  "data": Object {
+    "file": Object {
+      "exports": Array [
+        Object {
+          "id": "1:6",
         },
       ],
     },
