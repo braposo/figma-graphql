@@ -74,7 +74,7 @@
         "@types/react-dom": "^16.8.4",
         "@types/semantic-release": "^15.13.0",
         "@typescript-eslint/eslint-plugin": "^1.9.0",
-        "@typescript-eslint/parser": "^1.9.0",
+        "@typescript-eslint/parser": "^1.10.2",
         "all-contributors-cli": "^6.6.0",
         "codecov": "^3.5.0",
         "commitizen": "^3.1.1",
