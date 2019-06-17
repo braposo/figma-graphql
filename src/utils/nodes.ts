@@ -39,7 +39,8 @@ export const processNodes = (nodes, documentStyles: { [key: string]: any }, file
                 return {
                     id: styleId,
                     ...documentStyle,
-                    style: node[`${key}s`],
+                    styles: node[`${key}s`],
+                    typeStyles: node.style,
                     type: "STYLE",
                 };
             });
