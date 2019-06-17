@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Shortcuts can generateQueriesForShortcuts 1`] = `
-"pages(name: String): [Page!]
-frames(name: String): [Frame!]
-groups(name: String): [Group!]
-vectors(name: String): [Vector!]
-booleanOperations(name: String): [BooleanOperation!]
-stars(name: String): [Star!]
-lines(name: String): [Line!]
-ellipses(name: String): [Ellipse!]
-regularPolygons(name: String): [RegularPolygon!]
-rectangles(name: String): [Rectangle!]
-texts(name: String): [Text!]
-slices(name: String): [Slice!]
-components(name: String): [Component!]
-instances(name: String): [Instance!]
-styles(name: String): [Style!]
+"pages(type: [NodeType], name: String): [Page!]
+frames(type: [NodeType], name: String): [Frame!]
+groups(type: [NodeType], name: String): [Group!]
+vectors(type: [NodeType], name: String): [Vector!]
+booleanOperations(type: [NodeType], name: String): [BooleanOperation!]
+stars(type: [NodeType], name: String): [Star!]
+lines(type: [NodeType], name: String): [Line!]
+ellipses(type: [NodeType], name: String): [Ellipse!]
+regularPolygons(type: [NodeType], name: String): [RegularPolygon!]
+rectangles(type: [NodeType], name: String): [Rectangle!]
+texts(type: [NodeType], name: String): [Text!]
+slices(type: [NodeType], name: String): [Slice!]
+components(type: [NodeType], name: String): [Component!]
+instances(type: [NodeType], name: String): [Instance!]
+styles(type: [StyleType], name: String): [Style!]
 children(type: [NodeType], name: String): [Node!]"
 `;
 
