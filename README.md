@@ -34,174 +34,15 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
 }
 ```
 
-## Query examples
+## Documentation
 
-Here are some examples of what you can do with the Figma GraphQL API.
-
-### Get a file's contents
-
-```gql
-{
-    file(id: "cLp23bR627jcuNSoBGkhL04E") {
-        name
-        thumbnailUrl
-        lastModified
-        pages {
-            name
-            id
-            type
-            frames {
-                id
-                name
-                clipsContent
-                blendMode
-                position {
-                    x
-                    y
-                }
-                size {
-                    width
-                    height
-                }
-                elements(type: "TEXT") {
-                    name
-                    type
-                    characters
-                    position {
-                        x
-                        y
-                    }
-                    size {
-                        width
-                        height
-                    }
-                    style {
-                        fontSize
-                        fontFamily
-                        fontWeight
-                        letterSpacing
-                    }
-                    strokes {
-                        type
-                    }
-                    fill {
-                        r
-                        g
-                        b
-                        a
-                    }
-                }
-            }
-        }
-    }
-}
-```
-
-### Get just the image of a Node a file or the whole file
-
-To get the whole file don't pass any more parameters.
-
-```gql
-{
-    image(id: "cLp23bR627jcuNSoBGkhL04E") {
-        images
-    }
-}
-```
-
-To get the image of node pass the id of that node as a parameter
-
-```gql
-{
-    image(id: "cLp23bR627jcuNSoBGkhL04E", params: { ids: "16:19" }) {
-        images
-    }
-}
-```
-
-### Get comments on a file
-
-```gql
-{
-    comments(id: "cLp23bR627jcuNSoBGkhL04E") {
-        id
-        file_key
-        parent_id
-        user {
-            img_url
-            handle
-        }
-        created_at
-        resolved_at
-        message
-        client_meta {
-            node_offset {
-                x
-                y
-            }
-        }
-    }
-}
-```
-
-### Post a comment to a file
-
-```gql
-mutation {
-    addComment(
-        id: "cLp23bR627jcuNSoBGkhL04E"
-        message: "Test from server"
-    ) {
-        id
-        message
-    }
-}
-```
-
-You can also pass the coordinates where the comment should be placed as a parameter
-
-```gql
-mutation {
-    addComment(
-        id: "cLp23bR627jcuNSoBGkhL04E"
-        message: "Test from server"
-        params: { x: "12", y: "12" }
-    ) {
-        id
-        message
-    }
-}
-```
-
-### Get all projects for a team
-
-```gql
-{
-    projects(id: "484668844937890483") {
-        id
-        name
-    }
-}
-```
-
-### Get all files for a project
-
-```gql
-{
-    projectFiles(project: "420878") {
-        key
-        name
-        thumbnail_url
-        last_modified
-    }
-}
-```
+Please read the [full documentation][website] for additional examples and best practices.
 
 ## Developing
 
 1.  Clone this repo
 2.  Run `yarn install` to install all dependencies
-3.  Run `FIGMA_TOKEN={YOUR_PERSONAL_FIGMA_TOKEN} yarn run dev`
+3.  Run `FIGMA_TOKEN={YOUR_PERSONAL_FIGMA_TOKEN} yarn run dev` or add it to an `.env` file
 4.  The Figma GraphQL playground should be available at `http://localhost:3001/`
 
 ## Figma file
@@ -241,3 +82,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [semantic]: https://github.com/semantic-release/semantic-release
 [greenkeeper-badge]: https://badges.greenkeeper.io/braposo/figma-graphql.svg?style=flat-square
 [greenkeeper]: https://greenkeeper.io/
+[website]: https://figma-graphql.party
