@@ -1,11 +1,13 @@
 {
   "vendors.js": "/static/js/vendors.5246b0b3.js",
-  "vendors.js.map": "/static/js/vendors.097c8d5c572b67f21649.js.map",
-  "app.js": "/static/js/app.097c8d5c572b67f21649.js",
-  "app.js.map": "/static/js/app.097c8d5c572b67f21649.js.map",
-  "home.js": "/static/js/home.3c64a4b8.js",
-  "home.js.map": "/static/js/home.097c8d5c572b67f21649.js.map",
-  "quick-start.js": "/static/js/quick-start.0abdf86c.js",
-  "quick-start.js.map": "/static/js/quick-start.097c8d5c572b67f21649.js.map",
+  "vendors.js.map": "/static/js/vendors.ef180f62e3249766dfd3.js.map",
+  "app.js": "/static/js/app.ef180f62e3249766dfd3.js",
+  "app.js.map": "/static/js/app.ef180f62e3249766dfd3.js.map",
+  "examples.js": "/static/js/examples.94c663b2.js",
+  "examples.js.map": "/static/js/examples.ef180f62e3249766dfd3.js.map",
+  "home.js": "/static/js/home.34c956fb.js",
+  "home.js.map": "/static/js/home.ef180f62e3249766dfd3.js.map",
+  "road-to-v2.js": "/static/js/road-to-v2.59230eef.js",
+  "road-to-v2.js.map": "/static/js/road-to-v2.ef180f62e3249766dfd3.js.map",
   "index.html": "/index.html"
 }
