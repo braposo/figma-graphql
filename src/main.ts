@@ -22,7 +22,11 @@ app.get("/figma/:id", (req, res) => {
     });
 });
 
+app.get("*", (req, res) => {
+    res.redirect(server.graphqlPath);
+});
+
 app.listen(PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`);
+    console.log(`🚀 Server ready at http://localhost:${PORT}`);
 });

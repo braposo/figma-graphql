@@ -6,19 +6,14 @@ export const groupNodes = (nodes: Node[]) => groupBy(uniqBy(nodes, "id"), "type"
 
 export const getNodes = (data, nodeType, filterBy) => {
     const { name: filterByName, type: filterByType } = filterBy;
-    let dataNodes;
-
-    if (nodeType !== "ALL") {
-        dataNodes = data.shortcuts[nodeType];
-    } else {
-        dataNodes =
-            filterByType == null
-                ? data.children
-                : data.children.filter(node => filterByType.includes(node.type));
-    }
+    const dataNodes = nodeType === "ALL" ? data.children : data.shortcuts[nodeType];
 
     if (dataNodes == null) {
         return [];
+    }
+
+    if (filterByType != null) {
+        return dataNodes.filter(node => filterByType.includes(node.styleType));
     }
 
     if (filterByName != null) {
@@ -44,7 +39,8 @@ export const processNodes = (nodes, documentStyles: { [key: string]: any }, file
                 return {
                     id: styleId,
                     ...documentStyle,
-                    style: node[`${key}s`],
+                    styles: node[`${key}s`],
+                    typeStyles: node.style,
                     type: "STYLE",
                 };
             });

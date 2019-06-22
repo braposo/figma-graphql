@@ -64,6 +64,8 @@ export const type = gql`
         key: String
         name: String
         type: StyleType
+        styles: [Paint]
+        typeStyles: TypeStyle
     }
 
     enum ScaleMode {
@@ -142,4 +144,8 @@ export enum ColorMode {
     HSL,
 }
 
-export const resolvers = {};
+export const resolvers = {
+    Style: {
+        type: node => node.styleType,
+    },
+};

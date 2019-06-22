@@ -27,9 +27,11 @@ const mapTypeToQuery = nodeTypes.reduce(
         const formattedType = camelCase(convertedType);
         const key = `${formattedType}s`;
         const returnType = formattedType.charAt(0).toUpperCase() + formattedType.slice(1);
+        const nodeType = type === "STYLE" ? "StyleType" : "NodeType";
+
         return {
             ...acc,
-            [key]: `${key}(name: String): [${returnType}!]`,
+            [key]: `${key}(type: [${nodeType}], name: String): [${returnType}!]`,
         };
     },
     {
