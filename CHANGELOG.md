@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/braposo/figma-graphql/compare/v1.11.0...v1.12.0) (2019-06-19)
+
+
+### Features
+
+* add type param support to shortcut query ([2e7ef92](https://github.com/braposo/figma-graphql/commit/2e7ef92))
+
 # [1.11.0](https://github.com/braposo/figma-graphql/compare/v1.10.0...v1.11.0) (2019-06-04)
 
 
