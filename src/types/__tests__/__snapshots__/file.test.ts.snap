@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File can get default file exports 1`] = `
+Object {
+  "data": Object {
+    "file": Object {
+      "exports": Array [
+        Object {
+          "id": "0:1",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`File can get file comments 1`] = `
+Object {
+  "data": Object {
+    "file": Object {
+      "comments": Array [
+        Object {
+          "client_meta": Object {
+            "node_id": "28:5",
+            "node_offset": Object {
+              "x": 111,
+              "y": 22,
+            },
+          },
+          "created_at": "2019-05-26T17:47:36Z",
+          "file_key": "cLp23bR627jcuNSoBGkhL04E",
+          "id": "6907475",
+          "message": "Testing comment",
+          "order_id": 1,
+          "parent_id": "",
+          "resolved_at": null,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`File can get specific file exports 1`] = `
+Object {
+  "data": Object {
+    "file": Object {
+      "exports": Array [
+        Object {
+          "id": "1:6",
+        },
+      ],
+    },
+  },
+}
+`;

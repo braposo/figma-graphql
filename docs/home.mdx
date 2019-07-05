@@ -7,9 +7,47 @@ route: /
 
 # figma-graphql
 
-The reimagined Figma API (super)powered by GraphQL
+The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
 [![Build Status][build-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br /> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
+
+## Quick start
+
+### 1. Open figma-graphql [sandbox][codesandbox] and fork it
+
+[![Open figma-graphql][codesandbox-badge]][codesandbox]
+
+### 2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
+
+### 3. Try your first query!
+
+```gql
+{
+    file(id: "cLp23bR627jcuNSoBGkhL04E") {
+        name
+    }
+}
+``` 
+
+## Why use figma-graphql?
+
+It's great that Figma provides an API allowing anyone to easily get the data from their design files. But that API has two characteristics that make it quite hard for people without a good technical knowledge to access it:
+
+1. The file data has a rigid tree-shaped structure that forces people to know the exact structure of the design file and can easily break existing code by just making a small change in the design file (like grouping elements).
+
+2. It requires multiple requests to different endpoints to get data that is related. Want to export specific frames in a file? You need to query the file data first, parse the data to get the frame ids and then make additional requests to a different endpoint to get that data. 
+
+This obviously makes things a lot more complex than they need to be so we use the power of GraphQL solve these issues and add a few other features.
+
+With figma-graphql, we focus on the person using the library, not the machines. We see this as the best way to open your design files to more people, especially to those with minimal technical backround.
+
+## Examples
+
+A good way to understand the different queries that you can build is to use the "Schema" tab on the righ-hand side of the playground and go through the different properties of all the supported types, but we've also selected a few [example scenarios](/practical-examples) that can be used as a reference for common uses of the library.
+
+## Migrating to v2 
+
+For v2 we've completely rebuilt the API in a more human-first approach which makes it incompatible with most of the v1 queries. To read more about the motivations and biggest changes please read the [Road to v2](/road-to-v2) section.
 
 ---
 

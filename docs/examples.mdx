@@ -1,0 +1,110 @@
+---
+name: Practical Examples
+route: /practical-examples
+---
+
+# Practical examples
+
+Let's look at some practical examples in the perspective of designers, developers and product managers.
+
+## Designers
+
+> Get all text styles in a specific frame
+
+This example tries to follow the structure of the file to get the information we need.
+
+```gql
+{
+    file(id: "fileID") {
+        pages(name: "styles") {
+            frames(name: "typography") {
+                groups {
+                    name
+                    texts {
+                        name
+                        styles {
+                            fontSize
+                            fontFamily
+                            fontWeight
+                            ...
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+> Get the background colours of all the global styles to update their Design System documentation
+
+We can now use the power of the shortcuts to get that information easily.
+
+```gql
+{
+    file(id: "fileID") {
+        styles(type: FILL) {
+            name
+            styles {
+                color {
+                    r
+                    g
+                    b
+                }
+            }
+        }
+    }
+}
+```
+
+## Developers
+
+> Export all icons in a design document to generate up-to-date React components
+
+We want to export the components in SVG format.
+
+```gql
+{
+    file(id: “fileID”) {
+        pages(name: "Icons") {
+            components {
+                name
+                size {
+                    width
+                    height
+                }
+                export(format: svg)
+            }
+        }
+    }
+}
+```
+
+## Product Managers
+
+> Get the screenshots of the prototype screens for a few different features to present at a product meeting
+
+We need to go through all the files inside the team projects so we'll be using aliases. 
+
+```gql
+{
+    projects(teamId: "teamID") {
+        featureA: files(name: "Feature A") {
+            pages(name: "Prototype") {
+                frames {
+                    name
+                    export(format: jpg)
+                }
+            }
+        },
+        featureB: files(name: "Feature B") {
+            pages(name: "Prototype") {
+                frames {
+                    name
+                    export(format: jpg)
+                }
+            }
+        }
+    }
+}
+```
