@@ -17,6 +17,8 @@
         "lint:check": "eslint --print-config . | eslint-config-prettier-check",
         "commit": "yarn git-cz",
         "semantic-release": "semantic-release",
+        "snyk-protect": "snyk protect",
+        "prepublish": "npm run snyk-protect",
         "ts:check": "tsc -p tsconfig.json --allowJs false --noEmit"
     },
     "keywords": [
@@ -56,6 +58,7 @@
         "isomorphic-fetch": "^2.2.1",
         "lodash": "^4.17.11",
         "nodemon": "^1.19.0",
+        "snyk": "^1.162.0",
         "ts-node": "^8.2.0"
     },
     "devDependencies": {
@@ -125,5 +128,6 @@
         "commitizen": {
             "path": "cz-conventional-changelog"
         }
-    }
+    },
+    "snyk": true
 }
