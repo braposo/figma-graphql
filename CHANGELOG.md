@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/braposo/figma-graphql/compare/v1.12.1...v1.12.2) (2019-07-05)
+
+
+### Bug Fixes
+
+* .snyk & package.json to reduce vulnerabilities  ([f66e1a0](https://github.com/braposo/figma-graphql/commit/f66e1a0))
+
 ## [1.12.1](https://github.com/braposo/figma-graphql/compare/v1.12.0...v1.12.1) (2019-07-05)
 
 
