@@ -58,7 +58,7 @@
         "isomorphic-fetch": "^2.2.1",
         "lodash": "^4.17.11",
         "nodemon": "^1.19.0",
-        "snyk": "^1.190.0",
+        "snyk": "^2.0.0",
         "ts-node": "^8.2.0"
     },
     "devDependencies": {
