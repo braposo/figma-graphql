@@ -73,7 +73,7 @@ We want to export the components in SVG format.
                     width
                     height
                 }
-                export(format: svg)
+                export(params: { format: svg })
             }
         }
     }
@@ -93,7 +93,7 @@ We need to go through all the files inside the team projects so we'll be using a
             pages(name: "Prototype") {
                 frames {
                     name
-                    export(format: jpg)
+                    export(params: { format: jpg })
                 }
             }
         },
@@ -101,7 +101,7 @@ We need to go through all the files inside the team projects so we'll be using a
             pages(name: "Prototype") {
                 frames {
                     name
-                    export(format: jpg)
+                    export(params: { format: jpg })
                 }
             }
         }
