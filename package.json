@@ -68,7 +68,7 @@
         "@commitlint/travis-cli": "^8.0.0",
         "@semantic-release/changelog": "^3.0.2",
         "@semantic-release/git": "^7.0.8",
-        "@types/eslint": "^4.16.6",
+        "@types/eslint": "^6.1.1",
         "@types/eslint-plugin-prettier": "^2.2.0",
         "@types/gh-pages": "^2.0.0",
         "@types/jest": "^24.0.13",
