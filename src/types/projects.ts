@@ -26,7 +26,10 @@ export const resolvers = {
     Project: {
         files: createBatchResolver<{ id: string }, any>(async projects => {
             const projectFiles = await Promise.all(
-                projects.map(async ({ id }) => loadProjectFiles(id).then(({ files }) => files))
+                projects.map(async ({ id }) => {
+                    const { files } = await loadProjectFiles(id);
+                    return files;
+                })
             );
 
             const parsedFiles = await Promise.all(

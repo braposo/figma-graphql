@@ -15,8 +15,8 @@ describe("Schema", () => {
         await expect(graphql(schema, query)).resolves.toEqual({ data: { version: "1.4" } });
     });
 
-    test("has valid type definitions", async () => {
-        await expect(async () => {
+    test("has valid type definitions", () => {
+        expect(async () => {
             const server = mockServer(schema, {});
 
             await server.query("{ __schema { types { name } } }");
