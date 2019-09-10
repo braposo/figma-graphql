@@ -38,7 +38,7 @@ export const nodeTypes = [
     "COMPONENT",
     "INSTANCE",
     "STYLE",
-];
+] as const;
 
 export const type = gql`
     enum NodeType {

@@ -14,7 +14,8 @@ export const getSize = node => ({
 export const addUnit = (string?: string | number, unit: string = "px") =>
     string != null ? `${string}${unit}` : string;
 
-export const getColor = ({ r, g, b, a }: Color, mode: ColorMode) => `rgba(${r}, ${g}, ${b}, ${a})`;
+export const getColor = ({ r, g, b, a }: Color, mode: ColorMode) =>
+    mode === ColorMode.RGB ? `rgba(${r}, ${g}, ${b}, ${a})` : "none";
 
 export const JSToCSS = cssObject => {
     return Object.entries(cssObject)
