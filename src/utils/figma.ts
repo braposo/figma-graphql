@@ -64,6 +64,7 @@ const mapTypeToFunctionWithParams = {
 };
 
 const mapTypeToFunction = {
+    [RequestType.File]: file,
     [RequestType.Comments]: comments,
     [RequestType.Projects]: teamProjects,
     [RequestType.ProjectFiles]: projectFiles,
@@ -114,7 +115,7 @@ async function getFigma<T extends FigmaResponse>({
     console.log("fetching", key);
 
     const fn: FigmaFunction =
-        params !== undefined
+        params === undefined
             ? mapTypeToFunction[requestType]
             : mapTypeToFunctionWithParams[requestType];
 
@@ -122,7 +123,10 @@ async function getFigma<T extends FigmaResponse>({
         const { data } = await fn(id, { ...params });
 
         // We just need to parse the response if it's for a file, otherwise we return the raw data
-        const processedData = "document" in data ? buildCustomFileReponse(data, id) : data;
+        const processedData =
+            "document" in data && requestType === RequestType.File
+                ? buildCustomFileReponse(data, id)
+                : data;
 
         // Only store data that doesn't change depending on the params
         // We store it even if noCache is true so we can update the cache
@@ -132,7 +136,7 @@ async function getFigma<T extends FigmaResponse>({
 
         return processedData as T;
     } catch (e) {
-        throw new Error("Problem fetching data");
+        throw new Error(e);
     }
 }
 
