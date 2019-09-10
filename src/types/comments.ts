@@ -58,7 +58,7 @@ export const type = gql`
 
     extend type Query {
         # Get Comments on a File
-        comments(id: ID!): [Comment]
+        comments(id: ID!, noCache: Boolean): [Comment]
     }
 
     extend type Mutation {
@@ -69,10 +69,11 @@ export const type = gql`
 
 export const resolvers = {
     Query: {
-        comments: (root, { id }) => loadComments(id).then(({ comments }) => comments),
+        comments: (_: never, { id, noCache }) =>
+            loadComments(id, noCache).then(({ comments }) => comments),
     },
     Mutation: {
-        addComment: (root, { id, message, params }) =>
+        addComment: (_: never, { id, message, params }) =>
             // eslint-disable-next-line @typescript-eslint/camelcase
             createComment(id, { client_meta: { ...params }, message }).then(data => data),
     },
