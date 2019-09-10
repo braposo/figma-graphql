@@ -1,3 +1,16 @@
+# [1.13.0](https://github.com/braposo/figma-graphql/compare/v1.12.2...v1.13.0) (2019-09-10)
+
+
+### Bug Fixes
+
+* fix issues with failing tests ([d9bd2f8](https://github.com/braposo/figma-graphql/commit/d9bd2f8))
+
+
+### Features
+
+* add caching support to figma requests ([4f66e57](https://github.com/braposo/figma-graphql/commit/4f66e57))
+* add noCache option to cacheable queries ([247b303](https://github.com/braposo/figma-graphql/commit/247b303))
+
 ## [1.12.2](https://github.com/braposo/figma-graphql/compare/v1.12.1...v1.12.2) (2019-07-05)
 
 
