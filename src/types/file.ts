@@ -29,13 +29,14 @@ export const type = gql`
 
     extend type Query {
         # get a file information
-        file(id: ID!): File
+        file(id: ID!, noCache: Boolean): File
     }
 `;
 
 export const resolvers = {
     Query: {
-        file: (_, { id }) => loadFile(id).then(data => data),
+        file: (_: never, { id, noCache }: { id: string; noCache: boolean }) =>
+            loadFile(id, noCache).then(data => data),
     },
     File: {
         exports: async ({ fileId }, { params }) => {

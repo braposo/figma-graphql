@@ -15,13 +15,14 @@ export const type = gql`
 
     extend type Query {
         # Get a teams projects
-        projects(teamId: ID!): [Project]
+        projects(teamId: ID!, noCache: Boolean): [Project]
     }
 `;
 
 export const resolvers = {
     Query: {
-        projects: (root, { teamId }) => loadTeamProjects(teamId).then(({ projects }) => projects),
+        projects: (_: never, { teamId, noCache }) =>
+            loadTeamProjects(teamId, noCache).then(({ projects }) => projects),
     },
     Project: {
         files: createBatchResolver<{ id: string }, any>(async projects => {
