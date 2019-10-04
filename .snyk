@@ -9,4 +9,8 @@ patch:
   SNYK-JS-AXIOS-174505:
     - figma-js > axios:
         patched: '2019-05-08T11:40:10.123Z'
-  
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T08:36:18.963Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T08:36:18.963Z'
