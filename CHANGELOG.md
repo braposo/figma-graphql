@@ -1,30 +1,37 @@
-## [1.12.2](https://github.com/braposo/figma-graphql/compare/v1.12.1...v1.12.2) (2019-07-05)
-
+# [1.13.0](https://github.com/braposo/figma-graphql/compare/v1.12.2...v1.13.0) (2019-09-10)
 
 ### Bug Fixes
 
-* .snyk & package.json to reduce vulnerabilities  ([f66e1a0](https://github.com/braposo/figma-graphql/commit/f66e1a0))
+-   fix issues with failing tests ([d9bd2f8](https://github.com/braposo/figma-graphql/commit/d9bd2f8))
+
+### Features
+
+-   add caching support to figma requests ([4f66e57](https://github.com/braposo/figma-graphql/commit/4f66e57))
+-   add noCache option to cacheable queries ([247b303](https://github.com/braposo/figma-graphql/commit/247b303))
+
+## [1.12.2](https://github.com/braposo/figma-graphql/compare/v1.12.1...v1.12.2) (2019-07-05)
+
+### Bug Fixes
+
+-   .snyk & package.json to reduce vulnerabilities ([f66e1a0](https://github.com/braposo/figma-graphql/commit/f66e1a0))
 
 ## [1.12.1](https://github.com/braposo/figma-graphql/compare/v1.12.0...v1.12.1) (2019-07-05)
 
-
 ### Bug Fixes
 
-* .snyk & package.json to reduce vulnerabilities  ([326859b](https://github.com/braposo/figma-graphql/commit/326859b))
+-   .snyk & package.json to reduce vulnerabilities ([326859b](https://github.com/braposo/figma-graphql/commit/326859b))
 
 # [1.12.0](https://github.com/braposo/figma-graphql/compare/v1.11.0...v1.12.0) (2019-06-19)
 
-
 ### Features
 
-* add type param support to shortcut query ([2e7ef92](https://github.com/braposo/figma-graphql/commit/2e7ef92))
+-   add type param support to shortcut query ([2e7ef92](https://github.com/braposo/figma-graphql/commit/2e7ef92))
 
 # [1.11.0](https://github.com/braposo/figma-graphql/compare/v1.10.0...v1.11.0) (2019-06-04)
 
-
 ### Features
 
-* add css export to nodes ([08200a8](https://github.com/braposo/figma-graphql/commit/08200a8)), closes [#19](https://github.com/braposo/figma-graphql/issues/19)
+-   add css export to nodes ([08200a8](https://github.com/braposo/figma-graphql/commit/08200a8)), closes [#19](https://github.com/braposo/figma-graphql/issues/19)
 
 # [1.10.0](https://github.com/braposo/figma-graphql/compare/v1.9.0...v1.10.0) (2019-05-26)
 
