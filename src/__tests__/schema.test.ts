@@ -2,7 +2,7 @@
 
 import { mockServer } from "graphql-tools";
 import { graphql } from "graphql";
-import schema from "../schema";
+import { schema } from "../schema";
 
 describe("Schema", () => {
     test("query has version", async () => {

@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from "graphql-tools";
 import { GraphQLDateTime } from "graphql-iso-date";
-import mergeSchema from "./types";
+import { mergeSchema } from "./types";
 
 const typeDefs = [
     `
@@ -27,4 +27,4 @@ const resolvers = {
     },
 };
 
-export default makeExecutableSchema(mergeSchema({ typeDefs, resolvers }));
+export const schema = makeExecutableSchema(mergeSchema({ typeDefs, resolvers }));

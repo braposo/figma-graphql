@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { loadFile } from "./utils/figma";
-import schema from "./schema";
+import { schema } from "./schema";
 
 const PORT = 3001;
 

@@ -41,7 +41,7 @@ const typePaths = [
  * The only requirement is that our type files expose named exports:
  * type, resolvers
  */
-export default ({ typeDefs: t, resolvers: r }) =>
+export const mergeSchema = ({ typeDefs: t, resolvers: r }) =>
     typePaths.reduce(
         ({ typeDefs, resolvers }, { type, resolvers: typeResolvers }) => ({
             typeDefs: [...typeDefs, type],

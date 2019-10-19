@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import { graphql } from "graphql";
-import schema from "../../schema";
+import { schema } from "../../schema";
 
 const figmaFile = "cLp23bR627jcuNSoBGkhL04E";
 
