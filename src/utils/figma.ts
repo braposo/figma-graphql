@@ -7,11 +7,9 @@ import {
     TeamProjectsResponse,
     ProjectFilesResponse,
     FileParams,
-    Node,
-    FileResponse,
 } from "figma-js";
 import { config } from "dotenv";
-import { processNodes, groupNodes } from "./nodes";
+import { processFile, ProcessedFile } from "figma-transformer";
 
 config();
 
@@ -32,18 +30,8 @@ type FigmaOptions = {
     noCache?: boolean;
 };
 
-type CustomFileResponse = {
-    fileId: string;
-    name: string;
-    lastModified: string;
-    thumbnailUrl: string;
-    version: string;
-    children: any;
-    shortcuts: Record<string, Node[]>;
-};
-
 type FigmaResponse =
-    | CustomFileResponse
+    | ProcessedFile
     | FileImageResponse
     | Comment
     | CommentsResponse
@@ -82,22 +70,6 @@ type FigmaFunction =
 // Initialise cache
 const cache = new Map();
 
-function buildCustomFileReponse(data: FileResponse, id: string): CustomFileResponse {
-    const { name, lastModified, thumbnailUrl, version, document, styles } = data;
-
-    const [processedNodes, processedShortcuts] = processNodes(document, styles, id);
-
-    return {
-        fileId: id,
-        name,
-        lastModified,
-        thumbnailUrl,
-        version,
-        children: processedNodes[0].children,
-        shortcuts: groupNodes(processedShortcuts),
-    };
-}
-
 async function getFigma<T extends FigmaResponse>({
     requestType,
     id,
@@ -124,9 +96,7 @@ async function getFigma<T extends FigmaResponse>({
 
         // We just need to parse the response if it's for a file, otherwise we return the raw data
         const processedData =
-            "document" in data && requestType === RequestType.File
-                ? buildCustomFileReponse(data, id)
-                : data;
+            "document" in data && requestType === RequestType.File ? processFile(data, id) : data;
 
         // Only store data that doesn't change depending on the params
         // We store it even if noCache is true so we can update the cache
@@ -140,7 +110,7 @@ async function getFigma<T extends FigmaResponse>({
     }
 }
 
-export const loadFile = (id: string, noCache: boolean = false): Promise<CustomFileResponse> =>
+export const loadFile = (id: string, noCache: boolean = false): Promise<ProcessedFile> =>
     getFigma({ requestType: RequestType.File, id, noCache });
 
 export const loadComments = (id: string, noCache: boolean = false): Promise<CommentsResponse> =>
