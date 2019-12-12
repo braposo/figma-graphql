@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -9,4 +9,6 @@ patch:
   SNYK-JS-AXIOS-174505:
     - figma-js > axios:
         patched: '2019-05-08T11:40:10.123Z'
-  
+  SNYK-JS-TREEKILL-536781:
+    - snyk > snyk-sbt-plugin > tree-kill:
+        patched: '2019-12-12T08:37:03.963Z'
