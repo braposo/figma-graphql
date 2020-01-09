@@ -99,7 +99,7 @@
         "prettier": "^1.18.2",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
-        "semantic-release": "^15.13.27",
+        "semantic-release": "^16.0.0",
         "ts-jest": "^24.1.0",
         "ts-node-dev": "^1.0.0-pre.42",
         "type-coverage": "^2.3.0",
