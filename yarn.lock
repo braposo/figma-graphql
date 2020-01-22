@@ -4194,16 +4194,6 @@ clone-deep@^0.2.4:
     lazy-cache "^1.0.3"
     shallow-clone "^0.1.2"
 
-clone-deep@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/clone-deep/-/clone-deep-0.3.0.tgz#348c61ae9cdbe0edfe053d91ff4cc521d790ede8"
-  integrity sha1-NIxhrpzb4O3+BT2R/0zFIdeQ7eg=
-  dependencies:
-    for-own "^1.0.0"
-    is-plain-object "^2.0.1"
-    kind-of "^3.2.2"
-    shallow-clone "^0.1.2"
-
 clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
@@ -5545,15 +5535,15 @@ dotenv@^5.0.1:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
   integrity sha512-4As8uPrjfwb7VXC+WnLCbXK7y+Ueb2B3zgNCePYfhxS1PYeaO1YTeplffTEcbfLhvFNGLAz90VvJs9yomG7bow==
 
-dotnet-deps-parser@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/dotnet-deps-parser/-/dotnet-deps-parser-4.5.2.tgz#f3223fa2b9d0d247c3e855d6b5a292904c2c8109"
-  integrity sha512-bk5Q1luEwQ10rrBwZbtTxUNadaLz2dM6xzOLoTK+oUBcaq6saCeELmkIgdG+Fwkn58XRgLQvOySVS0gp4OG6RA==
+dotnet-deps-parser@4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/dotnet-deps-parser/-/dotnet-deps-parser-4.9.0.tgz#d14f9f92ae9a64062cd215c8863d1e77e80236f0"
+  integrity sha512-V0O+7pI7Ei+iL5Kgy6nYq1UTwzrpqci5K/zf8cXyP5RWBSQBUl/JOE9I67zLUkKiwOdfPhbMQgcRj/yGA+NL1A==
   dependencies:
     "@types/xml2js" "0.4.3"
     lodash "^4.17.11"
     source-map-support "^0.5.7"
-    tslib "^1.9.3"
+    tslib "^1.10.0"
     xml2js "0.4.19"
 
 duplexer2@~0.1.0:
@@ -6640,13 +6630,6 @@ for-own@^0.1.3:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/for-own/-/for-own-0.1.5.tgz#5265c681a4f294dabbf17c9509b6763aa84510ce"
   integrity sha1-UmXGgaTylNq78XyVCbZ2OqhFEM4=
-  dependencies:
-    for-in "^1.0.1"
-
-for-own@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/for-own/-/for-own-1.0.0.tgz#c63332f415cedc4b04dbfe70cf836494c53cb44b"
-  integrity sha1-xjMy9BXO3EsE2/5wz4NklMU8tEs=
   dependencies:
     for-in "^1.0.1"
 
@@ -9069,7 +9052,7 @@ kind-of@^2.0.1:
   dependencies:
     is-buffer "^1.0.2"
 
-kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0, kind-of@^3.2.2:
+kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
@@ -10359,7 +10342,7 @@ nconf@^0.10.0:
     secure-keys "^1.0.0"
     yargs "^3.19.0"
 
-needle@^2.2.1, needle@^2.2.4:
+needle@^2.2.1, needle@^2.2.4, needle@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/needle/-/needle-2.4.0.tgz#6833e74975c444642590e15a750288c5f939b57c"
   integrity sha512-4Hnwzr3mi5L97hMYeNl8wRW/Onhy4nUKR/lVemJ8gJedxxUyBLm9kkrDColJvoSfwi0jCNhD+xCdOtiGDQiRZg==
@@ -11216,7 +11199,7 @@ p-locate@^4.0.0, p-locate@^4.1.0:
   dependencies:
     p-limit "^2.2.0"
 
-p-map@^2.0.0:
+p-map@2.1.0, p-map@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
   integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
@@ -13472,15 +13455,14 @@ snyk-go-plugin@1.11.1:
     tmp "0.0.33"
     tslib "^1.10.0"
 
-snyk-gradle-plugin@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.2.2.tgz#703484bec39390d8bd9ca89a408deb77fd63122a"
-  integrity sha512-ijIWsypbtpdTuRcYTFsnEWbaBnhCc7q0iIg0A4OcOW/xLyInPwyfBMnip4ubNfHAS/PrvzgfwwwJhttcQD0ZaQ==
+snyk-gradle-plugin@3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.2.4.tgz#c1ff1dfbbe3c1a254d0da54a91c3f59c1b5582ca"
+  integrity sha512-XmS1gl7uZNHP9HP5RaPuRXW3VjkbdWe+EgSOlvmspztkubIOIainqc87k7rIJ6u3tLBhqsZK8b5ru0/E9Q69hQ==
   dependencies:
-    "@snyk/cli-interface" "2.2.0"
+    "@snyk/cli-interface" "2.3.0"
     "@types/debug" "^4.1.4"
     chalk "^2.4.2"
-    clone-deep "^0.3.0"
     debug "^4.1.1"
     tmp "0.0.33"
     tslib "^1.9.3"
@@ -13493,33 +13475,38 @@ snyk-module@1.9.1, snyk-module@^1.6.0, snyk-module@^1.9.1:
     debug "^3.1.0"
     hosted-git-info "^2.7.1"
 
-snyk-mvn-plugin@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.4.0.tgz#b653050a4095feccffc1b9387dc3a3f2f1aa69da"
-  integrity sha512-Fmt6Mjx6zZz+4q6PnBkhuNGhEX++q/pKMI26ls4p3JPkx4KxBz89oncpkmf7P8YCkoaka8oHhtDEv/R4Z9LleQ==
+snyk-mvn-plugin@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.7.0.tgz#39996df2a878b16a7e3cbe5b63a7c43855031d49"
+  integrity sha512-DLBt+6ZvtoleXE7Si3wAa6gdPSWsXdIQEY6m2zW2InN9WiaRwIEKMCY822eFmRPZVNNmZNRUIeQsoHZwv/slqQ==
   dependencies:
+    "@snyk/cli-interface" "2.2.0"
+    debug "^4.1.1"
     lodash "^4.17.15"
+    needle "^2.4.0"
+    tmp "^0.1.0"
     tslib "1.9.3"
 
-snyk-nodejs-lockfile-parser@1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.16.1.tgz#4a4b38b92dbb7e8935dcce61976a69a00b6747b6"
-  integrity sha512-MEQImB2XU35D66wYve6g1RcDuD9vyoxGvYtM+ngSd5ItujzjIpyF26W7niqHwBRGLamqjsKF5cOlbmHs+wsx/Q==
+snyk-nodejs-lockfile-parser@1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.17.0.tgz#709e1d8c83faccae3bfdac5c10620dcedbf8c4ac"
+  integrity sha512-i4GAYFj9TJLOQ8F+FbIJuJWdGymi8w/XcrEX0FzXk7DpYUCY3mWibyKhw8RasfYBx5vLwUzEvRMaQuc2EwlyfA==
   dependencies:
     "@yarnpkg/lockfile" "^1.0.2"
     graphlib "^2.1.5"
     lodash "^4.17.14"
+    p-map "2.1.0"
     source-map-support "^0.5.7"
     tslib "^1.9.3"
     uuid "^3.3.2"
 
-snyk-nuget-plugin@1.13.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.13.1.tgz#e94f6b129b62f7c0134851be233deab5a472518b"
-  integrity sha512-2AQVeahBK7Rt38p0Acl1fMsFQu3dsqoRODPoRaS0IM/bOBzVdAkDF9pCb5yKMREGpMZcyRFkt8Q+hGiUk0Nlfg==
+snyk-nuget-plugin@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.16.0.tgz#241c6c8a417429c124c3ebf6db314a14eb8eed89"
+  integrity sha512-OEusK3JKKpR4Yto5KwuqjQGgb9wAhmDqBWSQomWdtKQVFrzn5B6BMzOFikUzmeMTnUGGON7gurQBLXeZZLhRqg==
   dependencies:
     debug "^3.1.0"
-    dotnet-deps-parser "4.5.2"
+    dotnet-deps-parser "4.9.0"
     jszip "^3.1.5"
     lodash "^4.17.14"
     snyk-paket-parser "1.5.0"
@@ -13557,10 +13544,10 @@ snyk-policy@1.13.5:
     snyk-try-require "^1.3.1"
     then-fs "^2.0.0"
 
-snyk-python-plugin@^1.13.3:
-  version "1.13.3"
-  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.13.3.tgz#34587001de2cca8fb400f3f21110c29b39a80e83"
-  integrity sha512-Ud7mHmpMG4uCChvYLx5jA8HwOV/FNpT65xTxSt+6wsOjIUTuLiqM86mbvgzgk3pir8vMP9yQEsCi1i0zYLBArw==
+snyk-python-plugin@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.16.0.tgz#0eae3c085a87b7d91f8097f598571104c01e0f08"
+  integrity sha512-IA53xOcy1s881tbIrIXNqIuCNozd4PAVWN8oF0xgRn2NQbq0e7EWt7kFPJbmZodpLCDpXaKKqV2MHbXruFIsrw==
   dependencies:
     "@snyk/cli-interface" "^2.0.3"
     tmp "0.0.33"
@@ -13596,14 +13583,15 @@ snyk-resolve@1.0.1, snyk-resolve@^1.0.0, snyk-resolve@^1.0.1:
     debug "^3.1.0"
     then-fs "^2.0.0"
 
-snyk-sbt-plugin@2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.9.0.tgz#cdbc3047b8749f71c51522c6cc908f0a5525e129"
-  integrity sha512-R8jfRDkqlSsiSHYNAItKBUKUwb0n5z304Ko8ply/eoNAJMkXbFASDKHRto1v4F4wryJb4Rl1j/vFvIwytqZrww==
+snyk-sbt-plugin@2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.11.0.tgz#f5469dcf5589e34575fc901e2064475582cc3e48"
+  integrity sha512-wUqHLAa3MzV6sVO+05MnV+lwc+T6o87FZZaY+43tQPytBI2Wq23O3j4POREM4fa2iFfiQJoEYD6c7xmhiEUsSA==
   dependencies:
+    debug "^4.1.1"
     semver "^6.1.2"
     tmp "^0.1.0"
-    tree-kill "^1.2.1"
+    tree-kill "^1.2.2"
     tslib "^1.10.0"
 
 snyk-tree@^1.0.0:
@@ -13623,10 +13611,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.248.0:
-  version "1.248.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.248.0.tgz#d70160e9ff0066cdfa448f9f45d4d91a0bff55fd"
-  integrity sha512-5rc339ktPNpqFjZHIpiduJT3VGx8G3uXIZG515Z4P/CNtQtl35FB3h2b+CKGz1vtQgOEzNky0fMmu5Wq/xt9Lg==
+snyk@^1.278.2:
+  version "1.279.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.279.0.tgz#53ed4bc4b79b1d37b4753b46b9be5fcc3331e2a6"
+  integrity sha512-LUy3S5msS0+1XXyBqLVHUWhunnWVpD9ClujLA90wYH/WOdjSfqd9YwLI8qH9a1c7hWhizqKR/Kmzm2/KosfHYA==
   dependencies:
     "@snyk/cli-interface" "2.3.0"
     "@snyk/dep-graph" "1.13.1"
@@ -13654,17 +13642,17 @@ snyk@^1.248.0:
     snyk-config "^2.2.1"
     snyk-docker-plugin "1.33.1"
     snyk-go-plugin "1.11.1"
-    snyk-gradle-plugin "3.2.2"
+    snyk-gradle-plugin "3.2.4"
     snyk-module "1.9.1"
-    snyk-mvn-plugin "2.4.0"
-    snyk-nodejs-lockfile-parser "1.16.1"
-    snyk-nuget-plugin "1.13.1"
+    snyk-mvn-plugin "2.7.0"
+    snyk-nodejs-lockfile-parser "1.17.0"
+    snyk-nuget-plugin "1.16.0"
     snyk-php-plugin "1.7.0"
     snyk-policy "1.13.5"
-    snyk-python-plugin "^1.13.3"
+    snyk-python-plugin "1.16.0"
     snyk-resolve "1.0.1"
     snyk-resolve-deps "4.4.0"
-    snyk-sbt-plugin "2.9.0"
+    snyk-sbt-plugin "2.11.0"
     snyk-tree "^1.0.0"
     snyk-try-require "1.3.1"
     source-map-support "^0.5.11"
@@ -14638,6 +14626,11 @@ tree-kill@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.1.tgz#5398f374e2f292b9dcc7b2e71e30a5c3bb6c743a"
   integrity sha512-4hjqbObwlh2dLyW4tcz0Ymw0ggoaVDMveUB9w8kFSQScdRLo0gxO9J7WFcUBo+W3C1TLdFIEwNOWebgZZ0RH9Q==
+
+tree-kill@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
+  integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
 trim-lines@^1.0.0:
   version "1.1.2"
