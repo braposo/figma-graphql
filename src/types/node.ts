@@ -50,7 +50,7 @@ export const type = gql`
     }
 `;
 
-const capitalise = string => string.charAt(0).toUpperCase() + string.slice(1);
+const capitalise = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 export const resolvers = {
     Node: {
@@ -66,7 +66,7 @@ export const resolvers = {
 
             const fileExports =
                 params && params.format === "css"
-                    ? Object.entries(sourcesByFile).map(([fileId, nodes]) =>
+                    ? Object.entries(sourcesByFile).map(([, nodes]) =>
                           nodes.reduce(
                               (acc, node) => ({
                                   ...acc,
@@ -89,7 +89,7 @@ export const resolvers = {
                 []
             );
         }),
-        visible: root => root.visible || true,
+        visible: (root) => root.visible || true,
     },
     RectangleBox: {
         __resolveType({ type: nodeType }) {

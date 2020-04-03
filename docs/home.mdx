@@ -27,7 +27,7 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
         name
     }
 }
-``` 
+```
 
 ## Why use figma-graphql?
 
@@ -35,7 +35,7 @@ It's great that Figma provides an API allowing anyone to easily get the data fro
 
 1. The file data has a rigid tree-shaped structure that forces people to know the exact structure of the design file and can easily break existing code by just making a small change in the design file (like grouping elements).
 
-2. It requires multiple requests to different endpoints to get data that is related. Want to export specific frames in a file? You need to query the file data first, parse the data to get the frame ids and then make additional requests to a different endpoint to get that data. 
+2. It requires multiple requests to different endpoints to get data that is related. Want to export specific frames in a file? You need to query the file data first, parse the data to get the frame ids and then make additional requests to a different endpoint to get that data.
 
 This obviously makes things a lot more complex than they need to be so we use the power of GraphQL solve these issues and add a few other features.
 
@@ -45,7 +45,7 @@ With figma-graphql, we focus on the person using the library, not the machines. 
 
 A good way to understand the different queries that you can build is to use the "Schema" tab on the righ-hand side of the playground and go through the different properties of all the supported types, but we've also selected a few [example scenarios](/practical-examples) that can be used as a reference for common uses of the library.
 
-## Migrating to v2 
+## Migrating to v2
 
 For v2 we've completely rebuilt the API in a more human-first approach which makes it incompatible with most of the v1 queries. To read more about the motivations and biggest changes please read the [Road to v2](/road-to-v2) section.
 
@@ -54,15 +54,19 @@ For v2 we've completely rebuilt the API in a more human-first approach which mak
 Brought to you by these awesome contributors:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt="Bernardo Raposo"/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-braposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td>
-    <td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt="Sara Vieira"/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="#review-SaraVieira" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt="Andrey Okonetchnikov"/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Code">💻</a></td>
-    <td align="center"><a href="http://travisrayarnold.com"><img src="https://avatars1.githubusercontent.com/u/2762082?v=4" width="100px;" alt="Travis Arnold"/><br /><sub><b>Travis Arnold</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=souporserious" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt=""/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/braposo/figma-graphql/pulls?q=is%3Apr+reviewed-by%3Abraposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td>
+    <td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt=""/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/pulls?q=is%3Apr+reviewed-by%3ASaraVieira" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt=""/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Code">💻</a></td>
+    <td align="center"><a href="https://souporserious.com"><img src="https://avatars1.githubusercontent.com/u/2762082?v=4" width="100px;" alt=""/><br /><sub><b>Travis Arnold</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=souporserious" title="Documentation">📖</a></td>
   </tr>
 </table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

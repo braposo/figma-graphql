@@ -22,7 +22,7 @@ describe("Export", () => {
         expect(response.data).toBeDefined();
 
         const fileExports = response.data && response.data.exports;
-        fileExports.forEach(fileExport => {
+        fileExports.forEach((fileExport) => {
             const { id, output } = fileExport;
             expect(id).toEqual("0:1");
             expect(output).not.toBeNull();
@@ -66,7 +66,7 @@ describe("Export", () => {
         expect(response.data).toBeDefined();
 
         const fileExports = response.data && response.data.exports;
-        fileExports.forEach(fileExport => {
+        fileExports.forEach((fileExport) => {
             const { id, output } = fileExport;
             expect(id).toEqual("0:1");
             expect(output).not.toBeNull();
@@ -87,7 +87,7 @@ describe("Export", () => {
         expect(response.data).toBeDefined();
 
         const fileExports = response.data && response.data.exports;
-        fileExports.forEach(fileExport => {
+        fileExports.forEach((fileExport) => {
             const { id, output } = fileExport;
             expect(id).toEqual("0:1");
             expect(output).not.toBeNull();

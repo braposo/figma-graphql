@@ -84,7 +84,7 @@ We want to export the components in SVG format.
 
 > Get the screenshots of the prototype screens for a few different features to present at a product meeting
 
-We need to go through all the files inside the team projects so we'll be using aliases. 
+We need to go through all the files inside the team projects so we'll be using aliases.
 
 ```gql
 {
@@ -96,7 +96,7 @@ We need to go through all the files inside the team projects so we'll be using a
                     export(params: { format: jpg })
                 }
             }
-        },
+        }
         featureB: files(name: "Feature B") {
             pages(name: "Prototype") {
                 frames {

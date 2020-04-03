@@ -146,6 +146,6 @@ export enum ColorMode {
 
 export const resolvers = {
     Style: {
-        type: node => node.styleType,
+        type: (node) => node.styleType,
     },
 };

@@ -1,16 +1,14 @@
 ## [1.13.2](https://github.com/braposo/figma-graphql/compare/v1.13.1...v1.13.2) (2019-10-27)
 
-
 ### Bug Fixes
 
-* **package:** update @types/dotenv to version 8.2.0 ([8b96705](https://github.com/braposo/figma-graphql/commit/8b9670503cf9008568dd4d86967d689c17845820))
+-   **package:** update @types/dotenv to version 8.2.0 ([8b96705](https://github.com/braposo/figma-graphql/commit/8b9670503cf9008568dd4d86967d689c17845820))
 
 ## [1.13.1](https://github.com/braposo/figma-graphql/compare/v1.13.0...v1.13.1) (2019-10-24)
 
-
 ### Bug Fixes
 
-* fixes issue with dependencies for docs ([37b4f4f](https://github.com/braposo/figma-graphql/commit/37b4f4f3327bdf6ee42440201c75b445d9cc50a6))
+-   fixes issue with dependencies for docs ([37b4f4f](https://github.com/braposo/figma-graphql/commit/37b4f4f3327bdf6ee42440201c75b445d9cc50a6))
 
 # [1.13.0](https://github.com/braposo/figma-graphql/compare/v1.12.2...v1.13.0) (2019-09-10)
 

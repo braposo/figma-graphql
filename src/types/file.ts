@@ -36,13 +36,13 @@ export const type = gql`
 export const resolvers = {
     Query: {
         file: (_: never, { id, noCache }: { id: string; noCache: boolean }) =>
-            loadFile(id, noCache).then(data => data),
+            loadFile(id, noCache).then((data) => data),
     },
     File: {
         exports: async ({ fileId }, { params }) => {
             const imageParams = { ...defaultImageParams, ...params };
             const { images } = await loadImages(fileId, imageParams);
-            return Object.entries(images).map(entry => ({ id: entry[0], output: entry[1] }));
+            return Object.entries(images).map((entry) => ({ id: entry[0], output: entry[1] }));
         },
         comments: ({ fileId }) => loadComments(fileId).then(({ comments }) => comments),
         ...generateResolversForShortcuts(),

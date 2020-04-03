@@ -7,12 +7,12 @@ export const getNodes = (data, nodeType, filterBy) => {
     }
 
     if (filterByType != null) {
-        return dataNodes.filter(node => filterByType.includes(node.styleType));
+        return dataNodes.filter((node) => filterByType.includes(node.styleType));
     }
 
     if (filterByName != null) {
         const nameRegex = new RegExp(filterByName);
-        return dataNodes.filter(node => nameRegex.test(node.name));
+        return dataNodes.filter((node) => nameRegex.test(node.name));
     }
 
     return dataNodes;

@@ -51,8 +51,8 @@ export const resolvers = {
     Query: {
         exports: async (root, { id, params }) => {
             const imageParams = { ...defaultImageParams, ...params };
-            const { images } = await loadImages(id, imageParams).then(data => data);
-            return Object.entries(images).map(entry => ({ id: entry[0], output: entry[1] }));
+            const { images } = await loadImages(id, imageParams).then((data) => data);
+            return Object.entries(images).map((entry) => ({ id: entry[0], output: entry[1] }));
         },
     },
 };

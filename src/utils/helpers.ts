@@ -1,12 +1,12 @@
 import { Color } from "figma-js";
 import { ColorMode } from "../types/helpers/style";
 
-export const getPosition = node => ({
+export const getPosition = (node) => ({
     x: node.absoluteBoundingBox.x,
     y: node.absoluteBoundingBox.y,
 });
 
-export const getSize = node => ({
+export const getSize = (node) => ({
     width: node.absoluteBoundingBox.width,
     height: node.absoluteBoundingBox.height,
 });
@@ -17,20 +17,20 @@ export const addUnit = (string?: string | number, unit: string = "px") =>
 export const getColor = ({ r, g, b, a }: Color, mode: ColorMode) =>
     mode === ColorMode.RGB ? `rgba(${r}, ${g}, ${b}, ${a})` : "none";
 
-export const JSToCSS = cssObject => {
+export const JSToCSS = (cssObject) => {
     return Object.entries(cssObject)
         .map(([key, value]) => {
             if (value == null) {
                 return value;
             }
 
-            return `${key.replace(/([A-Z])/g, g => `-${g[0].toLowerCase()}`)}: ${value};`;
+            return `${key.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`)}: ${value};`;
         })
         .filter(Boolean)
         .join(" ");
 };
 
-export const generateCSS = node => {
+export const generateCSS = (node) => {
     const styles = {
         textAlign: node.style && node.style.textAlignHorizontal.toLowerCase(),
         verticalAlign: node.style && node.style.textAlignVertical.toLowerCase(),

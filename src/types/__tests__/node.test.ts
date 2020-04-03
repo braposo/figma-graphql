@@ -23,7 +23,7 @@ describe("Node", () => {
         expect(response.data).not.toBeUndefined();
 
         const rectangles = response.data && response.data.file.rectangles;
-        rectangles.forEach(rectangle => {
+        rectangles.forEach((rectangle) => {
             const { export: nodeExport } = rectangle;
             expect(nodeExport).not.toBeNull();
         });
@@ -44,7 +44,7 @@ describe("Node", () => {
         expect(response.data).not.toBeUndefined();
 
         const rectangles = response.data && response.data.file.rectangles;
-        rectangles.forEach(rectangle => {
+        rectangles.forEach((rectangle) => {
             const { export: nodeExport } = rectangle;
             expect(nodeExport).not.toBeNull();
         });
@@ -65,7 +65,7 @@ describe("Node", () => {
         expect(response.data).not.toBeUndefined();
 
         const rectangles = response.data && response.data.file.rectangles;
-        rectangles.forEach(rectangle => {
+        rectangles.forEach((rectangle) => {
             const { export: nodeExport } = rectangle;
             expect(nodeExport).toMatchSnapshot();
         });

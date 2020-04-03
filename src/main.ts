@@ -17,7 +17,7 @@ server.applyMiddleware({ app });
 // Get figma API response (just for testing)
 app.get("/figma/:id", (req, res) => {
     const { id } = req.params;
-    loadFile(id).then(data => {
+    loadFile(id).then((data) => {
         res.json(data);
     });
 });

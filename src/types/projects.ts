@@ -25,7 +25,7 @@ export const resolvers = {
             loadTeamProjects(teamId, noCache).then(({ projects }) => projects),
     },
     Project: {
-        files: createBatchResolver<{ id: string }, any>(async projects => {
+        files: createBatchResolver<{ id: string }, any>(async (projects) => {
             const projectFiles = await Promise.all(
                 projects.map(async ({ id }) => {
                     const { files } = await loadProjectFiles(id);
@@ -34,7 +34,7 @@ export const resolvers = {
             );
 
             const parsedFiles = await Promise.all(
-                projectFiles.map(files => Promise.all(files.map(file => loadFile(file.key))))
+                projectFiles.map((files) => Promise.all(files.map((file) => loadFile(file.key))))
             );
 
             return Object.values(parsedFiles);

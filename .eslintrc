@@ -19,7 +19,13 @@
         "@typescript-eslint/no-inferrable-types": "off",
         "no-underscore-dangle": "off",
         "import/prefer-default-export": "off",
-        "import/no-default-export": "error"
+        "import/no-default-export": "error",
+        "import/extensions": [
+            "error",
+            {
+                "ts": "never"
+            }
+        ]
     },
     "settings": {
         "import/resolver": {

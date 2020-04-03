@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://figma-graphql.party">
-    <img width="150" src="./assets/logo.svg">
+    <img width="150" src="./assets/logo.svg" />
   </a>
 </p>
 
@@ -12,7 +12,7 @@ figma-graphql
 
 The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
 
-[![Build Status][build-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
+[![Build Status][build-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br/> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
 
 </div>
 
@@ -56,15 +56,19 @@ It should work with any file so can use your own Figma files and just replace `f
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt="Bernardo Raposo"/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-braposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td>
-    <td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt="Sara Vieira"/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="#review-SaraVieira" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt="Andrey Okonetchnikov"/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Code">💻</a></td>
-    <td align="center"><a href="http://travisrayarnold.com"><img src="https://avatars1.githubusercontent.com/u/2762082?v=4" width="100px;" alt="Travis Arnold"/><br /><sub><b>Travis Arnold</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=souporserious" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://bernardoraposo.com"><img src="https://avatars2.githubusercontent.com/u/38172?v=4" width="100px;" alt=""/><br /><sub><b>Bernardo Raposo</b></sub></a><br /><a href="#question-braposo" title="Answering Questions">💬</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Documentation">📖</a> <a href="#design-braposo" title="Design">🎨</a> <a href="#ideas-braposo" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/braposo/figma-graphql/pulls?q=is%3Apr+reviewed-by%3Abraposo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/braposo/figma-graphql/commits?author=braposo" title="Tests">⚠️</a></td>
+    <td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt=""/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Code">💻</a> <a href="https://github.com/braposo/figma-graphql/commits?author=SaraVieira" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/pulls?q=is%3Apr+reviewed-by%3ASaraVieira" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://okonet.ru"><img src="https://avatars3.githubusercontent.com/u/11071?v=4" width="100px;" alt=""/><br /><sub><b>Andrey Okonetchnikov</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Documentation">📖</a> <a href="https://github.com/braposo/figma-graphql/commits?author=okonet" title="Code">💻</a></td>
+    <td align="center"><a href="https://souporserious.com"><img src="https://avatars1.githubusercontent.com/u/2762082?v=4" width="100px;" alt=""/><br /><sub><b>Travis Arnold</b></sub></a><br /><a href="https://github.com/braposo/figma-graphql/commits?author=souporserious" title="Documentation">📖</a></td>
   </tr>
 </table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
