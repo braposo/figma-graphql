@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build",
+            "config": { "distDir": ".docz/dist" }
+        },
+        { "src": "src/main.ts", "use": "@now/node-server" },
+        { "src": "src/api/figma.ts", "use": "@now/node" }
+    ],
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/playground", "dest": "src/main.ts" },
+        { "src": "/figma/(.*)", "dest": "src/api/figma.ts?id=$1" },
+        { "src": "/.*", "dest": "/index.html" }
+    ],
+    "env": {
+        "FIGMA_TOKEN": "@figma-token"
+    }
+}
