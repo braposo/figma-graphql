@@ -15,6 +15,7 @@ node_modules
 package-lock.json
 
 .env
-coverage/
-.docz
+/coverage
 .now
+.docusaurus
+/build
