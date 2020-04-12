@@ -1,9 +1,10 @@
 ---
-name: Home
-route: /
+id: home
+title: Introduction
+hide_title: true
 ---
 
-# ![figma-graphql logo][logo]
+![figma-graphql logo][logo]
 
 # figma-graphql
 
@@ -13,15 +14,15 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
 
 ## Quick start
 
-### 1. Open figma-graphql [sandbox][codesandbox] and fork it
+1. Open figma-graphql [sandbox][codesandbox] and fork it
 
 [![Open figma-graphql][codesandbox-badge]][codesandbox]
 
-### 2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
+2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
 
-### 3. Try your first query!
+3. Try your first query!
 
-```gql
+```graphql
 {
     file(id: "cLp23bR627jcuNSoBGkhL04E") {
         name
