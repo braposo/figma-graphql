@@ -1,35 +1,36 @@
-{
-    "extends": [
+module.exports = {
+    extends: [
         "airbnb-base",
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:prettier/recommended",
-        "prettier/@typescript-eslint"
+        "prettier/@typescript-eslint",
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "./tsconfig.json"
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        project: "./tsconfig.json",
     },
-    "plugins": ["@typescript-eslint"],
-    "rules": {
+    plugins: ["@typescript-eslint"],
+    ignorePatterns: ["docs"],
+    rules: {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-inferrable-types": "off",
         "no-underscore-dangle": "off",
         "import/prefer-default-export": "off",
-        "import/no-default-export": "error",
+        "import/no-default-export": "off",
         "import/extensions": [
             "error",
             {
-                "ts": "never"
-            }
-        ]
+                ts: "never",
+            },
+        ],
     },
-    "settings": {
+    settings: {
         "import/resolver": {
-            "typescript": {}
-        }
-    }
-}
+            typescript: {},
+        },
+    },
+};
