@@ -13,7 +13,7 @@ const server = new ApolloServer({
 
 const app = express();
 app.use(cors());
-server.applyMiddleware({ app, path: "/playground" });
+server.applyMiddleware({ app });
 
 app.listen(PORT, () => {
     // eslint-disable-next-line no-console
