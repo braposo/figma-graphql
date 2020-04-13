@@ -1,6 +1,6 @@
 import camelCase from "lodash/camelCase";
 import { nodeTypes } from "../types/node";
-import { getNodes } from "./nodes";
+import { filterNodes } from "./nodes";
 
 const shortcutTypes = nodeTypes.map((type) => {
     const convertedType = type === "CANVAS" ? "PAGE" : type;
@@ -27,25 +27,27 @@ const mapTypeToQuery = nodeTypes.reduce(
         const formattedType = camelCase(convertedType);
         const key = `${formattedType}s`;
         const returnType = formattedType.charAt(0).toUpperCase() + formattedType.slice(1);
-        const nodeType = type === "STYLE" ? "StyleType" : "NodeType";
+        const nodeType = type === "STYLE" ? "styleType: [StyleType]" : "type: [NodeType]";
 
         return {
             ...acc,
-            [key]: `${key}(type: [${nodeType}], name: String): [${returnType}!]`,
+            [key]: `${key}(${nodeType}, name: String): [${returnType}!]`,
         };
     },
     {
-        children: "children(type: [NodeType], name: String): [Node!]",
+        children: "children(type: [NodeType], name: String): [Node]",
     }
 );
 
 export const generateResolversForShortcuts = () =>
     [...shortcutTypes, "children"].reduce((acc, resolverType) => {
         const key = resolverType === "children" ? resolverType : `${resolverType}s`;
+        const nodeType = mapTypeToFigmaType[key];
+        const getData = (data) => (nodeType === "ALL" ? data.children : data.shortcuts[nodeType]);
+
         return {
             ...acc,
-            [key]: (root, { type, name }) =>
-                getNodes(root, mapTypeToFigmaType[key], { type, name }),
+            [key]: (root, params) => filterNodes(getData(root), params),
         };
     }, {});
 

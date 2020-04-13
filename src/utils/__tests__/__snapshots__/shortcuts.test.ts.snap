@@ -15,8 +15,8 @@ texts(type: [NodeType], name: String): [Text!]
 slices(type: [NodeType], name: String): [Slice!]
 components(type: [NodeType], name: String): [Component!]
 instances(type: [NodeType], name: String): [Instance!]
-styles(type: [StyleType], name: String): [Style!]
-children(type: [NodeType], name: String): [Node!]"
+styles(styleType: [StyleType], name: String): [Style!]
+children(type: [NodeType], name: String): [Node]"
 `;
 
 exports[`Shortcuts can generateResolversForShortcuts 1`] = `
