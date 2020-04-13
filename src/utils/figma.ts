@@ -79,12 +79,17 @@ async function getFigma<T extends FigmaResponse>({
     const key = `${id}_${requestType}`;
 
     if (noCache === false && params === undefined && cache.has(key)) {
-        // eslint-disable-next-line no-console
-        console.log("returning from cache", key);
+        if (process.env.NODE_ENV === "development") {
+            // eslint-disable-next-line no-console
+            console.log("returning from cache", key);
+        }
         return cache.get(key);
     }
-    // eslint-disable-next-line no-console
-    console.log("fetching", key);
+
+    if (process.env.NODE_ENV === "development") {
+        // eslint-disable-next-line no-console
+        console.log("fetching", key);
+    }
 
     const fn: FigmaFunction =
         params === undefined
