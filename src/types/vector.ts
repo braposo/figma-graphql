@@ -111,7 +111,7 @@ export const type = gql`
         characters: String
 
         # Style of text including font family and weight
-        style: TypeStyle
+        style: TextStyle
     }
 
     type Star implements Node {

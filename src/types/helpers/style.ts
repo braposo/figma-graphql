@@ -65,7 +65,7 @@ export const type = gql`
         name: String
         type: StyleType
         styles: [Paint]
-        typeStyles: TypeStyle
+        textStyles: TextStyle
     }
 
     enum ScaleMode {

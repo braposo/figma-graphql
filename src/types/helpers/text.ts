@@ -31,7 +31,7 @@ export const type = gql`
         INTRINSIC_PC
     }
 
-    type TypeStyle {
+    type TextStyle {
         # Font Family of the text
         fontFamily: String
 
