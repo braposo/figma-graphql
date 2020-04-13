@@ -21,6 +21,11 @@ module.exports = {
                     position: "left",
                 },
                 {
+                    href: "/playground",
+                    label: "Playground",
+                    position: "left",
+                },
+                {
                     href: "https://github.com/braposo/figma-graphql",
                     label: "GitHub",
                     position: "right",

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://figma-graphql.party">
-    <img width="150" src="./assets/logo.svg" />
+    <img width="150" src="./static/img/logo.svg" />
   </a>
 </p>
 
