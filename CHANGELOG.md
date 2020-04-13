@@ -1,9 +1,8 @@
 ## [1.13.3](https://github.com/braposo/figma-graphql/compare/v1.13.2...v1.13.3) (2020-04-03)
 
-
 ### Bug Fixes
 
-* **package:** updates packages to latest and fixes issues ([da4e1d3](https://github.com/braposo/figma-graphql/commit/da4e1d3ddba1c8f2cccac358753a06d3cd842d54))
+-   **package:** updates packages to latest and fixes issues ([da4e1d3](https://github.com/braposo/figma-graphql/commit/da4e1d3ddba1c8f2cccac358753a06d3cd842d54))
 
 ## [1.13.2](https://github.com/braposo/figma-graphql/compare/v1.13.1...v1.13.2) (2019-10-27)
 

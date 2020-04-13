@@ -56,7 +56,7 @@ export const resolvers = {
     Node: {
         __resolveType({ type: nodeType }) {
             if (nodeType === "CANVAS") {
-                return "Pages";
+                return "Page";
             }
 
             return capitalise(camelCase(nodeType));
