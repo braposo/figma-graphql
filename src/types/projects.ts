@@ -1,6 +1,9 @@
 import { gql } from "apollo-server-express";
 import { createBatchResolver } from "graphql-resolve-batch";
-import { loadFile, loadTeamProjects, loadProjectFiles } from "../utils/figma";
+import { ProjectSummary, ProjectFilesResponse } from "figma-js";
+import { ProcessedFile } from "figma-transformer";
+import { loadFile, loadProjectFiles } from "../utils/figma";
+import { filterNodes } from "../utils/nodes";
 
 export const type = gql`
     # A single Project
@@ -10,34 +13,65 @@ export const type = gql`
         # Name of the Project
         name: String!
 
-        files: [File]
+        files(name: String): [File]
     }
 
     extend type Query {
         # Get a teams projects
-        projects(teamId: ID!, noCache: Boolean): [Project]
+        project(id: ID!, noCache: Boolean): Project
     }
 `;
 
 export const resolvers = {
     Query: {
-        projects: (_: never, { teamId, noCache }) =>
-            loadTeamProjects(teamId, noCache).then(({ projects }) => projects),
+        project: (_: never, { id, noCache }) =>
+            loadProjectFiles(id, noCache).then((project) => ({ id, ...project })),
     },
     Project: {
-        files: createBatchResolver<{ id: string }, any>(async (projects) => {
-            const projectFiles = await Promise.all(
-                projects.map(async ({ id }) => {
-                    const { files } = await loadProjectFiles(id);
-                    return files;
-                })
-            );
+        files: createBatchResolver<ProjectSummary | ProjectFilesResponse, any>(
+            async (projects, params: { name: string } | undefined) => {
+                if (projects.length === 0) {
+                    return [];
+                }
 
-            const parsedFiles = await Promise.all(
-                projectFiles.map((files) => Promise.all(files.map((file) => loadFile(file.key))))
-            );
+                // Check if projects come from qery or resolving from Teams
+                function isProjectFromQuery(projs: any): projs is ProjectFilesResponse[] {
+                    return projs[0].files != null;
+                }
 
-            return Object.values(parsedFiles);
-        }),
+                function isProjectFromResolver(projs: any): projs is ProjectSummary[] {
+                    return projs[0].files == null;
+                }
+
+                let projectFiles: ProjectFilesResponse["files"][] = [];
+
+                if (isProjectFromQuery(projects)) {
+                    projectFiles = [projects[0].files];
+                }
+
+                if (isProjectFromResolver(projects)) {
+                    projectFiles = await Promise.all(
+                        projects.map(async ({ id }) => {
+                            const { files } = await loadProjectFiles(id);
+                            return files;
+                        })
+                    );
+                }
+
+                // Load the full details for each file
+                const parsedProjectFiles: ProcessedFile[][] = await Promise.all(
+                    projectFiles.map((files) =>
+                        Promise.all(files.map((file) => loadFile(file.key)))
+                    )
+                );
+
+                // Filter files based on params
+                if (params == null) {
+                    return parsedProjectFiles;
+                }
+
+                return parsedProjectFiles.map((file) => filterNodes(Object.values(file), params));
+            }
+        ),
     },
 };

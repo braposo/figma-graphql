@@ -14,6 +14,7 @@ import * as style from "./helpers/style";
 import * as effect from "./helpers/effect";
 import * as grid from "./helpers/grid";
 import * as text from "./helpers/text";
+import * as team from "./team";
 
 const typePaths = [
     file,
@@ -31,6 +32,7 @@ const typePaths = [
     effect,
     grid,
     text,
+    team,
 ];
 
 /**
