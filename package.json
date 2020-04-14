@@ -52,7 +52,7 @@
         "figma-transformer": "^1.0.0",
         "graphql": "^15.0.0",
         "graphql-iso-date": "^3.6.1",
-        "graphql-playground-middleware-express": "^1.7.12",
+        "graphql-playground-middleware-express": "^1.7.14",
         "graphql-resolve-batch": "^1.0.2",
         "graphql-tools": "^4.0.7",
         "isomorphic-fetch": "^2.2.1",
