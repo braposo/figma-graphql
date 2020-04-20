@@ -6,8 +6,5 @@
         { "src": "/playground", "dest": "api/playground.ts" },
         { "src": "/figma/(.*)", "dest": "api/figma.ts?id=$1" },
         { "src": "/.*", "dest": "/index.html" }
-    ],
-    "env": {
-        "FIGMA_TOKEN": "@figma-token"
-    }
+    ]
 }
