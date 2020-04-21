@@ -42,7 +42,7 @@
         "@types/graphql-iso-date": "^3.3.3",
         "@types/graphql-resolve-batch": "^1.1.5",
         "@types/isomorphic-fetch": "^0.0.35",
-        "@types/lodash": "^4.14.149",
+        "@types/lodash": "^4.14.150",
         "apollo-server-express": "^2.12.0",
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
