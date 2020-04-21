@@ -54,7 +54,7 @@
         "graphql-iso-date": "^3.6.1",
         "graphql-playground-middleware-express": "^1.7.12",
         "graphql-resolve-batch": "^1.0.2",
-        "graphql-tools": "^4.0.7",
+        "graphql-tools": "^4.0.8",
         "isomorphic-fetch": "^2.2.1",
         "lodash": "^4.17.15",
         "nodemon": "^2.0.3",
