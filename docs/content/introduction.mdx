@@ -1,26 +1,14 @@
 ---
-id: home
 title: Introduction
 hide_title: true
+sidebar_label: Introduction
 ---
 
-![figma-graphql logo][logo]
+# Quick start
 
-# figma-graphql
+1. Open the <a href="/playground" target="_blank">playground</a>
 
-The reimagined [Figma API](https://www.figma.com/developers) (super)powered by GraphQL
-
-[![Build Status][build-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper] [![Code Coverage][coverage-badge]][coverage] [![Known Vulnerabilities][snyk-badge]][snyk] [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors) [![PRs Welcome][prs-badge]][prs] <br /> ![Prettier format][prettier-badge] [![Commitizen friendly][commitizen-badge]][commitizen] [![semantic-release][semantic-badge]][semantic] [![MIT License][license-badge]][license]
-
-## Quick start
-
-1. Open figma-graphql [sandbox][codesandbox] and fork it
-
-[![Open figma-graphql][codesandbox-badge]][codesandbox]
-
-2. Add your [Figma API Token](https://www.figma.com/developers/docs#access-tokens) as `FIGMA_TOKEN` in the [codesandbox secret keys](https://codesandbox.io/docs/secrets)
-
-3. Try your first query!
+2. Try your first query
 
 ```graphql
 {
@@ -30,7 +18,9 @@ The reimagined [Figma API](https://www.figma.com/developers) (super)powered by G
 }
 ```
 
-## Why use figma-graphql?
+3. Keep exploring and see what else you can do!
+
+## Motivations
 
 It's great that Figma provides an API allowing anyone to easily get the data from their design files. But that API has two characteristics that make it quite hard for people without a good technical knowledge to access it:
 
@@ -42,17 +32,21 @@ This obviously makes things a lot more complex than they need to be so we use th
 
 With figma-graphql, we focus on the person using the library, not the machines. We see this as the best way to open your design files to more people, especially to those with minimal technical backround.
 
-## Examples
+To read more about the motivations and biggest changes for v2 please read the [Road to v2](road-to-v2.mdx) section.
 
-A good way to understand the different queries that you can build is to use the "Schema" tab on the righ-hand side of the playground and go through the different properties of all the supported types, but we've also selected a few [example scenarios](/practical-examples) that can be used as a reference for common uses of the library.
+## Recipes
 
-## Migrating to v2
+A good way to understand the different queries that you can build is to use the "Schema" tab on the righ-hand side of the playground and go through the different properties of all the supported types, but we've also selected a few [example scenarios](recipes.mdx) that can be used as a reference for common uses of the library.
 
-For v2 we've completely rebuilt the API in a more human-first approach which makes it incompatible with most of the v1 queries. To read more about the motivations and biggest changes please read the [Road to v2](/road-to-v2) section.
+## Acknowledgements
 
----
+This library wouldn't even exist without the incredible effort from the Figma team to bring a fully-featured API to their design tool. You can have a look at the [Figma API](https://www.figma.com/developers/api) documentation if you want to learn more.
 
-Brought to you by these awesome contributors:
+For the integration with the Figma API and TypeScript we rely on the awesome [figma-js](https://github.com/jongold/figma-js) library.
+
+## Contributors
+
+figma-graphql is an open-source project made possible with the contributions from these amazing people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -71,7 +65,9 @@ Brought to you by these awesome contributors:
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. 
+
+If you're interested in contributing please reach out! Contributions of any kind welcome ❤
 
 [logo]: https://raw.githubusercontent.com/braposo/figma-graphql/master/assets/logo.svg?sanitize=true
 [license-badge]: https://img.shields.io/npm/l/figma-graphql.svg?style=flat-square
@@ -91,5 +87,3 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [commitizen]: http://commitizen.github.io/cz-cli/
 [semantic-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
 [semantic]: https://github.com/semantic-release/semantic-release
-[greenkeeper-badge]: https://badges.greenkeeper.io/braposo/figma-graphql.svg?style=flat-square
-[greenkeeper]: https://greenkeeper.io/

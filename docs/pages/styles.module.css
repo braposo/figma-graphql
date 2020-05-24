@@ -6,7 +6,7 @@
 
 .heroBanner {
     padding: 4rem 0;
-    text-align: center;
+    text-align: left;
     position: relative;
     overflow: hidden;
 }
@@ -19,8 +19,8 @@
 
 .buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: start;
 }
 
 .features {
@@ -33,4 +33,8 @@
 .featureImage {
     height: 200px;
     width: 200px;
+}
+
+.code {
+    text-align: center;
 }

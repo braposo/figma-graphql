@@ -1,3 +1,3 @@
 module.exports = {
-    docs: ["home", "recipes", "road-to-v2"],
+    docs: ["introduction", "recipes", "road-to-v2"],
 };

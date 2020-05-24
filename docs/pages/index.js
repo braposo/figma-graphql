@@ -10,21 +10,34 @@ function Home() {
     const context = useDocusaurusContext();
     const { siteConfig = {} } = context;
     return (
-        <Layout title={`Hello from ${siteConfig.title}`} description={siteConfig.tagline}>
-            <header className={classnames("hero hero--primary", styles.heroBanner)}>
+        <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+            <header className={classnames("hero", styles.heroBanner)}>
                 <div className="container">
-                    <h1 className="hero__title">{siteConfig.title}</h1>
-                    <p className="hero__subtitle">{siteConfig.tagline}</p>
-                    <div className={styles.buttons}>
-                        <Link
-                            className={classnames(
-                                "button button--outline button--secondary button--lg",
-                                styles.getStarted
-                            )}
-                            to={useBaseUrl("docs/home")}
-                        >
-                            Get Started
-                        </Link>
+                    <div className="row">
+                        <div className="col col--6">
+                            <h1 className="hero__title">{siteConfig.tagline}</h1>
+                            <p className="hero__subtitle">
+                                Get everything you need from your design files without even opening
+                                them.
+                            </p>
+                            <div className={styles.buttons}>
+                                <Link
+                                    className={classnames(
+                                        "button button--primary button--lg",
+                                        styles.getStarted
+                                    )}
+                                    to={useBaseUrl("docs/introduction")}
+                                >
+                                    Get Started
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={classnames("col col--6", styles.code)}>
+                            <img
+                                alt="figma-graphql code example"
+                                src={useBaseUrl("img/code.svg")}
+                            />
+                        </div>
                     </div>
                 </div>
             </header>

@@ -13,7 +13,7 @@ module.exports = {
         project: "./tsconfig.json",
     },
     plugins: ["@typescript-eslint"],
-    ignorePatterns: ["docs"],
+    ignorePatterns: ["docs", "**/*.js"],
     rules: {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",

@@ -15,7 +15,7 @@ module.exports = {
             },
             links: [
                 {
-                    to: "docs/home",
+                    to: "docs/introduction",
                     activeBasePath: "docs",
                     label: "Docs",
                     position: "left",
@@ -26,7 +26,7 @@ module.exports = {
                     position: "left",
                 },
                 {
-                    href: "https://github.com/braposo/figma-graphql",
+                    href: "https://github.com/braposo/figma-graphql/tree/v2",
                     label: "GitHub",
                     position: "right",
                 },
@@ -35,6 +35,15 @@ module.exports = {
         footer: {
             style: "dark",
             copyright: `Copyright © ${new Date().getFullYear()} figma-graphql. Built with Docusaurus.`,
+        },
+        announcementBar: {
+            id: "supportus",
+            content:
+                '⚠ This is a <em>work in progress</em> for the upcoming v2 release. For the stable release, please visit <a target="_blank" rel="noopener noreferrer" href="https://figma-graphql.party">the v1 website</a>. ⚠',
+        },
+        prism: {
+            theme: require("prism-react-renderer/themes/palenight"),
+            darkTheme: require("prism-react-renderer/themes/palenight"),
         },
     },
     presets: [
