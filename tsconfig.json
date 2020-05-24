@@ -9,8 +9,8 @@
         "skipLibCheck": true,
 
         // Compilation options
-        "lib": ["dom", "es2017"],
-        "target": "es6",
+        "lib": ["es2018", "esnext.asynciterable"],
+        "target": "es2018",
         "module": "commonjs",
         "moduleResolution": "node",
         "noEmit": true,
@@ -18,19 +18,21 @@
         "removeComments": true,
         "sourceMap": true,
         "pretty": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
 
         // Rules
         "strict": true,
         "noImplicitAny": false,
         "noImplicitReturns": true,
         "noImplicitThis": true,
-        "strictPropertyInitialization": true,
+        "strictPropertyInitialization": false,
         "strictNullChecks": true,
         "noUnusedLocals": true,
         "noUnusedParameters": false,
 
         // Resolvers
-        "baseUrl": "src"
+        // "baseUrl": "./src",
     },
-    "exclude": ["node_modules", "docs"]
+    "exclude": ["node_modules", "docs", "old-types"]
 }

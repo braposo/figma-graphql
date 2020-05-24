@@ -15,11 +15,14 @@ module.exports = {
     plugins: ["@typescript-eslint"],
     ignorePatterns: ["docs"],
     rules: {
+        "max-classes-per-file": "off",
+        "class-methods-use-this": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-inferrable-types": "off",
         "no-underscore-dangle": "off",
         "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
         "import/no-default-export": "off",
         "import/extensions": [
             "error",
