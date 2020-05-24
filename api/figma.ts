@@ -1,7 +1,7 @@
 import type { NowRequest, NowResponse } from "@now/node";
 import { loadFile } from "../src/utils/figma";
 
-export default async (request: NowRequest, response: NowResponse) => {
+export default async (request: NowRequest, response: NowResponse): Promise<void> => {
     const { id } = request.query;
 
     try {
