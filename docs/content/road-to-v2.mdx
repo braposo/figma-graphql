@@ -3,8 +3,6 @@ title: Road to v2
 id: road-to-v2
 ---
 
-# From v1 to v2
-
 We're big fans of [Figma](https://www.figma.com) since pretty much the beginning so when the [API](https://www.figma.com/developers) was announced we immediately jumped on board and created this GraphQL API. That was the first version of the figma-graphql library and it was mostly a 1-to-1 mapping of the existing API.
 
 As we kept using figma-graphql to get the information from our design files it became evident that the structure of the Figma API response object was very limiting.
@@ -21,7 +19,7 @@ We opted to surface all the different types of elements that are descendants of 
 
 Let's see a concrete example. This was how we could get the name of a text element in a document:
 
-```gql
+```graphql
 {
     file(id: "cLp23bR627jcuNSoBGkhL04E") {
         pages {
@@ -41,7 +39,7 @@ If the designers grouped the text elements together inside those same frames, we
 
 In v2 this is what we can do instead:
 
-```gql
+```graphql
 {
     file(id: "cLp23bR627jcuNSoBGkhL04E") {
         pages {
@@ -61,7 +59,7 @@ In this query `texts`, `frames` and `pages` are shortcuts and don't behave the s
 
 This also means that we could even simplify this query if we just want the name of all the text elements in a file, no matter where they are placed:
 
-```gql
+```graphql
 {
     file(id: "cLp23bR627jcuNSoBGkhL04E") {
         texts {
@@ -85,7 +83,7 @@ Instead, we are now stitching together the different queries into a single query
 
 Let's look at this query for example:
 
-```gql
+```graphql
 {
     projects(teamId: "teamID") {
         name

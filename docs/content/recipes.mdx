@@ -38,7 +38,7 @@ This example tries to follow the structure of the file to get the information we
 
 We can now use the power of the shortcuts to get that information easily.
 
-```gql
+```graphql
 {
     file(id: "fileID") {
         styles(type: FILL) {
@@ -61,7 +61,7 @@ We can now use the power of the shortcuts to get that information easily.
 
 We want to export the components in SVG format.
 
-```gql
+```graphql
 {
     file(id: “fileID”) {
         pages(name: "Icons") {
@@ -84,7 +84,7 @@ We want to export the components in SVG format.
 
 We need to go through all the files inside the team projects so we'll be using aliases.
 
-```gql
+```graphql
 {
     projects(teamId: "teamID") {
         featureA: files(name: "Feature A") {

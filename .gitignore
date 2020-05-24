@@ -19,3 +19,4 @@ package-lock.json
 .now
 .docusaurus
 /build
+/old-types
