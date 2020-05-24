@@ -7,6 +7,8 @@ import {
     TeamProjectsResponse,
     ProjectFilesResponse,
     FileParams,
+    Comment,
+    FileResponse,
 } from "figma-js";
 import { config } from "dotenv";
 import { processFile, ProcessedFile } from "figma-transformer";
@@ -31,6 +33,7 @@ type FigmaOptions = {
 };
 
 type FigmaResponse =
+    | FileResponse
     | ProcessedFile
     | FileImageResponse
     | Comment
@@ -58,7 +61,7 @@ const mapTypeToFunction = {
     [RequestType.ProjectFiles]: projectFiles,
 };
 
-type Values<O extends object> = O[keyof O];
+type Values<O extends Record<string, unknown>> = O[keyof O];
 
 type FigmaFunction =
     | ((id: string) => ReturnType<Values<typeof mapTypeToFunction>>)
@@ -68,7 +71,7 @@ type FigmaFunction =
       ) => ReturnType<Values<typeof mapTypeToFunctionWithParams>>);
 
 // Initialise cache
-const cache = new Map();
+const cache = new Map<string, FigmaResponse>();
 
 async function getFigma<T extends FigmaResponse>({
     requestType,
@@ -83,7 +86,12 @@ async function getFigma<T extends FigmaResponse>({
             // eslint-disable-next-line no-console
             console.log("returning from cache", key);
         }
-        return cache.get(key);
+
+        const cachedFile = cache.get(key) as T;
+
+        if (cachedFile !== undefined) {
+            return cachedFile;
+        }
     }
 
     if (process.env.NODE_ENV === "development") {
@@ -91,6 +99,7 @@ async function getFigma<T extends FigmaResponse>({
         console.log("fetching", key);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const fn: FigmaFunction =
         params === undefined
             ? mapTypeToFunction[requestType]
