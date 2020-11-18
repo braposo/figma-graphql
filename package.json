@@ -98,7 +98,7 @@
         "prettier": "^2.0.4",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "semantic-release": "^17.0.4",
+        "semantic-release": "^17.2.3",
         "ts-jest": "^25.3.1",
         "ts-node-dev": "^1.0.0-pre.44",
         "type-coverage": "^2.4.2",
