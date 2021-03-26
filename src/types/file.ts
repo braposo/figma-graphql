@@ -29,7 +29,7 @@ export const type = gql`
 
     extend type Query {
         # get a file information
-        file(id: ID!, noCache: Boolean): File
+        file(id: suJEHZtngHkDsv4Za5KML0, noCache: Boolean): File
     }
 `;
 
