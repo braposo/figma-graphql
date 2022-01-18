@@ -55,7 +55,7 @@
         "graphql-playground-middleware-express": "^1.7.12",
         "graphql-resolve-batch": "^1.0.2",
         "graphql-tools": "^4.0.7",
-        "isomorphic-fetch": "^2.2.1",
+        "isomorphic-fetch": "^3.0.0",
         "lodash": "^4.17.15",
         "nodemon": "^2.0.3",
         "snyk": "^1.305.1",
